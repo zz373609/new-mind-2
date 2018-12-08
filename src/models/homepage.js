@@ -1,10 +1,11 @@
 import { fetchMovieTop250 } from '../services/server'
 
 export default {
-  namespace: 'mainpage',
+  namespace: 'homepage',
 
   state: {
-    movietop250: null
+    movietop250: null,
+    language: 'zh'
   },
 
   subscriptions: {
