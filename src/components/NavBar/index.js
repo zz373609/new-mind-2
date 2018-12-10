@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import styles from './index.scss'
 class NavBar extends Component {
   render () {
-    const { history } = this.props
+    const { history, dispatch, homepage } = this.props
     const links = [
-      { link: '/', value: '主页' },
-      { link: '/project', value: '项目' },
-      { link: '/music', value: '音乐' },
-      { link: '/column', value: '专栏' },
-      { link: '/about', value: '关于' },
-      { link: '/contact', value: '联系我们' }
+      { link: '/', value_zh: '主页' },
+      { link: window.location.pathname, value_zh: '项目' },
+      // { link: window.location.pathname, value_zh: '音乐' },
+      { link: '/column', value_zh: '专栏' },
+      { link: '/about', value_zh: '关于' },
+      { link: '/contact', value_zh: '联系我们' }
     ]
-    return (<nav style={{ height: 40, width: '100vw', border: '1px solid', background: 'rgba(0,0,0,0.1)', margin: '0 auto', position: 'fixed' }}>
+    return (<nav style={{ height: 40, width: '100vw', background: 'rgba(0,0,0,0.1)', boxShadow: 'inset 0 0 10px #aaa', margin: '0 auto', position: 'fixed' }}>
       导航
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <ul style={{ margin: 0, padding: 0, display: 'flex' }}>
@@ -19,11 +19,45 @@ class NavBar extends Component {
             return (
               <li
                 key={index}
-                style={{ margin: '0 10px', padding: 0, listStyle: 'none', cursor: 'pointer' }}
+                style={{ margin: '0 10px', padding: 0, listStyle: 'none', cursor: 'pointer', color: '#fff' }}
                 onClick={() => {
+                  if (i.value_zh === '项目') {
+                    dispatch({
+                      type: 'homepage/updateState',
+                      payload: {
+                        key: 'showProjectMenu',
+                        value: true
+                      }
+                    })
+                  } else if (i.value_zh === '音乐') {
+                    dispatch({
+                      type: 'homepage/updateState',
+                      payload: {
+                        key: 'showMusicPlayer',
+                        value: true
+                      }
+                    })
+                  } else {
+                    dispatch({
+                      type: 'homepage/updateState',
+                      payload: {
+                        key: 'showProjectMenu',
+                        value: false
+                      }
+                    })
+                    dispatch({
+                      type: 'homepage/updateState',
+                      payload: {
+                        key: 'showMusicPlayer',
+                        value: false
+                      }
+                    })
+                  }
                   history.push(i.link)
                 }}
-              >{i.value}</li>
+              >
+                {i.value_zh}
+              </li>
             )
           })}
         </ul>

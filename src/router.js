@@ -7,30 +7,23 @@ import {
   Music,
   Column,
   About,
-  Contact
+  Contact,
+  App
 } from './routes'
-import {
-  NavBar
-} from './components'
 function RouterConfig ({ history }) {
   return (
     <div>
       <Router history={history}>
-        <div>
-          <Route path='/' render={(props) => (
-            <NavBar {...props} history={history} />
-          )} />
-          <div>
-            <Switch>
-              <Route path='/' exact component={HomePage} />
-              <Route path='/project' exact component={Project} />
-              <Route path='/music' exact component={Music} />
-              <Route path='/column' exact component={Column} />
-              <Route path='/about' exact component={About} />
-              <Route path='/contact' exact component={Contact} />
-            </Switch>
-          </div>
-        </div>
+        <App>
+          <Switch>
+            <Route exact path='/' component={HomePage} />
+            <Route exact path='/music/:id' component={Music} />
+            <Route exact path='/project/:id' component={Project} />
+            <Route exact path='/column' component={Column} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/contact' component={Contact} />
+          </Switch>
+        </App>
       </Router>
     </div>
   )

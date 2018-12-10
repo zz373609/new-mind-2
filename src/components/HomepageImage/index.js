@@ -5,7 +5,7 @@ class HomepageImage extends Component {
   render () {
     const { src, percent } = this.props
     return <div style={{ width: percent, verticalAlign: 'middle' }}>
-      <img style={{ width: percent, display: 'block' }} src={src} />
+      <img style={{ width: '100%', display: 'block' }} src={src} />
     </div>
   }
 }

@@ -13,7 +13,7 @@ class Column extends Component {
 
   render () {
     const { history } = this.props
-    return <div style={{ width: '100vw', margin: '0 auto' }}>
+    return <div style={{ width: '100vw', margin: '0 auto', height: '100vh' }}>
       Column
     </div>
   }

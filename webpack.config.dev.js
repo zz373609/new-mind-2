@@ -15,6 +15,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(webm|mp4)$/,
+        use: [{
+          loader: 'file-loader'
+        }]
+      },
+      {
         test: /\.(ttf|eot|woff)$/,
         use: [{
           loader: 'file-loader',
@@ -50,7 +56,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [ {
+        use: [{
           loader: 'style-loader'
         }, {
           loader: 'css-loader',

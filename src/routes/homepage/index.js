@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'dva'
 import PropTypes from 'prop-types'
-import { TopBanner, BottomNav, HomepageImage } from '../../components'
+import { HomepageImage, ProjectMenu } from '../../components'
+import { withRouter } from 'react-router'
 import styles from './style/index.scss'
+import { Player } from 'video-react'
+import { Modal } from 'antd'
 const material1 = require('./image/material1/main.png')
 const material1_show1 = require('./image/material1/img1.jpg')
 const material1_show2 = require('./image/material1/img2.jpg')
@@ -82,109 +85,141 @@ const video_left_zh = require('./image/other/video_left_zh.png')
 const video_right_zh = require('./image/other/video_right_zh.png')
 const people = require('./image/other/people.png')
 const sand = require('./image/other/sand.png')
-@connect(state => ({
-  homepage: state.homepage,
-  loading: state.loading
-}))
+import bottom_left_video from './video/bottom_left.mp4'
+import bottom_right_video from './video/bottom_right.mp4'
 class HomePage extends Component {
   constructor (props) {
     super(props)
-    this.state = {}
+    this.state = {
+      videoVisible: false,
+      videoSrc: ''
+    }
   }
 
   render () {
-    const { homepage, loading, history } = this.props
-    const { language } = homepage
-    return <div style={{ width: '100vw', minWidth: '1024px', margin: '0 auto', background: '#eee' }}>
-      <header style={{ width: '100%' }}>
-        <TopBanner />
-      </header>
-      <main style={{
-        width: '69.125%',
-        margin: '0 auto',
-        padding: '0 1.5%',
-        background: '#fff'
-      }}>
-        <div>
-          <div style={{ display: 'flex' }}>
-            <HomepageImage src={material1} percent='50%' />
-            <HomepageImage src={language === 'zh' ? material2_zh : material2_en} percent='50%' />
-          </div>
-          <div style={{ display: 'flex' }}>
-            <HomepageImage src={language === 'zh' ? material3_left_zh : material3_left_en} percent='33.3333%' />
-            <HomepageImage src={language === 'zh' ? material3_middle_zh : material3_middle_en} percent='33.3333%' />
-            <HomepageImage src={language === 'zh' ? material3_right_zh : material3_right_en} percent='33.3333%' />
-          </div>
-          <HomepageImage src={language === 'zh' ? transition1_zh : transition1_en} percent='100%' />
-          <HomepageImage src={fullpageVideo} percent='100%' />
-          <HomepageImage src={language === 'zh' ? transition2_zh : transition2_en} percent='100%' />
-          <div style={{ display: 'flex' }}>
-            <HomepageImage src={language === 'zh' ? material4_zh : material4_en} percent='50%' />
-            <HomepageImage src={language === 'zh' ? material5_zh : material5_en} percent='50%' />
-          </div>
-          <HomepageImage src={language === 'zh' ? transition3_zh : transition3_en} percent='100%' />
+    const { homepage, history } = this.props
+    const { language, showProjectMenu } = homepage
+    console.log('qwqw', showProjectMenu)
+    return <div style={{
+      width: '68.25%',
+      margin: '0 auto',
+      padding: '0 1.25%',
+      background: '#fff',
+      boxSizing: 'border-box'
+    }}>
+      <div>
+        <div style={{ display: 'flex' }}>
+          <HomepageImage src={material1} percent='50%' />
+          <HomepageImage src={language === 'zh' ? material2_zh : material2_en} percent='50%' />
         </div>
         <div style={{ display: 'flex' }}>
-          <HomepageImage src={language === 'zh' ? award_zh : award_en} percent='50%' />
-          <HomepageImage src={material6_zh} percent='50%' />
+          <HomepageImage src={language === 'zh' ? material3_left_zh : material3_left_en} percent='33.3333%' />
+          <HomepageImage src={language === 'zh' ? material3_middle_zh : material3_middle_en} percent='33.3333%' />
+          <HomepageImage src={language === 'zh' ? material3_right_zh : material3_right_en} percent='33.3333%' />
         </div>
+        <HomepageImage src={language === 'zh' ? transition1_zh : transition1_en} percent='100%' />
+        <div onClick={() => {
+          this.setState({
+            fullVideoVisible: true
+          })
+        }}><HomepageImage src={fullpageVideo} percent='100%' /></div>
+        <HomepageImage src={language === 'zh' ? transition2_zh : transition2_en} percent='100%' />
         <div style={{ display: 'flex' }}>
-          <HomepageImage src={material7_zh} percent='50%' />
-          <HomepageImage src={material8_zh} percent='50%' />
+          <HomepageImage src={language === 'zh' ? material4_zh : material4_en} percent='50%' />
+          <HomepageImage src={language === 'zh' ? material5_zh : material5_en} percent='50%' />
         </div>
-        <HomepageImage src={language === 'zh' ? transition4_zh : transition4_en} percent='100%' />
-        <HomepageImage src={fog} percent='100%' />
-        <HomepageImage src={language === 'zh' ? transition5_zh : transition5_en} percent='100%' />
-        <HomepageImage src={language === 'zh' ? transition6_zh : transition6_en} percent='100%' />
-        <div style={{ display: 'flex' }}>
-          <HomepageImage src={brain1_zh} percent='50%' />
-          <HomepageImage src={brain2_zh} percent='50%' />
+        <HomepageImage src={language === 'zh' ? transition3_zh : transition3_en} percent='100%' />
+      </div>
+      <div style={{ display: 'flex' }}>
+        <HomepageImage src={language === 'zh' ? award_zh : award_en} percent='50%' />
+        <HomepageImage src={material6_zh} percent='50%' />
+      </div>
+      <div style={{ display: 'flex' }}>
+        <HomepageImage src={material7_zh} percent='50%' />
+        <HomepageImage src={material8_zh} percent='50%' />
+      </div>
+      <HomepageImage src={language === 'zh' ? transition4_zh : transition4_en} percent='100%' />
+      <HomepageImage src={fog} percent='100%' />
+      <HomepageImage src={language === 'zh' ? transition5_zh : transition5_en} percent='100%' />
+      <HomepageImage src={language === 'zh' ? transition6_zh : transition6_en} percent='100%' />
+      <div style={{ display: 'flex' }}>
+        <HomepageImage src={brain1_zh} percent='50%' />
+        <HomepageImage src={brain2_zh} percent='50%' />
+      </div>
+      <HomepageImage src={language === 'zh' ? transition7_zh : transition7_en} percent='100%' />
+      <div style={{ display: 'flex' }}>
+        <HomepageImage src={brain3_zh} percent='50%' />
+        <HomepageImage src={brain4_zh} percent='50%' />
+      </div>
+      <HomepageImage src={language === 'zh' ? transition8_zh : transition8_en} percent='100%' />
+      <HomepageImage src={language === 'zh' ? transition9_zh : transition9_en} percent='100%' />
+      <HomepageImage src={land1} percent='100%' />
+      <HomepageImage src={language === 'zh' ? transition10_zh : transition10_en} percent='100%' />
+      <div style={{ display: 'flex' }}>
+        <HomepageImage src={language === 'zh' ? material9_zh : material9_en} percent='50%' />
+        <HomepageImage src={language === 'zh' ? space1_zh : space1_en} percent='50%' />
+      </div>
+      <div style={{ display: 'flex' }}>
+        <HomepageImage src={language === 'zh' ? space2_zh : space2_en} percent='50%' />
+        <HomepageImage src={language === 'zh' ? material10_zh : material10_en} percent='50%' />
+      </div>
+      <HomepageImage src={language === 'zh' ? transition11_zh : transition11_en} percent='100%' />
+      <div style={{ display: 'flex' }}>
+        <HomepageImage src={language === 'zh' ? material11_zh : material11_en} percent='50%' />
+        <HomepageImage src={language === 'zh' ? space3_zh : space3_en} percent='50%' />
+      </div>
+      <HomepageImage src={language === 'zh' ? transition12_zh : transition12_en} percent='100%' />
+      <HomepageImage src={land2} percent='100%' />
+      <HomepageImage src={language === 'zh' ? transition13_zh : transition13_en} percent='100%' />
+      <div style={{ display: 'flex' }}>
+        <div style={{ cursor: 'pointer', width: '50%' }} onClick={() => {
+          this.setState({
+            videoSrc: bottom_left_video,
+            videoVisible: true
+          })
+        }}>
+          <HomepageImage src={language === 'zh' ? video_left_zh : video_left_en} percent='100%' />
         </div>
-        <HomepageImage src={language === 'zh' ? transition7_zh : transition7_en} percent='100%' />
-        <div style={{ display: 'flex' }}>
-          <HomepageImage src={brain3_zh} percent='50%' />
-          <HomepageImage src={brain4_zh} percent='50%' />
+        <div style={{ cursor: 'pointer', width: '50%' }} onClick={() => {
+          this.setState({
+            videoSrc: bottom_right_video,
+            videoVisible: true
+          })
+        }}>
+          <HomepageImage src={language === 'zh' ? video_right_zh : video_right_en} percent='100%' />
         </div>
-        <HomepageImage src={language === 'zh' ? transition8_zh : transition8_en} percent='100%' />
-        <HomepageImage src={language === 'zh' ? transition9_zh : transition9_en} percent='100%' />
-        <HomepageImage src={land1} percent='100%' />
-        <HomepageImage src={language === 'zh' ? transition10_zh : transition10_en} percent='100%' />
-        <div style={{ display: 'flex' }}>
-          <HomepageImage src={language === 'zh' ? material9_zh : material9_en} percent='50%' />
-          <HomepageImage src={language === 'zh' ? space1_zh : space1_en} percent='50%' />
-        </div>
-        <div style={{ display: 'flex' }}>
-          <HomepageImage src={language === 'zh' ? space2_zh : space2_en} percent='50%' />
-          <HomepageImage src={language === 'zh' ? material10_zh : material10_en} percent='50%' />
-        </div>
-        <HomepageImage src={language === 'zh' ? transition11_zh : transition11_en} percent='100%' />
-        <div style={{ display: 'flex' }}>
-          <HomepageImage src={language === 'zh' ? material11_zh : material11_en} percent='50%' />
-          <HomepageImage src={language === 'zh' ? space3_zh : space3_en} percent='50%' />
-        </div>
-        <HomepageImage src={language === 'zh' ? transition12_zh : transition12_en} percent='100%' />
-        <HomepageImage src={land2} percent='100%' />
-        <HomepageImage src={language === 'zh' ? transition13_zh : transition13_en} percent='100%' />
-        <div style={{ display: 'flex' }}>
-          <HomepageImage src={language === 'zh' ? video_left_zh : video_left_en} percent='50%' />
-          <HomepageImage src={language === 'zh' ? video_right_zh : video_right_en} percent='50%' />
-        </div>
-        <HomepageImage src={language === 'zh' ? transition14_zh : transition14_en} percent='100%' />
-        <HomepageImage src={people} percent='100%' />
-        <HomepageImage src={language === 'zh' ? transition15_zh : transition15_en} percent='100%' />
-        <HomepageImage src={sand} percent='100%' />
-        <HomepageImage src={language === 'zh' ? transition16_zh : transition16_en} percent='100%' />
-      </main>
-      <footer style={{ width: '100%', border: '1px solid' }}>
-        <BottomNav />
-      </footer>
+      </div>
+      <HomepageImage src={language === 'zh' ? transition14_zh : transition14_en} percent='100%' />
+      <HomepageImage src={people} percent='100%' />
+      <HomepageImage src={language === 'zh' ? transition15_zh : transition15_en} percent='100%' />
+      <HomepageImage src={sand} percent='100%' />
+      <HomepageImage src={language === 'zh' ? transition16_zh : transition16_en} percent='100%' />
+      <Modal
+        className={styles.modal}
+        title={null}
+        visible={this.state.videoVisible}
+        footer={null}
+        closable={false}
+        destroyOnClose
+        maskClosable
+        width={800}
+        onCancel={() => {
+          this.setState({
+            videoVisible: false
+          })
+        }}
+      >
+        <Player>
+          <source src={this.state.videoSrc} type='audio/mpeg' />
+        </Player>
+      </Modal>
     </div>
   }
 }
 
 HomePage.propTypes = {
   homepage: PropTypes.object,
-  loading: PropTypes.object
+  history: PropTypes.object
 }
 
-export default HomePage
+export default withRouter(connect(state => state)(HomePage))

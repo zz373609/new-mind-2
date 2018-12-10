@@ -18,6 +18,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(webm|mp4)$/,
+        use: [{
+          loader: 'file-loader'
+        }]
+      },
+      {
         test: /\.(ttf|eot|woff)$/,
         use: [{
           loader: 'file-loader',
@@ -123,6 +129,16 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        context: __dirname,
+        postcss: [
+          require('autoprefixer'),
+          require('precss'),
+          require('postcss-assets')
+        ]
+      }
     }),
     new HappyPack({
       loaders: [
