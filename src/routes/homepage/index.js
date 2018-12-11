@@ -6,7 +6,7 @@ import { withRouter } from 'react-router'
 import styles from './style/index.scss'
 import { Player } from 'video-react'
 import { Modal } from 'antd'
-const material1 = require('./image/material1/main.png')
+const material1_main = require('./image/material1/main.png')
 const material1_show1 = require('./image/material1/img1.jpg')
 const material1_show2 = require('./image/material1/img2.jpg')
 const material1_show3 = require('./image/material1/img3.jpg')
@@ -87,12 +87,20 @@ const people = require('./image/other/people.png')
 const sand = require('./image/other/sand.png')
 import bottom_left_video from './video/bottom_left.mp4'
 import bottom_right_video from './video/bottom_right.mp4'
+const material1 = {
+  main_zh: material1_main,
+  main_en: material1_main,
+  show_zh: [material11_show1, material1_show2, material1_show3, material1_show4, material1_show5],
+  show_en: [material11_show1, material1_show2, material1_show3, material1_show4, material1_show5]
+}
 class HomePage extends Component {
   constructor (props) {
     super(props)
     this.state = {
       videoVisible: false,
-      videoSrc: ''
+      videoSrc: '',
+      pictureVisible: false,
+      imageSrc: ''
     }
   }
 
@@ -109,7 +117,12 @@ class HomePage extends Component {
     }}>
       <div>
         <div style={{ display: 'flex' }}>
-          <HomepageImage src={material1} percent='50%' />
+          <HomepageImage onClick={() => {
+            this.setState({
+              pictureVisible: true,
+              imageSrc: material1
+            })
+          }} src={language === 'zh' ? material1.main_zh : material1.main_en} percent='50%' />
           <HomepageImage src={language === 'zh' ? material2_zh : material2_en} percent='50%' />
         </div>
         <div style={{ display: 'flex' }}>
@@ -195,14 +208,14 @@ class HomePage extends Component {
       <HomepageImage src={sand} percent='100%' />
       <HomepageImage src={language === 'zh' ? transition16_zh : transition16_en} percent='100%' />
       <Modal
-        className={styles.modal}
+        className={styles['video-modal']}
         title={null}
         visible={this.state.videoVisible}
         footer={null}
         closable={false}
         destroyOnClose
         maskClosable
-        width={800}
+        width='70vw'
         onCancel={() => {
           this.setState({
             videoVisible: false
@@ -212,6 +225,22 @@ class HomePage extends Component {
         <Player>
           <source src={this.state.videoSrc} type='audio/mpeg' />
         </Player>
+      </Modal>
+      <Modal
+        className={styles['picture-modal']}
+        title={null}
+        visible={this.state.pictureVisible}
+        footer={null}
+        closable
+        destroyOnClose
+        width='70vw'
+        onCancel={() => {
+          this.setState({
+            pictureVisible: false
+          })
+        }}
+      >
+        <div><img src={this.state.imageSrc} /></div>
       </Modal>
     </div>
   }
