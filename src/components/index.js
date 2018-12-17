@@ -8,6 +8,7 @@ import Music from './Music'
 import Articles from './Articles'
 import News from './News'
 import ArticleDetail from './ArticleDetail'
+import ShareIcons from './ShareIcons'
 export {
   NavBar,
   TopBanner,
@@ -18,5 +19,6 @@ export {
   Music,
   Articles,
   News,
-  ArticleDetail
+  ArticleDetail,
+  ShareIcons
 }

@@ -1,16 +1,7 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
+import { ShareIcons } from '../../components'
 const QRcode = require('./image/QRcode.png')
-const qq = require('./image/qq.png')
-const qq_black = require('./image/qq_black.png')
-const wechat = require('./image/wechat.png')
-const wechat_black = require('./image/wechat_black.png')
-const friend = require('./image/friend.png')
-const friend_black = require('./image/friend_black.png')
-const weibo = require('./image/weibo.png')
-const weibo_black = require('./image/weibo_black.png')
-const link = require('./image/link.png')
-const link_black = require('./image/link_black.png')
 class ArticleDetail extends Component {
   constructor (props) {
     super(props)
@@ -20,7 +11,6 @@ class ArticleDetail extends Component {
   }
   render () {
     const { articles, homepage } = this.props
-    console.log(qq_black)
     const reArticle = /\/column\/articles\/(\d+)/
     const articleId = reArticle.exec(window.location.pathname)[1]
     const article = articles.find(i => i.id === Number(articleId))
@@ -28,35 +18,7 @@ class ArticleDetail extends Component {
       <h2 style={{ fontWeight: 400, textAlign: 'center', borderBottom: '1px solid #ddd', paddingBottom: 20 }}>{article.title}</h2>
       <div className={styles.en} style={{ marginBottom: 56, display: 'flex', justifyContent: 'space-between' }}>
         <span style={{ fontSize: 12 }}>{article.time}</span>
-        <div style={{ width: 170, display: 'flex', justifyContent: 'space-between' }}>
-          {[
-            {
-              normal: qq, hover: qq_black
-            },
-            {
-              normal: wechat, hover: wechat_black
-            },
-            {
-              normal: friend, hover: friend_black
-            },
-            {
-              normal: weibo, hover: weibo_black
-            },
-            {
-              normal: link, hover: link_black
-            }
-          ].map((i, index) => (
-            <img style={{ height: 22, cursor: 'pointer' }} onMouseEnter={() => {
-              this.setState({
-                inIcon: index
-              })
-            }} onMouseLeave={() => {
-              this.setState({
-                inIcon: null
-              })
-            }} src={index === this.state.inIcon ? i.hover : i.normal} />
-          ))}
-        </div>
+        <ShareIcons />
       </div>
       {
         article.content.map((i, index) => {

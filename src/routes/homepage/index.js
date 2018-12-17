@@ -290,7 +290,7 @@ class HomePage extends Component {
         }}
       >
         <Player>
-          <source src={this.state.videoSrc} type='audio/mpeg' />
+          <source src={this.state.videoSrc} type='video/mp4' />
         </Player>
       </Modal>
       <Modal

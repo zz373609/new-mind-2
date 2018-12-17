@@ -17,7 +17,6 @@ class App extends Component {
     }}>
       <NavBar history={history} dispatch={dispatch} homepage={homepage} />
       <TopBanner src={homepage.topSrc} />
-      <ProjectMenu history={history} key='projectmenu' visible={homepage.showProjectMenu} />
       {this.props.children}
       <BottomNav />
     </div>
