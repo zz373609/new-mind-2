@@ -1,0 +1,22 @@
+.zh {
+  font-family: 'Microsoft Yahei';
+}
+
+.en {
+  font-family: 'Helvetica';
+}
+
+.abstract-para {
+  font-size: 6px;
+  overflow: hidden;
+  max-height: 4.5em;
+  position: relative;
+  &::after {
+    content: '...';
+    position: absolute;
+    display: inline-block;
+    margin-left: -6px;
+    padding-left: 2px;
+    background: #fff;
+  }
+}

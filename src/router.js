@@ -4,22 +4,20 @@ import PropTypes from 'prop-types'
 import {
   HomePage,
   Project,
-  Music,
   Column,
   About,
   Contact,
   App
 } from './routes'
-function RouterConfig ({ history }) {
+function RouterConfig ({ history, match }) {
   return (
     <div>
-      <Router history={history}>
+      <Router history={history} match={match}>
         <App>
           <Switch>
             <Route exact path='/' component={HomePage} />
-            <Route exact path='/music/:id' component={Music} />
             <Route exact path='/project/:id' component={Project} />
-            <Route exact path='/column' component={Column} />
+            <Route path='/column' component={Column} />
             <Route exact path='/about' component={About} />
             <Route exact path='/contact' component={Contact} />
           </Switch>
@@ -30,7 +28,8 @@ function RouterConfig ({ history }) {
 }
 
 RouterConfig.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
+  match: PropTypes.object
 }
 
 export default RouterConfig

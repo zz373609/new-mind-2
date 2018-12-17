@@ -6,12 +6,11 @@ class NavBar extends Component {
     const links = [
       { link: '/', value_zh: '主页' },
       { link: window.location.pathname, value_zh: '项目' },
-      // { link: window.location.pathname, value_zh: '音乐' },
-      { link: '/column', value_zh: '专栏' },
+      { link: '/column/articles', value_zh: '专栏' },
       { link: '/about', value_zh: '关于' },
       { link: '/contact', value_zh: '联系我们' }
     ]
-    return (<nav style={{ height: 40, width: '100vw', background: 'rgba(0,0,0,0.1)', boxShadow: 'inset 0 0 10px #aaa', margin: '0 auto', position: 'fixed' }}>
+    return (<nav style={{ height: 40, width: '100vw', background: 'rgba(0,0,0,0.1)', boxShadow: 'inset 0 0 10px #aaa', margin: '0 auto', position: 'fixed', zIndex: 100 }}>
       导航
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <ul style={{ margin: 0, padding: 0, display: 'flex' }}>

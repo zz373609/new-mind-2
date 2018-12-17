@@ -1,3 +1,15 @@
+.container {
+  width: 68.25%;
+  margin: 0 auto;
+  padding: 0 1.25%;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+:global(.ant-modal-close-x) {
+  color: white;
+}
+
 .header {
   background-color: #222;
   height: 150px;
@@ -28,8 +40,12 @@
   }
 }
 
-.video-modal {
-  color: red;
+.video-modal,
+.picture-modal {
+  :global(.ant-modal-content) {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: none;
+  }
   :global(.ant-modal-body) {
     padding: 0;
   }

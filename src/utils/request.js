@@ -53,7 +53,13 @@ function request (url, options = { method: 'get' }) {
 export default {
   request: request,
   get: (url) => {
-    return request(url, { method: 'get' })
+    return request(url,
+      {
+        method: 'get',
+        headers: {
+          'cache': 'no-cache'
+        }
+      })
   },
   post: (url, body = {}) => {
     return request(url, {
