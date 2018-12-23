@@ -12,6 +12,9 @@ module.exports = {
     filename: 'js/bundle.js',
     publicPath: '/static/'
   },
+  externals: {
+    'AMap': 'AMap'
+  },
   module: {
     rules: [
       {

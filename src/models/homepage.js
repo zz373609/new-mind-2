@@ -1,4 +1,4 @@
-
+import qs from 'qs'
 export default {
   namespace: 'homepage',
 
@@ -7,29 +7,64 @@ export default {
     showProjectMenu: false,
     showMusicPlayer: false,
     columnKey: 0,
-    articleId: null
+    articleId: null,
+    navIndex: 0
   },
 
   subscriptions: {
     setup ({ dispatch, history }) {  // eslint-disable-line
-      return history.listen(({ pathname }) => { // eslint-disable-line
+      return history.listen(({ pathname, search }) => { // eslint-disable-line
+        if (search) {
+          let { language } = qs.parse(search, { ignoreQueryPrefix: true })
+          if (language) {
+            dispatch({
+              type: 'updateState',
+              payload: {
+                key: 'language',
+                value: language
+              }
+            })
+          }
+        }
         let columnKey = 0
+        let navIndex
         switch (pathname) {
           case '/column/articles':
             columnKey = 0
+            navIndex = 2
             break
           case '/column/music':
             columnKey = 1
+            navIndex = 2
             break
           case '/column/news':
             columnKey = 2
+            navIndex = 2
             break
+          case '/':
+            navIndex = 0
+            break
+          case '/about':
+            navIndex = 3
+            break
+          case '/contact':
+            navIndex = 4
+            break
+          default:
+            navIndex = 1
         }
         dispatch({
           type: 'updateState',
           payload: {
             key: 'columnKey',
             value: columnKey
+          }
+        })
+        dispatch({
+          type: 'updateState',
+          payload: {
+            key: 'navIndex',
+            value: navIndex
           }
         })
       })
@@ -42,9 +77,7 @@ export default {
 
   reducers: {
     updateState (state, { payload }) {
-      console.log('update')
       state[payload.key] = payload.value
-      console.log(state)
       return state
     }
   }

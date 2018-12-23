@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
 import { ShareIcons } from '../../components'
+import propTypes from 'prop-types'
 const QRcode = require('./image/QRcode.png')
 class ArticleDetail extends Component {
   constructor (props) {
@@ -10,7 +11,7 @@ class ArticleDetail extends Component {
     }
   }
   render () {
-    const { articles, homepage } = this.props
+    const { articles } = this.props
     const reArticle = /\/column\/articles\/(\d+)/
     const articleId = reArticle.exec(window.location.pathname)[1]
     const article = articles.find(i => i.id === Number(articleId))
@@ -42,5 +43,8 @@ class ArticleDetail extends Component {
       <div style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: '20px', borderTop: '1px solid #ccc' }}><img style={{ height: '84px' }} src={QRcode} /></div>
     </div>
   }
+}
+ArticleDetail.propTypes = {
+  articles: propTypes.array
 }
 export default ArticleDetail

@@ -112,19 +112,43 @@ class Contact extends Component {
     this.state = {}
   }
   componentDidMount () {
-    var map = new AMap.Map('mapcontainer', {
-      resizeEnable: true,
-      center: [120.07027, 30.13964],
-      zoom: 14
-    })
-    var marker = new AMap.Marker({
-      position: new AMap.LngLat(120.07027, 30.13964),
-      title: '凤凰创意大厦'
-    })
-    marker.on('click', () => {
-      window.open('https://www.amap.com/place/B0FFFWSOF4', '_blank')
-    })
-    map.add(marker)
+    function isAmap (Amap) {
+      (function (Amap) {
+        try {
+          return Amap, true
+        } catch (e) {
+          return false
+        }
+      }())()
+    }
+    if (isAmap) {
+      var map = new AMap.Map('mapcontainer', {
+        resizeEnable: true,
+        center: [120.07027, 30.13964],
+        zoom: 14
+      })
+      var marker = new AMap.Marker({
+        position: new AMap.LngLat(120.07027, 30.13964),
+        title: '凤凰创意大厦'
+      })
+      marker.on('click', () => {
+        window.open('https://www.amap.com/place/B0FFFWSOF4', '_blank')
+      })
+      map.add(marker)
+      var map = new AMap.Map('mapcontainer', {
+        resizeEnable: true,
+        center: [120.07027, 30.13964],
+        zoom: 14
+      })
+      var marker = new AMap.Marker({
+        position: new AMap.LngLat(120.07027, 30.13964),
+        title: '凤凰创意大厦'
+      })
+      marker.on('click', () => {
+        window.open('https://www.amap.com/place/B0FFFWSOF4', '_blank')
+      })
+      map.add(marker)
+    }
   }
   render () {
     const { homepage } = this.props

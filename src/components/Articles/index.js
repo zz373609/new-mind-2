@@ -3,6 +3,7 @@ import styles from './index.scss'
 import { mockArticles } from './mockdata/mock.js'
 import classNames from 'classnames'
 import { Pagination } from 'antd'
+import propTypes from 'prop-types'
 const readMore = require('./image/readmore.png')
 const readMore_black = require('./image/readmore_black.png')
 class Articles extends Component {
@@ -67,5 +68,8 @@ class Articles extends Component {
       }} />
     </div>)
   }
+}
+Articles.propTypes = {
+  history: propTypes.object
 }
 export default Articles

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'dva'
 import PropTypes from 'prop-types'
-import { HomepageImage, ProjectMenu } from '../../components'
+import { HomepageImage } from '../../components'
 import { withRouter } from 'react-router'
 import styles from './style/index.scss'
 import { Player } from 'video-react'
@@ -18,15 +18,17 @@ const material2_show1 = require('./image/material2/img1.jpg')
 const material2_show2 = require('./image/material2/img2.jpg')
 const material3_left_zh = require('./image/material3/left_zh.png')
 const material3_left_en = require('./image/material3/left_en.png')
-const material3_middle_zh = require('./image/material3/middle_zh.png')
-const material3_middle_en = require('./image/material3/middle_en.png')
+const material3_middle = require('./image/material3/middle.png')
 const material3_right_zh = require('./image/material3/right_zh.png')
 const material3_right_en = require('./image/material3/right_en.png')
 const transition1 = require('./image/transition/img1.png')
 const transition2_zh = require('./image/transition/img2_zh.png')
+const transition2_en = require('./image/transition/img2_en.png')
 const transition3_zh = require('./image/transition/img3_zh.png')
+const transition3_en = require('./image/transition/img3_en.png')
 const transition4 = require('./image/transition/img4.png')
 const transition5_zh = require('./image/transition/img5_zh.png')
+const transition5_en = require('./image/transition/img5_zh.png')
 const transition6 = require('./image/transition/img6.png')
 const transition7_zh = require('./image/transition/img7_zh.png')
 const transition7_en = require('./image/transition/img7_en.png')
@@ -57,6 +59,7 @@ const material5_show3 = require('./image/material5/img3.jpg')
 const award_zh = require('./image/other/award_zh.png')
 const award_en = require('./image/other/award_en.png')
 const material6_zh = require('./image/material6/main_zh.png')
+const material6_en = require('./image/material6/main_en.png')
 const material6_show1 = require('./image/material6/img1.jpg')
 const material6_show2 = require('./image/material6/img2.jpg')
 const material7_zh = require('./image/material7/main_zh.png')
@@ -137,7 +140,7 @@ class HomePage extends Component {
         </div>
         <div style={{ display: 'flex' }}>
           <HomepageImage src={language === 'zh' ? material3_left_zh : material3_left_en} percent='33.3333%' />
-          <HomepageImage src={language === 'zh' ? material3_middle_zh : material3_middle_en} percent='33.3333%' />
+          <HomepageImage src={material3_middle} percent='33.3333%' />
           <HomepageImage src={language === 'zh' ? material3_right_zh : material3_right_en} percent='33.3333%' />
         </div>
         <HomepageImage src={transition1} percent='100%' />
@@ -146,7 +149,7 @@ class HomePage extends Component {
             fullVideoVisible: true
           })
         }}><HomepageImage src={fullpageVideo} percent='100%' /></div>
-        <HomepageImage src={language === 'zh' ? transition2_zh : transition2_en} percent='100%' />
+        <HomepageImage id='award' src={language === 'zh' ? transition2_zh : transition2_en} percent='100%' />
         <div style={{ display: 'flex' }}>
           <HomepageImage
             onClick={() => {
@@ -198,7 +201,7 @@ class HomePage extends Component {
       </div>
       <HomepageImage src={transition4} percent='100%' />
       <HomepageImage src={fog} percent='100%' />
-      <HomepageImage src={language === 'zh' ? transition5_zh : transition5_en} percent='100%' />
+      <HomepageImage id='scientific' src={language === 'zh' ? transition5_zh : transition5_en} percent='100%' />
       <HomepageImage src={transition6} percent='100%' />
       <div style={{ display: 'flex' }}>
         <HomepageImage src={brain1} percent='50%' />
@@ -212,7 +215,7 @@ class HomePage extends Component {
       <HomepageImage src={language === 'zh' ? transition8_zh : transition8_en} percent='100%' />
       <HomepageImage src={transition9} percent='100%' />
       <HomepageImage src={land1} percent='100%' />
-      <HomepageImage src={language === 'zh' ? transition10_zh : transition10_en} percent='100%' />
+      <HomepageImage id='space' src={language === 'zh' ? transition10_zh : transition10_en} percent='100%' />
       <div style={{ display: 'flex' }}>
         <HomepageImage
           onClick={() => {
@@ -250,7 +253,7 @@ class HomePage extends Component {
       </div>
       <HomepageImage src={transition13} percent='100%' />
       <HomepageImage src={land2} percent='100%' />
-      <HomepageImage src={language === 'zh' ? transition14_zh : transition14_en} percent='100%' />
+      <HomepageImage id='overseas' src={language === 'zh' ? transition14_zh : transition14_en} percent='100%' />
       <div style={{ display: 'flex' }}>
         <div style={{ cursor: 'pointer', width: '50%' }} onClick={() => {
           this.setState({

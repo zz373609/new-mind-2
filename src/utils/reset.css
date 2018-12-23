@@ -1,3 +1,11 @@
+
+@font-face {
+  font-family: 'Microsoft YaheiRegular';
+  src: local('Microsoft Yahei Regular'),
+         local('Microsoft Yahei'),
+         url('Microsoft Yahei.ttf') format('truetype')
+ } 
+
 body {
   margin: 0 auto;
   box-sizing: border-box;
@@ -5,6 +13,7 @@ body {
 
 div {
   box-sizing: border-box;
+  font-family: Helvetica, 'Microsoft Yahei';
 }
 
 ul,

@@ -1,0 +1,36 @@
+.bottomInfo {
+  width: 68.25%;
+  margin: 38px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: white;
+  >div {
+    width: 30%;
+    &:nth-child(2) {
+      height: 72px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 40%;
+      text-align: center;
+      >div {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+    }
+    &:last-child {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    >div {
+      width: 100%;
+      font-size: 12px;
+      color: white;
+      font-weight: 100;
+    }
+  }
+}
