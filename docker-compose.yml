@@ -8,9 +8,9 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./server:/code
-    command: python3 -m server
+    command: python3 -m app
     ports:
-      - '5010:5000'
+      - '5020:5030'
     working_dir: /code
   # nginx:
   #   image: nginx
