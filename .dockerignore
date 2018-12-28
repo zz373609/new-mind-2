@@ -1,0 +1,8 @@
+mongodata
+mysqldata
+.git
+tarantula/.scrapy
+data
+web
+scripts
+tarantula/dbs
