@@ -7,10 +7,11 @@
 # monkey.patch_all()
 import logging
 from src.create_app import _app
-
+from src.config.reg_blueprint import reg
 
 if __name__ == '__main__':
     app = _app()
+    app = reg(app)
     app.run(host='0.0.0.0', port=5030, debug=True)
 
     # gevent server
