@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'dva'
 import PropTypes from 'prop-types'
 import { SubTitle } from '../../components'
-import picture from './image/picture.png'
-import seat from './image/seat.png'
-import gao from './image/gao.png'
+const picture = 'http://pkndszzxq.bkt.clouddn.com/image/about/picture.png'
+const seat = 'http://pkndszzxq.bkt.clouddn.com/image/about/seat.png'
+const gao = 'http://pkndszzxq.bkt.clouddn.com/image/about/gao.png'
 
 @connect(state => ({
   loading: state.loading

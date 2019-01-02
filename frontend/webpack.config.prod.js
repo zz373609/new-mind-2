@@ -4,7 +4,6 @@ var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HappyPack = require('happypack')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
-var ImageminPlugin = require('imagemin-webpack-plugin').default
 
 module.exports = {
   mode: 'production',
@@ -125,11 +124,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new ImageminPlugin({
-      pngquant: {
-        quality: '95-100'
-      }
-    }),
     new CleanWebpackPlugin('dist'),
     new HtmlWebpackPlugin({
       filename: '../index.html',
