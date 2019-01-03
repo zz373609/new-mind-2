@@ -6,6 +6,8 @@ import { withRouter } from 'react-router'
 import styles from './style/index.scss'
 import { Player } from 'video-react'
 import { Modal, Icon } from 'antd'
+const play = require('./image/play.png')
+const play_black = require('./image/play_black.png')
 const material1_main = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/main.png'
 const material1_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img1.jpg'
 const material1_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img2.jpg'
@@ -186,7 +188,7 @@ class HomePage extends Component {
           onClick={() => {
             this.setState({
               pictureVisible: true,
-              imageSrc: [material7_show1, material7_show2, material7_show3, material7_show4]
+              imageSrc: [material7_show1, material7_show4, material7_show2, material7_show3]
             })
           }}
           src={language === 'zh' ? material7_zh : material7_en} percent='50%' />
@@ -255,21 +257,41 @@ class HomePage extends Component {
       <HomepageImage src={land2} percent='100%' />
       <HomepageImage id='overseas' src={language === 'zh' ? transition14_zh : transition14_en} percent='100%' />
       <div style={{ display: 'flex' }}>
-        <div style={{ cursor: 'pointer', width: '50%' }} onClick={() => {
+        <div style={{ cursor: 'pointer', width: '50%', position: 'relative' }} onClick={() => {
           this.setState({
             videoSrc: bottom_left_video,
             videoVisible: true
           })
         }}>
           <HomepageImage src={language === 'zh' ? video_left_zh : video_left_en} percent='100%' />
+          <img style={{ position: 'absolute', width: '10%', top: '50%', left: '30%', transform: 'translateY(-50%)' }} src={this.state.activePlay === 'left' ? play_black : play} onMouseEnter={() => {
+            this.setState({
+              activePlay: 'left'
+            })
+          }} onMouseLeave={() => {
+            this.setState({
+              activePlay: null
+            })
+          }}
+          />
         </div>
-        <div style={{ cursor: 'pointer', width: '50%' }} onClick={() => {
+        <div style={{ cursor: 'pointer', width: '50%', position: 'relative' }} onClick={() => {
           this.setState({
             videoSrc: bottom_right_video,
             videoVisible: true
           })
         }}>
           <HomepageImage src={language === 'zh' ? video_right_zh : video_right_en} percent='100%' />
+          <img style={{ position: 'absolute', width: '10%', top: '50%', left: '30%', transform: 'translateY(-50%)' }} src={this.state.activePlay === 'right' ? play_black : play} onMouseEnter={() => {
+            this.setState({
+              activePlay: 'right'
+            })
+          }} onMouseLeave={() => {
+            this.setState({
+              activePlay: null
+            })
+          }}
+          />
         </div>
       </div>
       <HomepageImage src={transition15} percent='100%' />
