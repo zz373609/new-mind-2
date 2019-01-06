@@ -17,7 +17,7 @@ class App extends Component {
       width: '100vw',
       margin: '0 auto',
       minWidth: '1024px',
-      background: 'repeating-linear-gradient( -45deg, #d9d9d9, #ddd 1px, #fff 2px, #fff 7px)',
+      background: 'repeating-linear-gradient( -45deg, #f2f2f2, #f2f2f2 1px, #d9d9d9 1px, #fff 5px)',
       position: 'relative'
     }}>
       {this.state.showTopNav && <NavBar history={history} dispatch={dispatch} homepage={homepage} />}

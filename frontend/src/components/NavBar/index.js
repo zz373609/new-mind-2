@@ -55,7 +55,7 @@ class NavBar extends Component {
                 }}
               >
                 <span className={styles.language} style={{
-                  borderBottom: index === navIndex ? '2px solid #fff' : 'none'
+                  borderBottom: index === navIndex ? '1px solid #fff' : 'none'
                 }}>{language === 'zh' ? i.value_zh : i.value_en}</span>
                 {index === 1 && <ProjectMenu history={history} key='projectmenu' visible={homepage.showProjectMenu}
                   hidden={() => {
