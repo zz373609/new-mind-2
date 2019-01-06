@@ -53,6 +53,9 @@ export default {
           default:
             navIndex = 1
         }
+        if (pathname.indexOf('/column/articles') > -1) {
+          navIndex = 2
+        }
         dispatch({
           type: 'updateState',
           payload: {

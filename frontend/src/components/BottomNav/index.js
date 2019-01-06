@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
+const bottom_nav_zh = require('./image/bottom_nav_zh.png')
 const navItems = [{
   key: 'home',
   zh_value: '主页',
@@ -75,93 +76,61 @@ class BottomNav extends Component {
   render () {
     const { homepage, history } = this.props
     const { language } = homepage
-    return (<div id='bottomNav' style={{ verticalAlign: 'middle', width: '100%' }}>
-      <div style={{
-        height: '66px',
-        width: '100%',
-        minHeight: 50,
-        background: '#000',
-        color: 'white',
-        fontSize: '20px',
-        paddingLeft: '15.875%',
+    return (<div id='bottomNav' style={{ verticalAlign: 'middle', width: '100%', position: 'relative' }}>
+      <img style={{ width: '100%' }} src={bottom_nav_zh} />
+      <ul style={{
         display: 'flex',
-        alignItems: 'center'
-      }}>{language === 'zh' ? '导航' : 'NAVIGATION'}</div>
-      <div style={{
-        height: '380px',
-        background: '#2F2F2F'
+        justifyContent: 'space-between',
+        width: '68.25%',
+        margin: '0 auto',
+        padding: '64px 0',
+        position: 'absolute',
+        top: '20%',
+        left: '50%',
+        transform: 'translateX(-50% )'
       }}>
-        <ul style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          width: '68.25%',
-          margin: '0 auto',
-          padding: '64px 0',
-          borderBottom: '1px solid #aaa'
-        }}>
-          {
-            navItems.map(item => (
-              <li key={item.key}>
-                <div>
-                  <h3 style={{
-                    fontSize: 14, color: 'white', fontWeight: 300
-                  }}>{language === 'zh' ? item.zh_value : item.en_value}</h3>
-                  <ul>{
-                    item.links.map((i, index) => (
-                      <li key={index}>{
-                        i.hash && <a style={{
-                          color: '#ddd',
-                          textDecoration: 'none',
-                          fontSize: 10,
-                          fontFamily: 'Helvertical,Microsoft Yahei'
-                        }} href={`/?language=${language}#${i.hash}`}>
-                          {
-                            language === 'zh' ? i.zh_value : i.en_value
-                          }
-                        </a>
-                      }{i.pathname && <span
-                        onClick={() => {
-                          history.push({
-                            pathname: i.pathname,
-                            search: `language=${language}`
-                          })
-                        }}
-                        style={{
-                          cursor: 'pointer',
-                          color: '#ddd',
-                          fontSize: 10,
-                          fontFamily: 'Helvertical,Microsoft Yahei'
-                        }}>{language === 'zh' ? i.zh_value : i.en_value
-                        }</span>}</li>
-                    ))
-                  }</ul>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
-        <div className={styles.bottomInfo}>
-          <div className={styles.address}>
-            <div>
-              Add: 3A-211, Phoenix Creative Building Xihu, Hangzhou, Zhejiang
-            </div>
-            <div>
-              Zip code: 310024
-            </div>
-            <div>
-              China Tel: +86-571-87097983
-            </div>
-          </div>
-          <div>
-            <div>share Icons</div>
-            <div>Copyright ©2009-2016 微客设计机构 浙CPI备05021792</div>
-          </div>
-          <div>
-            LOGO
-          </div>
-        </div>
-      </div>
-    </div>)
+        {
+          navItems.map(item => (
+            <li key={item.key}>
+              <div>
+                <h3 style={{
+                  fontSize: 14, color: 'white', fontWeight: 300
+                }}>{language === 'zh' ? item.zh_value : item.en_value}</h3>
+                <ul>{
+                  item.links.map((i, index) => (
+                    <li key={index}>{
+                      i.hash && <a style={{
+                        color: '#ddd',
+                        textDecoration: 'none',
+                        fontSize: 10,
+                        fontFamily: 'Helvertical,Microsoft Yahei'
+                      }} href={`/?language=${language}#${i.hash}`}>
+                        {
+                          language === 'zh' ? i.zh_value : i.en_value
+                        }
+                      </a>
+                    }{i.pathname && <span
+                      onClick={() => {
+                        history.push({
+                          pathname: i.pathname,
+                          search: `language=${language}`
+                        })
+                      }}
+                      style={{
+                        cursor: 'pointer',
+                        color: '#ddd',
+                        fontSize: 10,
+                        fontFamily: 'Helvertical,Microsoft Yahei'
+                      }}>{language === 'zh' ? i.zh_value : i.en_value
+                      }</span>}</li>
+                  ))
+                }</ul>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div >)
   }
 }
 export default BottomNav

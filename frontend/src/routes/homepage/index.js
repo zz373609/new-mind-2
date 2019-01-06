@@ -6,101 +6,103 @@ import { withRouter } from 'react-router'
 import styles from './style/index.scss'
 import { Player } from 'video-react'
 import { Modal, Icon } from 'antd'
-const material1_main = require('./image/material1/main.png')
-const material1_show1 = require('./image/material1/img1.jpg')
-const material1_show2 = require('./image/material1/img2.jpg')
-const material1_show3 = require('./image/material1/img3.jpg')
-const material1_show4 = require('./image/material1/img4.jpg')
-const material1_show5 = require('./image/material1/img5.jpg')
-const material2_zh = require('./image/material2/main_zh.png')
-const material2_en = require('./image/material2/main_en.png')
-const material2_show1 = require('./image/material2/img1.jpg')
-const material2_show2 = require('./image/material2/img2.jpg')
-const material3_left_zh = require('./image/material3/left_zh.png')
-const material3_left_en = require('./image/material3/left_en.png')
-const material3_middle = require('./image/material3/middle.png')
-const material3_right_zh = require('./image/material3/right_zh.png')
-const material3_right_en = require('./image/material3/right_en.png')
-const transition1 = require('./image/transition/img1.png')
-const transition2_zh = require('./image/transition/img2_zh.png')
-const transition2_en = require('./image/transition/img2_en.png')
-const transition3_zh = require('./image/transition/img3_zh.png')
-const transition3_en = require('./image/transition/img3_en.png')
-const transition4 = require('./image/transition/img4.png')
-const transition5_zh = require('./image/transition/img5_zh.png')
-const transition5_en = require('./image/transition/img5_zh.png')
-const transition6 = require('./image/transition/img6.png')
-const transition7_zh = require('./image/transition/img7_zh.png')
-const transition7_en = require('./image/transition/img7_en.png')
-const transition8_zh = require('./image/transition/img8_zh.png')
-const transition8_en = require('./image/transition/img8_en.png')
-const transition9 = require('./image/transition/img9.png')
-const transition10_zh = require('./image/transition/img10_zh.png')
-const transition10_en = require('./image/transition/img10_en.png')
-const transition11 = require('./image/transition/img11.png')
-const transition12 = require('./image/transition/img12.png')
-const transition13 = require('./image/transition/img13.png')
-const transition14_zh = require('./image/transition/img14_zh.png')
-const transition14_en = require('./image/transition/img14_en.png')
-const transition15 = require('./image/transition/img15.png')
-const transition16_zh = require('./image/transition/img16_zh.png')
-const transition16_en = require('./image/transition/img16_en.png')
-const transition17 = require('./image/transition/img17.png')
-const fullpageVideo = require('./image/other/video1.png')
-const material4 = require('./image/material4/main_en.png')
-const material4_show1 = require('./image/material4/img1.jpg')
-const material4_show2 = require('./image/material4/img2.jpg')
-const material4_show3 = require('./image/material4/img3.jpg')
-const material5_zh = require('./image/material5/main_zh.png')
-const material5_en = require('./image/material5/main_en.png')
-const material5_show1 = require('./image/material5/img1.jpg')
-const material5_show2 = require('./image/material5/img2.jpg')
-const material5_show3 = require('./image/material5/img3.jpg')
-const award_zh = require('./image/other/award_zh.png')
-const award_en = require('./image/other/award_en.png')
-const material6_zh = require('./image/material6/main_zh.png')
-const material6_en = require('./image/material6/main_en.png')
-const material6_show1 = require('./image/material6/img1.jpg')
-const material6_show2 = require('./image/material6/img2.jpg')
-const material7_zh = require('./image/material7/main_zh.png')
-const material7_en = require('./image/material7/main_en.png')
-const material7_show1 = require('./image/material7/img1.jpg')
-const material7_show2 = require('./image/material7/img2.jpg')
-const material7_show3 = require('./image/material7/img3.jpg')
-const material7_show4 = require('./image/material7/img4.jpg')
-const material8_zh = require('./image/material8/main_zh.png')
-const material8_en = require('./image/material8/main_en.png')
-const material8_show1 = require('./image/material8/img1.jpg')
-const material8_show2 = require('./image/material8/img2.jpg')
-const fog = require('./image/other/fog.png')
-const brain1 = require('./image/other/brain1.png')
-const brain2_zh = require('./image/other/brain2_zh.png')
-const brain2_en = require('./image/other/brain2_en.png')
-const brain3_zh = require('./image/other/brain3_zh.png')
-const brain3_en = require('./image/other/brain3_en.png')
-const brain4 = require('./image/other/brain4.png')
-const land1 = require('./image/other/land1.png')
-const land2 = require('./image/other/land2.png')
-const material9 = require('./image/material9/main_en.png')
-const material9_show1 = require('./image/material9/img1.png')
-const space1_zh = require('./image/other/space1_zh.png')
-const space1_en = require('./image/other/space1_en.png')
-const space2_zh = require('./image/other/space2_zh.png')
-const space2_en = require('./image/other/space2_en.png')
-const material10 = require('./image/material10/main_en.png')
-const material10_show1 = require('./image/material10/img1.png')
-const material11 = require('./image/material11/main_en.png')
-const material11_show1 = require('./image/material11/img1.jpg')
-const material11_show2 = require('./image/material11/img2.jpg')
-const material11_show3 = require('./image/material11/img3.jpg')
-const space3_zh = require('./image/other/space3_zh.png')
-const space3_en = require('./image/other/space3_en.png')
-const video_left_zh = require('./image/other/video_left_zh.png')
-const video_left_en = require('./image/other/video_left_en.png')
-const video_right_zh = require('./image/other/video_right_zh.png')
-const video_right_en = require('./image/other/video_right_en.png')
-const people = require('./image/other/people.png')
-const sand = require('./image/other/sand.png')
+const play = require('./image/play.png')
+const play_black = require('./image/play_black.png')
+const material1_main = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/main.png'
+const material1_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img1.jpg'
+const material1_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img2.jpg'
+const material1_show3 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img3.jpg'
+const material1_show4 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img4.jpg'
+const material1_show5 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img5.jpg'
+const material2_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material2/main_zh.png'
+const material2_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material2/main_en.png'
+const material2_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material2/img1.jpg'
+const material2_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material2/img2.jpg'
+const material3_left_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material3/left_zh.png'
+const material3_left_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material3/left_en.png'
+const material3_middle = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material3/middle.png'
+const material3_right_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material3/right_zh.png'
+const material3_right_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material3/right_en.png'
+const transition1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img1.png'
+const transition2_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img2_zh.png'
+const transition2_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img2_en.png'
+const transition3_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img3_zh.png'
+const transition3_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img3_en.png'
+const transition4 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img4.png'
+const transition5_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img5_zh.png'
+const transition5_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img5_zh.png'
+const transition6 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img6.png'
+const transition7_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img7_zh.png'
+const transition7_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img7_en.png'
+const transition8_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img8_zh.png'
+const transition8_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img8_en.png'
+const transition9 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img9.png'
+const transition10_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img10_zh.png'
+const transition10_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img10_en.png'
+const transition11 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img11.png'
+const transition12 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img12.png'
+const transition13 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img13.png'
+const transition14_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img14_zh.png'
+const transition14_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img14_en.png'
+const transition15 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img15.png'
+const transition16_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img16_zh.png'
+const transition16_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img16_en.png'
+const transition17 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img17.png'
+const fullpageVideo = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/video1.png'
+const material4 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material4/main_en.png'
+const material4_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material4/img1.jpg'
+const material4_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material4/img2.jpg'
+const material4_show3 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material4/img3.jpg'
+const material5_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material5/main_zh.png'
+const material5_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material5/main_en.png'
+const material5_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material5/img1.jpg'
+const material5_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material5/img2.jpg'
+const material5_show3 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material5/img3.jpg'
+const award_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/award_zh.png'
+const award_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/award_en.png'
+const material6_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material6/main_zh.png'
+const material6_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material6/main_en.png'
+const material6_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material6/img1.jpg'
+const material6_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material6/img2.jpg'
+const material7_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material7/main_zh.png'
+const material7_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material7/main_en.png'
+const material7_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material7/img1.jpg'
+const material7_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material7/img2.jpg'
+const material7_show3 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material7/img3.jpg'
+const material7_show4 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material7/img4.jpg'
+const material8_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material8/main_zh.png'
+const material8_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material8/main_en.png'
+const material8_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material8/img1.jpg'
+const material8_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material8/img2.jpg'
+const fog = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/fog.png'
+const brain1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/brain1.png'
+const brain2_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/brain2_zh.png'
+const brain2_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/brain2_en.png'
+const brain3_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/brain3_zh.png'
+const brain3_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/brain3_en.png'
+const brain4 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/brain4.png'
+const land1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/land1.png'
+const land2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/land2.png'
+const material9 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material9/main_en.png'
+const material9_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material9/img1.png'
+const space1_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/space1_zh.png'
+const space1_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/space1_en.png'
+const space2_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/space2_zh.png'
+const space2_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/space2_en.png'
+const material10 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material10/main_en.png'
+const material10_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material10/img1.png'
+const material11 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material11/main_en.png'
+const material11_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material11/img1.jpg'
+const material11_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material11/img2.jpg'
+const material11_show3 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material11/img3.jpg'
+const space3_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/space3_zh.png'
+const space3_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/space3_en.png'
+const video_left_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/video_left_zh.png'
+const video_left_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/video_left_en.png'
+const video_right_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/video_right_zh.png'
+const video_right_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/video_right_en.png'
+const people = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/people.png'
+const sand = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/sand.png'
 import bottom_left_video from './video/bottom_left.mp4'
 import bottom_right_video from './video/bottom_right.mp4'
 class HomePage extends Component {
@@ -186,7 +188,7 @@ class HomePage extends Component {
           onClick={() => {
             this.setState({
               pictureVisible: true,
-              imageSrc: [material7_show1, material7_show2, material7_show3, material7_show4]
+              imageSrc: [material7_show1, material7_show4, material7_show2, material7_show3]
             })
           }}
           src={language === 'zh' ? material7_zh : material7_en} percent='50%' />
@@ -255,21 +257,41 @@ class HomePage extends Component {
       <HomepageImage src={land2} percent='100%' />
       <HomepageImage id='overseas' src={language === 'zh' ? transition14_zh : transition14_en} percent='100%' />
       <div style={{ display: 'flex' }}>
-        <div style={{ cursor: 'pointer', width: '50%' }} onClick={() => {
+        <div style={{ cursor: 'pointer', width: '50%', position: 'relative' }} onClick={() => {
           this.setState({
             videoSrc: bottom_left_video,
             videoVisible: true
           })
         }}>
           <HomepageImage src={language === 'zh' ? video_left_zh : video_left_en} percent='100%' />
+          <img style={{ position: 'absolute', width: '10%', top: '50%', left: '30%', transform: 'translateY(-50%)' }} src={this.state.activePlay === 'left' ? play_black : play} onMouseEnter={() => {
+            this.setState({
+              activePlay: 'left'
+            })
+          }} onMouseLeave={() => {
+            this.setState({
+              activePlay: null
+            })
+          }}
+          />
         </div>
-        <div style={{ cursor: 'pointer', width: '50%' }} onClick={() => {
+        <div style={{ cursor: 'pointer', width: '50%', position: 'relative' }} onClick={() => {
           this.setState({
             videoSrc: bottom_right_video,
             videoVisible: true
           })
         }}>
           <HomepageImage src={language === 'zh' ? video_right_zh : video_right_en} percent='100%' />
+          <img style={{ position: 'absolute', width: '10%', top: '50%', left: '30%', transform: 'translateY(-50%)' }} src={this.state.activePlay === 'right' ? play_black : play} onMouseEnter={() => {
+            this.setState({
+              activePlay: 'right'
+            })
+          }} onMouseLeave={() => {
+            this.setState({
+              activePlay: null
+            })
+          }}
+          />
         </div>
       </div>
       <HomepageImage src={transition15} percent='100%' />
