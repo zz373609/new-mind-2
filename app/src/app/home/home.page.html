@@ -1,12 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://beta.ionicframework.com/docs/">docs</a> will be your guide.</p>
+<ion-content>
+  <div class='background'>
+    <div class="imgbox">
+      <img src='../../assets/img/dis.png' (click)="pushPage($event,'search')"/>
+    </div>
+    <div class="imgbox">
+        <img src='../../assets/img/nois.png' (click)="pushPage($event,'noise')"/>
+    </div>
+    <div class="imgbox">
+        <img src='../../assets/img/music.png'(click)="pushPage($event,'music')" />
+    </div>
+  </div>
 </ion-content>

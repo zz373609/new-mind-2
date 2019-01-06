@@ -3,18 +3,18 @@ import { connect } from 'dva'
 import PropTypes from 'prop-types'
 import { Breadcrumb } from 'antd'
 import styles from './style/index.scss'
+import { Product } from '../../components'
 
 @connect(state => state)
 class Project extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {}
   }
 
-  render () {
+  render() {
     const { history, match, homepage } = this.props
     const { language } = homepage
-    console.log('match', match)
     return <div style={{
       width: '68.25%',
       margin: '0 auto',
@@ -28,6 +28,9 @@ class Project extends Component {
           <Breadcrumb.Item>{<span style={{ fontSize: 10 }} className={styles[language]}>{language === 'zh' ? '项目' : 'PROJECT'}</span>}</Breadcrumb.Item>
           <Breadcrumb.Item>{<span style={{ fontSize: 10 }} className={styles[language]}>{match.params.id}</span>}</Breadcrumb.Item>
         </Breadcrumb>
+      </div>
+      <div>
+        <Product />
       </div>
     </div>
   }

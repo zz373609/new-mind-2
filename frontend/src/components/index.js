@@ -9,6 +9,9 @@ import Articles from './Articles'
 import News from './News'
 import ArticleDetail from './ArticleDetail'
 import ShareIcons from './ShareIcons'
+import Product from './Product'
+import Divider from './Divider'
+
 export {
   NavBar,
   TopBanner,
@@ -20,5 +23,7 @@ export {
   Articles,
   News,
   ArticleDetail,
-  ShareIcons
+  ShareIcons,
+  Product,
+  Divider
 }

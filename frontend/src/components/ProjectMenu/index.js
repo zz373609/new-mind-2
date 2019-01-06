@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import propTypes from 'prop-types'
 class ProjectMenu extends Component {
   render () {
-    const { history, visible } = this.props
+    const { history, visible, hidden } = this.props
     return <div key='projectmenu' style={{
       position: 'absolute',
       top: '54px',
@@ -16,6 +16,7 @@ class ProjectMenu extends Component {
           history.push({
             pathname: '/project/seat'
           })
+          hidden()
         }} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', cursor: 'pointer' }}>
           <div style={{ height: '7.6vw', width: '7.6vw', minHeight: '77.82px', minWidth: '77.82px', borderRadius: '50%', background: '#f1f2f3' }} />
           <span style={{ width: '100%', textAlign: 'center' }}>冥想坐具</span>
@@ -25,6 +26,7 @@ class ProjectMenu extends Component {
           history.push({
             pathname: '/project/desk'
           })
+          hidden()
         }} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', cursor: 'pointer' }}>
           <div style={{ height: '7.6vw', width: '7.6vw', minHeight: '77.82px', minWidth: '77.82px', borderRadius: '50%', background: '#f1f2f3' }} />
           <span style={{ width: '100%', textAlign: 'center' }}>冥想桌</span>
