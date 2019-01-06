@@ -8,11 +8,12 @@ export default {
     showMusicPlayer: false,
     columnKey: 0,
     articleId: null,
-    navIndex: 0
+    navIndex: 0,
+    topSrc: 'http://pkndszzxq.bkt.clouddn.com//image/backgroundtop/topbackground.png'
   },
 
   subscriptions: {
-    setup ({ dispatch, history }) {  // eslint-disable-line
+    setup({ dispatch, history }) {  // eslint-disable-line
       return history.listen(({ pathname, search }) => { // eslint-disable-line
         if (search) {
           let { language } = qs.parse(search, { ignoreQueryPrefix: true })
@@ -79,7 +80,7 @@ export default {
   },
 
   reducers: {
-    updateState (state, { payload }) {
+    updateState(state, { payload }) {
       state[payload.key] = payload.value
       return state
     }
