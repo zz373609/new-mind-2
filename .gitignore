@@ -18,3 +18,5 @@ node_modules/
 dbs
 
 node_modules/
+ssh
+ip_address

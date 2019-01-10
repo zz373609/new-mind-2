@@ -1,6 +1,6 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from flask_pymongo import PyMongo
 
-url = 'mysql+pymysql://root:zhiqiang1314@localhost:3306/newmind?charset=utf8'
+url = 'mongodb://root:zhiqiang1314@localhost:3306/newmind?charset=utf8'
 
-db = SQLAlchemy()
+mongo = PyMongo()
