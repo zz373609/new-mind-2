@@ -103,8 +103,8 @@ const video_right_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/vi
 const video_right_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/video_right_en.png'
 const people = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/people.png'
 const sand = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/sand.png'
-import bottom_left_video from './video/bottom_left.mp4'
-import bottom_right_video from './video/bottom_right.mp4'
+const bottom_left_video = 'http://pkndszzxq.bkt.clouddn.com/video/mp4/bottom_left.mp4bottom_left.mp4'
+const bottom_right_video = 'http://pkndszzxq.bkt.clouddn.com/video/mp4/bottom_right.mp4bottom_right.mp4'
 class HomePage extends Component {
   constructor (props) {
     super(props)

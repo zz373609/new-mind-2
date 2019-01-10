@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
-const bottom_nav_zh = require('./image/bottom_nav_zh.png')
+const bottom_nav_zh = 'http://pkndszzxq.bkt.clouddn.com/image/jpg/bottom_nav.jpgbottom_nav_zh.png'
 const navItems = [{
   key: 'home',
   zh_value: '主页',
@@ -73,7 +73,7 @@ const navItems = [{
 }
 ]
 class BottomNav extends Component {
-  render () {
+  render() {
     const { homepage, history } = this.props
     const { language } = homepage
     return (<div id='bottomNav' style={{ verticalAlign: 'middle', width: '100%', position: 'relative' }}>
