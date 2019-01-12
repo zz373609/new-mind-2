@@ -3,8 +3,6 @@ version: '2'
 services:
   backend:
     image: server
-    links:
-      - back
     build:
       context: server
       dockerfile: Dockerfile
@@ -19,5 +17,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - ./frontend/dist/:/www/data/
+    links:
+      - server
     ports:
       - '80:80'
