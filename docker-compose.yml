@@ -3,9 +3,8 @@ version: '2'
 services:
   backend:
     image: server
-    container_name: web
     build:
-      context: web
+      context: server
       dockerfile: Dockerfile
     volumes:
       - ./server:/code
