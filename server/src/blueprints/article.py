@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, Response, Blueprint, render_template_string
 from src.mock.mock_data import article_mock
+from src.config.db_config import mongo
 
 article_bp = Blueprint(
     'article',
@@ -10,10 +11,6 @@ article_bp = Blueprint(
 @article_bp.route('/all')
 def articles():
     data = []
-    for x in range(1, 10):
-        p = article_mock
-        p['id'] = x
-        data.append(p)
     return jsonify(data)
 
 @article_bp.route('/<int:id>')

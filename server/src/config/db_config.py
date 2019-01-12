@@ -1,6 +1,6 @@
-from flask import Flask
 from flask_pymongo import PyMongo
+import urllib
 
-url = 'mongodb://root:zhiqiang1314@localhost:3306/newmind?charset=utf8'
+url = 'mongodb://zzq:' + urllib.parse.quote("Zhiqiang1314!@#") + '@shinemeditation.cn:27017/newmind?authSource=admin'
 
 mongo = PyMongo()

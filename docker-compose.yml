@@ -12,12 +12,11 @@ services:
     ports:
       - '5020:5030'
     working_dir: /code
-  # nginx:
-  #   image: nginx
-  #   volumes:
-  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf
-  #     - ./frontend/dist/:/www/data/
-  #     - ../Nginx::/etc/nginx/conf
-  #   ports:
-  #     - '80:80'
-  #     - '5020:80'
+   nginx:
+     image: nginx
+     volumes:
+       - ./nginx.conf:/etc/nginx/conf.d/default.conf
+       - ./frontend/dist/:/www/data/
+     ports:
+       - '80:80'
+       - '5020:80'
