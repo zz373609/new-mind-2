@@ -19,3 +19,4 @@ services:
       - ./frontend/dist/:/www/data/
     ports:
       - '80:80'
+      - '5040:80'
