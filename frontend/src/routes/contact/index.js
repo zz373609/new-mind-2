@@ -4,20 +4,53 @@ import PropTypes from 'prop-types'
 import { SubTitle } from '../../components'
 import styles from './style/index.scss'
 import { Input, Form, Button, Select } from 'antd'
+import './style/index.css'
+
 const FormItem = Form.Item
 const TextArea = Input.TextArea
 const Option = Select.Option
+const OptionsData = [
+  {
+    key: 'after_sell',
+    value: {
+      zh: "售后",
+      en: 'After Sell'
+    }
+  },
+  {
+    key: 'coope',
+    value: {
+      zh: "合作",
+      en: 'Cooperation'
+    }
+  },
+  {
+    key: 'recruitment',
+    value: {
+      zh: "招聘",
+      en: 'Recruitment'
+    }
+  },
+  {
+    key: 'other',
+    value: {
+      zh: "其他",
+      en: 'Other'
+    }
+  }
+]
+
+
 class QAForm extends Component {
   handleSubmit = (e) => {
     console.log(e)
   }
-  render () {
+  render() {
     const { getFieldDecorator } = this.props.form
     const { language } = this.props.homepage
     return (
       <Form onSubmit={(e) => {
         e.preventDefault()
-        console.log(e)
         this.props.form.validateFields((err, value) => {
           if (err) {
             console.log(err)
@@ -30,8 +63,8 @@ class QAForm extends Component {
             {getFieldDecorator('questionType', {
               rules: [{ required: true, message: language === 'zh' ? '请选择问题类别' : 'Please choose type of request.' }]
             })(<Select>
-              {[{ key: 'qa1', value: 'qa1' }, { key: 'qa2', value: 'qa2' }].map((i, index) => (
-                <Option key={i.key} value={i.value}>{i.value}</Option>
+              {OptionsData.map((i, index) => (
+                <Option key={i.key} value={i.key}>{i.value[language]}</Option>
               ))}
             </Select>)}
           </FormItem>
@@ -107,12 +140,12 @@ class QAForm extends Component {
 const QAFormWrap = Form.create()(QAForm)
 @connect(state => state)
 class Contact extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {}
   }
-  componentDidMount () {
-    function isAmap (Amap) {
+  componentDidMount() {
+    function isAmap(Amap) {
       (function (Amap) {
         try {
           return Amap, true
@@ -150,11 +183,10 @@ class Contact extends Component {
       map.add(marker)
     }
   }
-  render () {
+  render() {
     const { homepage } = this.props
     const { language } = homepage
     return <div style={{
-      width: '68.25%',
       margin: '0 auto',
       background: '#fff',
       padding: '86px 7.45%'

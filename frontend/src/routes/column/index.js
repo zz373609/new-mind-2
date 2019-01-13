@@ -31,7 +31,6 @@ class Column extends Component {
     const { history, homepage, match, dispatch } = this.props
     const { language, columnKey, articleId } = homepage
     return (<div style={{
-      width: '68.25%',
       margin: '0 auto',
       background: '#fff',
       padding: '86px 7.45%'

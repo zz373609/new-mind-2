@@ -106,8 +106,24 @@ const people = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/people.png
 const sand = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/sand.png'
 const bottom_left_video = 'http://pkndszzxq.bkt.clouddn.com/video/mp4/bottom_left.mp4bottom_left.mp4'
 const bottom_right_video = 'http://pkndszzxq.bkt.clouddn.com/video/mp4/bottom_right.mp4bottom_right.mp4'
+
+function getIndex(index, length, type) {
+  if (index == 0) {
+    return length - 1
+  } else if (index + 1 == length) {
+    return 0
+  } else {
+    switch (type) {
+      case 'left':
+        return index - 1
+      case 'right':
+        return index + 1
+    }
+  }
+}
+
 class HomePage extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       videoVisible: false,
@@ -118,7 +134,10 @@ class HomePage extends Component {
     }
   }
 
-  render () {
+  componentDidMount(){
+  }
+
+  render() {
     const { homepage, history } = this.props
     const { language, showProjectMenu } = homepage
     const { pictureIndex, pictureVisible, imageSrc } = this.state
@@ -336,8 +355,18 @@ class HomePage extends Component {
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', width: '70vw', height: '70vh', position: 'relative' }}>
-          <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <img className={styles['modal-pic']} src={this.state.imageSrc[pictureIndex]} style={{ maxWidth: '100%', maxHeight: '100%', boxShadow: '0 10vh 10vh #000' }} />
+          <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
+            <Icon onClick={() => {
+              this.setState({
+                pictureIndex: getIndex(this.state.pictureIndex, imageSrc.length, 'left')
+              })
+            }} type="left" style={{ position: 'absolute', top: '50%', left: '0', color: 'white', fontSize: '30px', cursor: 'pointer' }} />
+            <Icon onClick={() => {
+              this.setState({
+                pictureIndex: getIndex(this.state.pictureIndex, imageSrc.length, 'right')
+              })
+            }} type="right" style={{ position: 'absolute', top: '50%', right: '0', color: 'white', fontSize: '30px', cursor: 'pointer' }} />
+            <img className={styles['modal-pic']} src={this.state.imageSrc[pictureIndex]} style={{ maxWidth: '100%', maxHeight: '100%', boxShadow: '0 10vh 10vh #000' }} id='imageload'/>
             <Icon type='close' style={{ color: 'white', position: 'absolute', top: '-20px', right: 0, cursor: 'pointer' }}
               onClick={() => {
                 this.setState({

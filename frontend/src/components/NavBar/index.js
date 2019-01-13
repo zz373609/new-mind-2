@@ -16,7 +16,7 @@ class NavBar extends Component {
     return (<nav className={styles['nav-wrap']} style={{ backgroundColor: diff.background }}>
       <div className={styles['nav-mid']}>
         <div className={styles['main-logo']}>
-          <img src={diff.logo} />
+          <img src={diff.logo} style={{ width: '65%', height:'60%' }} />
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', width: '60%' }}>
           <ul style={{ margin: 0, padding: 0, display: 'flex' }}>
