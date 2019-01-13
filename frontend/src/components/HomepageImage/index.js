@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import propTypes from 'prop-types'
+import styles from './index.scss'
+
 class HomepageImage extends Component {
-  render () {
+  render() {
     const { src, percent, onClick, id } = this.props
-    return <div id={id} onClick={onClick} style={{ width: percent, verticalAlign: 'middle' }}>
+    return <div id={id} onClick={onClick} style={{ width: percent, verticalAlign: 'middle' }} className={styles.homeimage}>
+      <div className={styles.cover} />
       <img style={{ width: '100%', display: 'block' }} src={src} />
     </div>
   }

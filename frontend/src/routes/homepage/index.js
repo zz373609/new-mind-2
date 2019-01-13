@@ -303,6 +303,7 @@ class HomePage extends Component {
         className={styles['video-modal']}
         title={null}
         visible={this.state.videoVisible}
+        transitionName="am-zoom"
         footer={null}
         closable={false}
         destroyOnClose

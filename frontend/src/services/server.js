@@ -5,14 +5,14 @@ const mode = process.env.NODE_ENV
 
 if (mode === 'development') {
   host = ''
-  api = '/proxy/v2'
+  api = '/proxy/api/v1'
 }
 
 if (mode === 'production') {
   host = ''
-  api = '/v2'
+  api = '/api/v1'
 }
 
-export function fetchMovieTop250 () {
-  return fetch.get(`${host}${api}/movie/top250`)
+export function fetchProduct() {
+  return fetch.get(`${host}${api}/product/all`)
 }

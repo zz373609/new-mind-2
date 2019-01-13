@@ -1,4 +1,5 @@
 import qs from 'qs'
+import { fetchProduct } from '../services/server'
 export default {
   namespace: 'homepage',
 
@@ -15,6 +16,9 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {  // eslint-disable-line
       return history.listen(({ pathname, search }) => { // eslint-disable-line
+        dispatch({
+          type:'Product'
+        })
         if (search) {
           let { language } = qs.parse(search, { ignoreQueryPrefix: true })
           if (language) {
@@ -76,7 +80,15 @@ export default {
   },
 
   effects: {
-
+    *Product({ payload }, { call, put, select, take }) {
+      console.log('herer?')
+      try {
+        let res = yield call(fetchProduct)
+        console.log(res)
+      } catch(error){
+        console.log(error)
+      }
+    }
   },
 
   reducers: {

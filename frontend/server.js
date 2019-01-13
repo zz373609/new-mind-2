@@ -22,10 +22,10 @@ app.use(function (req, res, next) {
 
 // proxy setting for dev
 const proxyConfig = {
-  'target': 'https://api.douban.com',
+  'target': 'http://shinemeditation.cn',
   'pathRewrite': { '^/proxy': '' },
   'headers': {
-    host: 'api.douban.com'
+    host: 'shinemeditation.cn'
   }
 }
 
