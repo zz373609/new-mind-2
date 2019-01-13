@@ -65,7 +65,7 @@ class App extends Component {
       <div style={{
         maxWidth: '1920px',
         minWidth: '900px',
-        width: '1024',
+        width: '900px',
         margin: '0 auto'
       }} ref={div => this.div = div}>
         {this.props.children}
