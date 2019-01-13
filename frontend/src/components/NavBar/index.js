@@ -96,7 +96,7 @@ class NavBar extends Component {
           style={{
             width: '5%',
             cursor: 'pointer',
-            color: 'white',
+            color: diff.color,
             fontSize: 12
           }}>{language === 'zh' ? 'EN' : '中文'}</span>
       </div>

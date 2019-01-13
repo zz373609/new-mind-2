@@ -5,7 +5,6 @@ import { withRouter } from 'react-router'
 import { connect } from 'dva'
 import styles from './style/index.scss'
 
-
 const up = {
   logo: 'http://pkndszzxq.bkt.clouddn.com/image/logoWechatIMG21.png',
   background: 'rgba(0, 0, 0,0.1)',
@@ -16,7 +15,7 @@ const up = {
 
 const down = {
   logo: 'http://pkndszzxq.bkt.clouddn.com/image/logoWechatIMG20.png',
-  background: 'rgba(255, 255, 255,0.7)',
+  background: 'rgba(255, 255, 255,0.9)',
   color: 'black',
   selectcolor: '#004D8B',
   bottom: '1px solid #004D8B'
@@ -63,9 +62,7 @@ class App extends Component {
       {this.state.showTopNav && <NavBar history={history} dispatch={dispatch} homepage={homepage} diff={this.state.diff} product={homepage.product}/>}
       <TopBanner src={homepage.topSrc} />
       <div style={{
-        maxWidth: '1920px',
-        minWidth: '900px',
-        width: '900px',
+        width: '68.5%',
         margin: '0 auto'
       }} ref={div => this.div = div}>
         {this.props.children}
