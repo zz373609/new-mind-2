@@ -30,7 +30,7 @@ class Project extends Component {
         </Breadcrumb>
       </div>
       <div>
-        <Product />
+        <Product productone={homepage.productone} language={homepage.language}/>
       </div>
     </div>
   }

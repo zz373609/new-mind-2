@@ -1,5 +1,5 @@
 import qs from 'qs'
-import { fetchProduct } from '../services/server'
+import { fetchProduct, fetchProductone } from '../services/server'
 export default {
   namespace: 'homepage',
 
@@ -10,15 +10,24 @@ export default {
     columnKey: 0,
     articleId: null,
     navIndex: 0,
-    topSrc: 'http://pkndszzxq.bkt.clouddn.com//image/backgroundtop/topbackground.png'
+    topSrc: 'http://pkndszzxq.bkt.clouddn.com//image/backgroundtop/topbackground.png',
+    product: [],
+    productone: {}
   },
 
   subscriptions: {
     setup({ dispatch, history }) {  // eslint-disable-line
       return history.listen(({ pathname, search }) => { // eslint-disable-line
         dispatch({
-          type:'Product'
+          type: 'Product'
         })
+        if (pathname.indexOf('/project') > -1) {
+          console.log(pathname.replace('/project/', ''))
+          dispatch({
+            type: 'ProductOne',
+            payload: pathname.replace('/project/', '')
+          })
+        }
         if (search) {
           let { language } = qs.parse(search, { ignoreQueryPrefix: true })
           if (language) {
@@ -81,11 +90,33 @@ export default {
 
   effects: {
     *Product({ payload }, { call, put, select, take }) {
-      console.log('herer?')
       try {
         let res = yield call(fetchProduct)
-        console.log(res)
-      } catch(error){
+        yield put({
+          type: 'updateState',
+          payload: {
+            key: 'product',
+            value: res
+          }
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    *ProductOne({ payload }, { call, put, select, take }) {
+      try {
+        let param = {
+          id: payload
+        }
+        let res = yield call(fetchProductone, param)
+        yield put({
+          type: 'updateState',
+          payload: {
+            key: 'productone',
+            value: res
+          }
+        })
+      } catch (error) {
         console.log(error)
       }
     }
@@ -93,8 +124,9 @@ export default {
 
   reducers: {
     updateState(state, { payload }) {
-      state[payload.key] = payload.value
-      return state
+      let ustate = JSON.parse(JSON.stringify(state))
+      ustate[payload.key] = payload.value
+      return ustate
     }
   }
 }

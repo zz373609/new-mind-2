@@ -1,42 +1,128 @@
 import React, { Component } from 'react'
 import propTypes from 'prop-types'
 import styles from './index.scss'
-import { Carousel, Row, Col } from 'antd'
-import Divider from '../Divider'
+import { Carousel, Row, Col, Divider } from 'antd'
 
-const image = [1, 2, 3, 4, 5]
+const SelectList = [
+	{
+		value: 'des',
+		text: {
+			zh: '产品描述',
+			en: 'Descrption'
+		}
+	},
+	{
+		value: 'param',
+		text: {
+			zh: '参数',
+			en: 'Params'
+		}
+	},
+	{
+		value: 'after_sell',
+		text: {
+			zh: '售后',
+			en: 'After Sell'
+		}
+	}
+]
 
 class Product extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			key: 'des'
+		}
+		this.goto = this.goto.bind(this)
+		this.slider = null
+		this.setKey = this.setKey.bind(this)
+	}
+
+	goto(index) {
+		this.slider.goTo(index)
+	}
+
+	setKey(key) {
+		this.setState({
+			key: key
+		})
+	}
+
 	render() {
-		const { } = this.props
+		const { productone, language } = this.props
 		return <div>
 			<div className={styles.Product}>
 				<div className={styles.left}>
-					<Carousel>
-						<div>
-							<Image src={'http://pkndszzxq.bkt.clouddn.com//image/project16.png'} />
-						</div>
+					<Carousel
+						effect="fade"
+						ref={c => (this.slider = c)}
+					>
+						{
+							productone && productone.images && productone.images.map((item, index) => {
+								return <Image key={index} src={item.image} />
+							})
+						}
 					</Carousel>
 					<div className={styles.crads}>
-						<ImageCard src={'http://pkndszzxq.bkt.clouddn.com//image/project12.png'} />
-						<ImageCard src={'http://pkndszzxq.bkt.clouddn.com//image/project12.png'} />
-						<ImageCard src={'http://pkndszzxq.bkt.clouddn.com//image/project12.png'} />
-						<ImageCard src={'http://pkndszzxq.bkt.clouddn.com//image/project12.png'} />
+						{
+							productone && productone.image_card && productone.image_card.map((item, index) => {
+								return <ImageCard key={index} src={item.card_image} onClick={this.goto} index={item.link} />
+							})
+						}
 					</div>
 				</div>
 				<div className={styles.right}>
-					<Title text={'冥想坐具'} />
+					<Title text={productone && productone.title && productone.title[language]} />
 					<Divider />
-					<Price text={'¥2180-2580'} />
-					<Des />
-					<Colors />
+					<Price text={productone && productone.price} />
+					<Des text={productone && productone.description && productone.description[language]} />
+					<Colors colors={productone.images} goto={this.goto} />
 					<Share />
 				</div>
 			</div>
 			<div>
+				<Bottom language={language} current={this.state.key} setkey={this.setKey} productone={productone} />
 			</div>
 		</div>
 	}
+}
+
+const Bottom = ({ language, current, setkey, productone }) => {
+	return <div>
+		<div style={{
+			display: 'flex',
+			justifyContent: 'flex-start'
+		}}>
+			{
+				SelectList.map((item, index) => {
+					return <div key={index} className={styles.list}
+						onClick={() => {
+							setkey(item.value)
+						}}
+					>
+						<span style={current == item.value ? { backgroundColor: 'black', color: 'white' } : { backgroundColor: 'white', color: 'black' }}>{item.text[language]}</span>
+					</div>
+				})
+			}
+		</div>
+		<Divider />
+		<div className={styles.bottomdes}>
+			{
+				productone && productone.more_infor && productone.more_infor.map((item, index) => {
+					switch (item.type) {
+						case "text":
+							if (item.key == current) {
+								return <p style={{ fontSize: '10px' }}>{item.value[language]}</p>
+							}
+						case "image":
+							if (item.key == current) {
+								return <img style={{ width: '100%' }} src={item.value[language]} />
+							}
+					}
+				})
+			}
+		</div>
+	</div>
 }
 
 const Image = ({ src }) => {
@@ -48,33 +134,37 @@ const Title = ({ text }) => {
 }
 
 const Des = ({ text }) => {
-	return <p style={{ fontSize: '10px', marginBottom: '16px' }}>盘腿是一种有益的古老姿势,但是现代人缺少一种合适的坐具以盘腿坐。这是一张真正意义上的辅助冥想的人体工学盘腿坐具。</p>
+	return <p style={{ fontSize: '10px', marginBottom: '16px' }}>{text}</p>
 }
 
 const Price = ({ text }) => {
 	return <p style={{ marginTop: '16px' }}>{text}</p>
 }
 
-const Colors = ({ colors }) => {
+const Colors = ({ colors, goto }) => {
 	return <div>
 		<p>颜色</p>
 		<Divider />
 		<div className={styles.colors}>
 			<Row type="flex" justify="space-around">
 				{
-					image.map((item, index) => {
-						return <Col span={4}>
-							<Color src={'http://pkndszzxq.bkt.clouddn.com//image/project03.png'} />
-						</Col>
+					colors && colors.map((item, index) => {
+						if (index < 5) {
+							return <Col span={4} key={index} >
+								<Color src={item.cricle_image} goto={goto} index={index} />
+							</Col>
+						}
 					})
 				}
 			</Row>
 			<Row type="flex" justify="space-around">
 				{
-					image.map((item, index) => {
-						return <Col span={4}>
-							<Color src={'http://pkndszzxq.bkt.clouddn.com//image/project03.png'} />
-						</Col>
+					colors && colors.map((item, index) => {
+						if (index > 4 && item.cricle_image) {
+							return <Col span={4} key={index} >
+								<Color src={item.cricle_image} goto={goto} index={index} />
+							</Col>
+						}
 					})
 				}
 			</Row>
@@ -82,14 +172,18 @@ const Colors = ({ colors }) => {
 	</div>
 }
 
-const Color = ({ src }) => {
-	return <div className={styles.color}>
+const Color = ({ src, goto, index }) => {
+	return <div className={styles.color} onClick={() => {
+		goto(index)
+	}}>
 		<img src={src} style={{ width: '60%' }} />
 	</div>
 }
 
-const ImageCard = ({ src }) => {
-	return <div className={styles.imagecard}>
+const ImageCard = ({ src, onClick, index }) => {
+	return <div className={styles.imagecard} onClick={() => {
+		onClick(index)
+	}}>
 		<img src={src} style={{ width: '100%' }} />
 	</div>
 }

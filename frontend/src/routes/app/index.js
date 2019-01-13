@@ -60,7 +60,7 @@ class App extends Component {
       background: 'repeating-linear-gradient( -45deg, #f2f2f2, #f2f2f2 1px, #d9d9d9 1px, #fff 5px)',
       position: 'relative'
     }}>
-      {this.state.showTopNav && <NavBar history={history} dispatch={dispatch} homepage={homepage} diff={this.state.diff} />}
+      {this.state.showTopNav && <NavBar history={history} dispatch={dispatch} homepage={homepage} diff={this.state.diff} product={homepage.product}/>}
       <TopBanner src={homepage.topSrc} />
       <div style={{
         maxWidth: '1920px',

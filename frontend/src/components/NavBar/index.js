@@ -4,7 +4,7 @@ import styles from './index.scss'
 import propTypes from 'prop-types'
 class NavBar extends Component {
   render() {
-    const { history, dispatch, homepage, diff } = this.props
+    const { history, dispatch, homepage, diff, product } = this.props
     const { language, navIndex } = homepage
     const links = [
       { link: '/', value_zh: '主页', value_en: 'HOME' },
@@ -60,7 +60,11 @@ class NavBar extends Component {
                     borderBottom: diff.bottom,
                     color: diff.selectcolor
                   } : { borderBottom: 'none' }}>{language === 'zh' ? i.value_zh : i.value_en}</span>
-                  {index === 1 && <ProjectMenu history={history} key='projectmenu' visible={homepage.showProjectMenu}
+                  {index === 1 && <ProjectMenu history={history}
+                    language={homepage.language}
+                    product={product}
+                    key='projectmenu'
+                    visible={homepage.showProjectMenu}
                     hidden={() => {
                       dispatch({
                         type: 'homepage/updateState',
