@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { ProjectMenu } from '../../components'
 import styles from './index.scss'
 import propTypes from 'prop-types'
+import { Input,Icon } from 'antd'
+import './index.css'
+const Search = Input.Search;
+
 class NavBar extends Component {
   render() {
     const { history, dispatch, homepage, diff, product } = this.props
@@ -16,7 +20,7 @@ class NavBar extends Component {
     return (<nav className={styles['nav-wrap']} style={{ backgroundColor: diff.background }}>
       <div className={styles['nav-mid']}>
         <div className={styles['main-logo']}>
-          <img src={diff.logo} style={{ width: '65%', height:'60%' }} />
+          <img src={diff.logo} style={{ width: '65%', height: '60%' }} />
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', width: '60%' }}>
           <ul style={{ margin: 0, padding: 0, display: 'flex' }}>
@@ -80,6 +84,7 @@ class NavBar extends Component {
             })}
           </ul>
         </div>
+        <Input style={{ width: '120px' }} prefix={<Icon type="search" style={{color:'black',backgroundColor:'black'}}/>}/>
         <span
           onClick={() => {
             dispatch({

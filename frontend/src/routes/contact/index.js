@@ -40,7 +40,6 @@ const OptionsData = [
   }
 ]
 
-
 class QAForm extends Component {
   handleSubmit = (e) => {
     console.log(e)
