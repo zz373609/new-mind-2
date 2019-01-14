@@ -389,7 +389,7 @@ class HomePage extends Component {
                   <img
                     className={styles['modal-pic']}
                     src={this.state.imageSrc[pictureIndex]}
-                    style={{ maxWidth: '100%', maxHeight: '100%', boxShadow: '0 10vh 10vh #000' }} id='imageload'
+                    style={{ maxWidth: '100%', maxHeight: '100%'}} id='imageload'
                   />
                 )
               }
