@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import propTypes from 'prop-types'
+import styles from './index.scss'
+
 class ProjectMenu extends Component {
   render() {
     const { history, visible, hidden, product, language } = this.props
@@ -28,13 +30,22 @@ const Project = ({ item, history, hidden, language }) => {
       pathname: item.location
     })
     hidden()
-  }} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', cursor: 'pointer', width: '50%' }}>
+  }}
+    style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', cursor: 'pointer', width: '50%' }}
+    className={styles.project}
+    >
     <div style={{
       height: '7.6vw',
       width: '7.6vw',
       borderRadius: '50%',
       background: '#f1f2f3',
+      position: 'relative'
     }} >
+      <div style={{
+        height: '7.6vw',
+        width: '7.6vw',
+        borderRadius: '50%'
+      }} className={styles.cover} />
       <img style={{ width: '100%', borderRadius: '50%', }} src={item.top_logo} />
     </div>
     <span style={{ width: '100%', textAlign: 'center' }}>{item.title[language]}</span>
