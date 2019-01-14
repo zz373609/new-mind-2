@@ -84,7 +84,7 @@ class NavBar extends Component {
             })}
           </ul>
         </div>
-        <Input style={{ width: '120px' }} prefix={<Icon type="search" style={{color:'black',backgroundColor:'black'}}/>}/>
+        <Input style={{ width: '120px' }} prefix={<Icon type="search"/>}/>
         <span
           onClick={() => {
             dispatch({
