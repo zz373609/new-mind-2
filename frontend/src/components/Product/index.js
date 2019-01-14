@@ -118,7 +118,7 @@ const Bottom = ({ language, current, setkey, productone }) => {
           switch (item.type) {
             case "text":
               if (item.key == current) {
-                return <p key={index} style={{ fontSize: '10px' }}>{item.value[language]}</p>
+                return <p key={index} style={{ margin: '0 !important', fontSize: '10px' }}>{item.value[language]}</p>
               }
             case "image":
               if (item.key == current) {
@@ -136,20 +136,20 @@ const Image = ({ src }) => {
 }
 
 const Title = ({ text }) => {
-  return <p>{text}</p>
+  return <p style={{ margin: '0' }}>{text}</p>
 }
 
 const Des = ({ text }) => {
-  return <p style={{ fontSize: '10px', marginBottom: '16px' }}>{text}</p>
+  return <p style={{ margin: '0', fontSize: '10px', marginBottom: '16px' }}>{text}</p>
 }
 
 const Price = ({ text }) => {
-  return <p style={{ marginTop: '16px' }}>{text}</p>
+  return <p style={{ margin: '0', marginTop: '16px' }}>{text}</p>
 }
 
 const Colors = ({ colors, goto }) => {
   return <div>
-    <p>颜色</p>
+    <p style={{ margin: '0' }}>颜色</p>
     <Divider />
     <div className={styles.colors}>
       <Row type="flex" justify="space-around">
@@ -202,7 +202,7 @@ const Buy = ({ buydata, language }) => {
 
 const Share = ({ sharedata, language }) => {
   return <div>
-    <p style={{ margin: '0px !important', fontSize: '13px' }}>分享</p>
+    <p style={{ margin: '0px', fontSize: '13px' }}>分享</p>
     <Divider />
     <div>
       <Row type="flex" justify="space-around">

@@ -22,7 +22,7 @@ class NavBar extends Component {
         <div className={styles['main-logo']} onClick={() => {
           window.location.href = '/'
         }}>
-          <img src={diff.logo} style={{ width: '55%', height: '50%' }} />
+          <img src={diff.logo} style={{ width: '45%', height: '40%' }} />
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', width: '60%' }}>
           <ul style={{ margin: 0, padding: 0, display: 'flex' }}>
