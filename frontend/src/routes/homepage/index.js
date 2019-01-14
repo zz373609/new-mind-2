@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 import { HomepageImage } from '../../components'
 import { withRouter } from 'react-router'
 import styles from './style/index.scss'
+import './style/index.css'
 import { Player } from 'video-react'
-
+import { CSSTransition } from 'react-transition-group';
 import { Modal, Icon } from 'antd'
 const play = require('./image/play.png')
 const play_black = require('./image/play_black.png')
@@ -108,17 +109,19 @@ const bottom_left_video = 'http://pkndszzxq.bkt.clouddn.com/video/mp4/bottom_lef
 const bottom_right_video = 'http://pkndszzxq.bkt.clouddn.com/video/mp4/bottom_right.mp4bottom_right.mp4'
 
 function getIndex(index, length, type) {
-  if (index == 0) {
-    return length - 1
-  } else if (index + 1 == length) {
-    return 0
-  } else {
-    switch (type) {
-      case 'left':
+  switch (type) {
+    case 'left':
+      if (index == 0) {
+        return length - 1
+      } else {
         return index - 1
-      case 'right':
+      }
+    case 'right':
+      if (index + 1 == length) {
+        return 0
+      } else {
         return index + 1
-    }
+      }
   }
 }
 
@@ -130,11 +133,12 @@ class HomePage extends Component {
       videoSrc: '',
       pictureVisible: false,
       pictureIndex: 0,
-      imageSrc: []
+      imageSrc: [],
+      animate: false
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
   }
 
   render() {
@@ -358,20 +362,48 @@ class HomePage extends Component {
           <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
             <Icon onClick={() => {
               this.setState({
-                pictureIndex: getIndex(this.state.pictureIndex, imageSrc.length, 'left')
+                animate: true
+              }, () => {
+                this.setState({
+                  pictureIndex: getIndex(this.state.pictureIndex, imageSrc.length, 'left'),
+                  animate: false
+                })
               })
-            }} type="left" style={{ position: 'absolute', top: '50%', left: '0', color: 'white', fontSize: '30px', cursor: 'pointer' }} />
+            }} type='left' style={{ position: 'absolute', top: '50%', left: '0', color: 'white', fontSize: '30px', cursor: 'pointer' }} />
             <Icon onClick={() => {
               this.setState({
-                pictureIndex: getIndex(this.state.pictureIndex, imageSrc.length, 'right')
+                animate: true
+              }, () => {
+                this.setState({
+                  pictureIndex: getIndex(this.state.pictureIndex, imageSrc.length, 'right'),
+                  animate: false
+                })
               })
-            }} type="right" style={{ position: 'absolute', top: '50%', right: '0', color: 'white', fontSize: '30px', cursor: 'pointer' }} />
-            <img className={styles['modal-pic']} src={this.state.imageSrc[pictureIndex]} style={{ maxWidth: '100%', maxHeight: '100%', boxShadow: '0 10vh 10vh #000' }} id='imageload'/>
+            }} type='right' style={{ position: 'absolute', top: '50%', right: '0', color: 'white', fontSize: '30px', cursor: 'pointer' }} />
+            <CSSTransition
+              in={this.state.animate}
+              timeout={400}
+              classNames='animate'
+            >{
+                state => (
+                  <img
+                    className={styles['modal-pic']}
+                    src={this.state.imageSrc[pictureIndex]}
+                    style={{ maxWidth: '100%', maxHeight: '100%', boxShadow: '0 10vh 10vh #000' }} id='imageload'
+                  />
+                )
+              }
+            </CSSTransition>
             <Icon type='close' style={{ color: 'white', position: 'absolute', top: '-20px', right: 0, cursor: 'pointer' }}
               onClick={() => {
                 this.setState({
-                  pictureVisible: false,
-                  pictureIndex: 0
+                  animate: true
+                }, () => {
+                  this.setState({
+                    pictureVisible: false,
+                    pictureIndex: 0,
+                    animate: false
+                  })
                 })
               }} />
           </div>
@@ -380,7 +412,12 @@ class HomePage extends Component {
               <div style={{ background: '#fff', height: '100%', cursor: 'pointer' }}
                 onClick={() => {
                   this.setState({
-                    pictureIndex: index
+                    animate: true
+                  }, () => {
+                    this.setState({
+                      pictureIndex: index,
+                      animate: false
+                    })
                   })
                 }}
               >

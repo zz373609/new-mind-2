@@ -3,3 +3,23 @@ body {
     padding: 0;
     font-family: sans-serif;
 }
+
+.animate-enter {
+    opacity: 0.01;
+  }
+  .animate-enter-active {
+    opacity: 1;
+    transition: all 700ms ease-in-out;
+  }
+  .animate-exit {
+    opacity:  0.01;
+  }
+  /* .animate-exit-active {
+    opacity: 0.4;
+    transition: all 1000ms ease-out;
+  } */
+
+  .animate-exit-done{
+    opacity: 1;
+    transition: all 1000ms ease-in-out;
+  }

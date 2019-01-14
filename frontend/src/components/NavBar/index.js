@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { ProjectMenu } from '../../components'
 import styles from './index.scss'
 import propTypes from 'prop-types'
-import { Input,Icon } from 'antd'
+import { Input, Icon } from 'antd'
 import './index.css'
 const Search = Input.Search;
 
@@ -18,9 +18,11 @@ class NavBar extends Component {
       { link: '/contact', value_zh: '联系我们', value_en: 'CONTACT' }
     ]
     return (<nav className={styles['nav-wrap']} style={{ backgroundColor: diff.background }}>
-      <div className={styles['nav-mid']}>
-        <div className={styles['main-logo']}>
-          <img src={diff.logo} style={{ width: '65%', height: '60%' }} />
+      <div className={styles['nav-mid']} style={{ cursor: 'pointer' }}>
+        <div className={styles['main-logo']} onClick={() => {
+          window.location.href = '/'
+        }}>
+          <img src={diff.logo} style={{ width: '55%', height: '50%' }} />
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', width: '60%' }}>
           <ul style={{ margin: 0, padding: 0, display: 'flex' }}>
@@ -30,9 +32,30 @@ class NavBar extends Component {
                   key={index}
                   className={styles['link-item']}
                   style={{ color: diff.color }}
+                  onMouseOver={() => {
+                    if (i.value_zh === '项目') {
+                      dispatch({
+                        type: 'homepage/updateState',
+                        payload: {
+                          key: 'showProjectMenu',
+                          value: true
+                        }
+                      })
+                    } else {
+                      dispatch({
+                        type: 'homepage/updateState',
+                        payload: {
+                          key: 'showProjectMenu',
+                          value: false
+                        }
+                      })
+                    }
+                  }}
                   onClick={() => {
-                    document.body.scrollTop = 0
-                    document.documentElement.scrollTop = 0
+                    if (i.value_zh != '项目') {
+                      document.body.scrollTop = 0
+                      document.documentElement.scrollTop = 0
+                    }
                     dispatch({
                       type: 'homepage/updateState',
                       payload: {
@@ -84,7 +107,7 @@ class NavBar extends Component {
             })}
           </ul>
         </div>
-        <Input style={{ width: '120px' }} prefix={<Icon type="search"/>}/>
+        <Input style={{ width: '120px' }} prefix={<Icon type='search' />} />
         <span
           onClick={() => {
             dispatch({
