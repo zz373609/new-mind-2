@@ -369,7 +369,7 @@ class HomePage extends Component {
                   animate: false
                 })
               })
-            }} type='left' style={{ position: 'absolute', top: '50%', left: '0', color: 'white', fontSize: '30px', cursor: 'pointer' }} />
+            }} type='left' style={{ position: 'absolute', top: '50%', left: '-35px', color: 'white', fontSize: '40px', cursor: 'pointer' }} />
             <Icon onClick={() => {
               this.setState({
                 animate: true
@@ -379,7 +379,7 @@ class HomePage extends Component {
                   animate: false
                 })
               })
-            }} type='right' style={{ position: 'absolute', top: '50%', right: '0', color: 'white', fontSize: '30px', cursor: 'pointer' }} />
+            }} type='right' style={{ position: 'absolute', top: '50%', right: '-35px', color: 'white', fontSize: '40px', cursor: 'pointer' }} />
             <CSSTransition
               in={this.state.animate}
               timeout={400}
