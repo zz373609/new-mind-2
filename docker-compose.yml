@@ -3,6 +3,7 @@ version: '2'
 services:
   backend:
     image: server
+    container_name: server
     build:
       context: server
       dockerfile: Dockerfile
