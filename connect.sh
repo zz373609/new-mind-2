@@ -1,1 +1,1 @@
-ssh root@$(cat ip_address)
+ssh root@94.191.88.27
