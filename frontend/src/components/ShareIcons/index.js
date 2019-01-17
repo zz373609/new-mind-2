@@ -11,13 +11,13 @@ const weibo_black = require('./image/weibo_black.png')
 const link = require('./image/link.png')
 const link_black = require('./image/link_black.png')
 class ShareIcons extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       inIcon: null
     }
   }
-  render () {
+  render() {
     return (<div style={{ width: 170, display: 'flex', justifyContent: 'space-between' }}>
       {[
         {
@@ -36,7 +36,7 @@ class ShareIcons extends Component {
           normal: link, hover: link_black
         }
       ].map((i, index) => (
-        <img style={{ height: 22, cursor: 'pointer' }} onMouseEnter={() => {
+        <img key={index} style={{ height: 22, cursor: 'pointer' }} onMouseEnter={() => {
           this.setState({
             inIcon: index
           })

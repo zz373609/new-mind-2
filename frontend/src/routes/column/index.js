@@ -27,7 +27,7 @@ const type = [
 ]
 @connect(state => state)
 class Column extends Component {
-  render () {
+  render() {
     const { history, homepage, match, dispatch } = this.props
     const { language, columnKey, articleId } = homepage
     return (<div style={{
@@ -59,8 +59,8 @@ class Column extends Component {
             ><span className={classNames(styles[language], { [styles['active']]: index === columnKey })} style={{ fontSize: '10px' }}>{i[language]}</span></li>))}
         </ul>
       </div>
-      <Route path='/column/articles' exact render={(props) => <Articles {...props} dispatch={dispatch} />} />
-      <Route path='/column/articles/:id' exact render={(props) => <ArticleDetail {...props} articles={mockArticles} homepage={homepage} />} />
+      <Route path='/column/articles' exact render={(props) => <Articles {...props} dispatch={dispatch} homepage={homepage} />} />
+      <Route path='/column/articles/:id' exact render={(props) => <ArticleDetail {...props} article={homepage.article} homepage={homepage} />} />
       <Route path='/column/music' exact component={Music} />
       <Route path='/column/news' exact component={News} />
     </div>

@@ -22,10 +22,10 @@ app.use(function (req, res, next) {
 
 // proxy setting for dev
 const proxyConfig = {
-  'target': 'http://shinemeditation.cn',
+  'target': 'http://localhost:5020',
   'pathRewrite': { '^/proxy': '' },
   'headers': {
-    host: 'shinemeditation.cn'
+    host: 'localhost:5020'
   }
 }
 

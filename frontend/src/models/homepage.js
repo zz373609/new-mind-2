@@ -1,5 +1,5 @@
 import qs from 'qs'
-import { fetchProduct, fetchProductone } from '../services/server'
+import { fetchProduct, fetchProductone, fetchArticle } from '../services/server'
 export default {
   namespace: 'homepage',
 
@@ -12,7 +12,9 @@ export default {
     navIndex: 0,
     topSrc: 'http://pkndszzxq.bkt.clouddn.com//image/backgroundtop/topbackground.png',
     product: [],
-    productone: {}
+    productone: {},
+    articles: [],
+    article: {}
   },
 
   subscriptions: {
@@ -22,10 +24,16 @@ export default {
           type: 'Product'
         })
         if (pathname.indexOf('/project') > -1) {
-          console.log(pathname.replace('/project/', ''))
           dispatch({
             type: 'ProductOne',
             payload: pathname.replace('/project/', '')
+          })
+        }
+        console.log(pathname)
+        if (pathname.indexOf('/column/articles/') > -1 && pathname.replace('/column/articles/', '').length) {
+          dispatch({
+            type: 'ArticleOne',
+            payload: pathname.replace('/column/articles/', '')
           })
         }
         if (search) {
@@ -44,6 +52,10 @@ export default {
         let navIndex
         switch (pathname) {
           case '/column/articles':
+            dispatch({
+              type: 'Articlefetch',
+              payload: 'all'
+            })
             columnKey = 0
             navIndex = 2
             break
@@ -119,9 +131,43 @@ export default {
       } catch (error) {
         console.log(error)
       }
+    },
+    *Articlefetch({ payload }, { call, put, select, take }) {
+      try {
+        let param = {
+          id: payload
+        }
+        let res = yield call(fetchArticle, param)
+        yield put({
+          type: 'updateState',
+          payload: {
+            key: 'articles',
+            value: res
+          }
+        })
+      } catch (error) {
+
+      }
+    },
+    *ArticleOne({ payload }, { call, put, select, take }) {
+      console.log(payload)
+      try {
+        let param = {
+          id: payload
+        }
+        let res = yield call(fetchArticle, param)
+        yield put({
+          type: 'updateState',
+          payload: {
+            key: 'article',
+            value: res
+          }
+        })
+      } catch (error) {
+
+      }
     }
   },
-
   reducers: {
     updateState(state, { payload }) {
       let ustate = JSON.parse(JSON.stringify(state))

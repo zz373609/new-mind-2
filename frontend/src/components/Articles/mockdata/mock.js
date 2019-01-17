@@ -1,8 +1,7 @@
-const cover = require('./mockimg.png')
 const item =
 {
   title: '全球精英人士正流行用“它”锻炼自己的身心灵',
-  cover,
+  cover: '',
   time: '2018/ 11 /02',
   content: [
     {

@@ -7,7 +7,7 @@ import propTypes from 'prop-types'
 const readMore = require('./image/readmore.png')
 const readMore_black = require('./image/readmore_black.png')
 class Articles extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       inIcon: null,
@@ -25,7 +25,7 @@ class Articles extends Component {
         <img style={{ height: '46px', marginTop: 10, cursor: 'pointer' }}
           onClick={() => {
             history.push({
-              pathname: `/column/articles/${article.id}`
+              pathname: `/column/articles/${article._id}`
             })
           }}
           onMouseEnter={() => {
@@ -42,11 +42,12 @@ class Articles extends Component {
       </div>
     </div >
   }
-  render () {
+  render() {
     const { current } = this.state
+    const { homepage } = this.props
     return (<div>
       {
-        mockArticles.slice((current - 1) * 5, current * 5).map((i, index) => (
+        homepage && homepage.articles && homepage.articles.map((i, index) => (
           <div key={index} style={{
             display: 'flex',
             justifyContent: 'space-between',

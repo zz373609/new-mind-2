@@ -17,6 +17,10 @@ export function fetchProduct() {
   return fetch.get(`${host}${api}/product/all`)
 }
 
-export function fetchProductone(param){
+export function fetchProductone(param) {
   return fetch.get(`${host}${api}/product/${param.id}`)
+}
+
+export function fetchArticle(param) {
+  return fetch.get(`${host}${api}/article/${param.id}`)
 }
