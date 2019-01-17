@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, Response, Blueprint, render_template_string
 from src.mock.mock_data import product_mock
 from src.config.db_config import mongo
+
 import logging
 
 product_bp = Blueprint(
