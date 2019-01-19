@@ -33,6 +33,13 @@ class NavBar extends Component {
                   className={styles['link-item']}
                   style={{ color: diff.color }}
                   onMouseOver={() => {
+                    dispatch({
+                      type: 'homepage/updateState',
+                      payload: {
+                        key: 'navIndex',
+                        value: index
+                      }
+                    })
                     if (i.value_zh === '项目') {
                       dispatch({
                         type: 'homepage/updateState',
@@ -56,13 +63,6 @@ class NavBar extends Component {
                       document.body.scrollTop = 0
                       document.documentElement.scrollTop = 0
                     }
-                    dispatch({
-                      type: 'homepage/updateState',
-                      payload: {
-                        key: 'navIndex',
-                        value: index
-                      }
-                    })
                     if (i.value_zh === '项目') {
                       dispatch({
                         type: 'homepage/updateState',

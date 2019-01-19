@@ -10,7 +10,7 @@ const up = {
   background: 'rgba(0, 0, 0,0.1)',
   color: 'white',
   selectcolor: 'white',
-  bottom: '1px solid #fff'
+  bottom: '2px solid #fff'
 }
 
 const down = {
@@ -18,7 +18,7 @@ const down = {
   background: 'rgba(255, 255, 255,0.9)',
   color: 'black',
   selectcolor: '#004D8B',
-  bottom: '1px solid #004D8B'
+  bottom: '2px solid #004D8B'
 }
 
 class App extends Component {
@@ -56,13 +56,13 @@ class App extends Component {
     return <div className={styles.container} style={{
       width: '100vw',
       margin: '0 auto',
-      background: 'repeating-linear-gradient( -45deg, #f2f2f2, #f2f2f2 1px, #d9d9d9 1px, #fff 5px)',
+      // background: 'repeating-linear-gradient( -45deg, #f2f2f2, #f2f2f2 1px, #d9d9d9 1px, #fff 5px)',
       position: 'relative'
     }}>
       {this.state.showTopNav && <NavBar history={history} dispatch={dispatch} homepage={homepage} diff={this.state.diff} product={homepage.product}/>}
       <TopBanner src={homepage.topSrc} />
       <div style={{
-        width: '68.5%',
+        width: '69.5%',
         margin: '0 auto'
       }} ref={div => this.div = div}>
         {this.props.children}
