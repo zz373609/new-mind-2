@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
-const bottom_nav_zh = 'http://pkndszzxq.bkt.clouddn.com/image/jpg/bottom_nav.jpgbottom_nav_zh.png'
+const bottom_nav_zh = 'http://pkndszzxq.bkt.clouddn.com/images/png/newbootm/bottom_nav.jpgbottom_nav_zh.png'
 const navItems = [{
   key: 'home',
   zh_value: '主页',
@@ -72,6 +72,20 @@ const navItems = [{
   }]
 }
 ]
+const address = {
+  'address': {
+    en: 'Address:Zhejiang hangzhou xihu chuanyilu 3A-211',
+    zh: '地址:浙江省杭州市西湖区转塘街道创意路2号凤凰创意大厦3A-211室'
+  },
+  'zip': {
+    zh: '邮编:310024',
+    cn: 'Zip:310024'
+  },
+  'phone': {
+    zh: '电话:+86-571-87097983',
+    en: 'phone:+86-571-87097983'
+  }
+}
 class BottomNav extends Component {
   render() {
     const { homepage, history } = this.props
@@ -130,6 +144,11 @@ class BottomNav extends Component {
           ))
         }
       </ul>
+      <div className={styles.address}>
+        <p style={{ margin: '0px', width: '180px' }}>{address['address'][language]}</p>
+        <p style={{ margin: '0px' }}>{address['zip'][language]}</p>
+        <p style={{ margin: '0px' }}>{address['phone'][language]}</p>
+      </div>
     </div >)
   }
 }
