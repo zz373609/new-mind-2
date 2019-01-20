@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
-const bottom_nav_zh = 'http://pkndszzxq.bkt.clouddn.com/images/png/newbootm/bottom_nav.jpgbottom_nav_zh.png'
+import { Divider } from 'antd'
+const bottom_nav_zh = 'http://pkndszzxq.bkt.clouddn.com//image/bottom/bg/WechatIMG111.png'
 const navItems = [{
   key: 'home',
   zh_value: '主页',
@@ -91,6 +92,9 @@ class BottomNav extends Component {
     const { homepage, history } = this.props
     const { language } = homepage
     return (<div id='bottomNav' style={{ verticalAlign: 'middle', width: '100%', position: 'relative' }}>
+      <div className={styles.nav}>
+        导航
+      </div>
       <img style={{ width: '100%' }} src={bottom_nav_zh} />
       <ul style={{
         display: 'flex',
@@ -108,7 +112,7 @@ class BottomNav extends Component {
             <li key={item.key}>
               <div>
                 <h3 style={{
-                  fontSize: 14, color: 'white', fontWeight: 300
+                  fontSize: 15, color: 'white', fontWeight: 300
                 }}>{language === 'zh' ? item.zh_value : item.en_value}</h3>
                 <ul>{
                   item.links.map((i, index) => (
@@ -145,7 +149,10 @@ class BottomNav extends Component {
         }
       </ul>
       <div className={styles.address}>
-        <p style={{ margin: '0px', width: '180px' }}>{address['address'][language]}</p>
+        <Divider style={{
+          backgroundColor: '#878787'
+        }} />
+        <p style={{ margin: '0px', width: '180px', marginTop: '16px' }}>{address['address'][language]}</p>
         <p style={{ margin: '0px' }}>{address['zip'][language]}</p>
         <p style={{ margin: '0px' }}>{address['phone'][language]}</p>
       </div>

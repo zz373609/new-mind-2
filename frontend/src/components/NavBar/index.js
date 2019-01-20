@@ -22,7 +22,7 @@ class NavBar extends Component {
         <div className={styles['main-logo']} onClick={() => {
           window.location.href = '/'
         }}>
-          <img src={diff.logo} style={{ width: '45%', height: '40%' }} />
+          <img src={diff.logo} style={{ width: '65%', height: '60%', marginRight:'14px' }} />
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', width: '60%' }}>
           <ul style={{ margin: 0, padding: 0, display: 'flex' }}>
@@ -108,7 +108,7 @@ class NavBar extends Component {
             })}
           </ul>
         </div>
-        <Input style={{ width: '120px' }} size='small' className={styles.inp} prefix={<Icon type='search' />} />
+        <Input style={{ width: '120px', backgroundColor: 'rgab(225,225,225,0.1) !important' }} size='small' className={styles.inp} prefix={<Icon type='search' />} />
         <span
           onClick={() => {
             dispatch({
