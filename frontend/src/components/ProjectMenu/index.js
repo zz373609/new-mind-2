@@ -55,8 +55,8 @@ const Project = ({ item, history, hidden, language, index }) => {
       }} className={styles.cover} />
       <img style={{ width: '100%', borderRadius: '50%' }} src={item.top_logo} />
     </div>
-    <span style={index == 1 ? { width: '100%', textAlign: 'center', marginTop: '10px', fontSize: '10px', fontWeight: '300', marginLeft: '18px' } :
-      { width: '100%', textAlign: 'center', marginTop: '10px', fontSize: '10px', fontWeight: '300' }
+    <span style={index == 1 ? { width: '100%', textAlign: 'center', marginTop: '10px', fontSize: '10px', fontWeight: '300', marginLeft: '18px',color: 'white' } :
+      { width: '100%', textAlign: 'center', marginTop: '10px', fontSize: '10px', fontWeight: '300', color: 'white' }
     }>{item.title[language]}</span>
   </div>
 }
