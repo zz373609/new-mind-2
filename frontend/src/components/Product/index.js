@@ -71,7 +71,7 @@ class Product extends Component {
           <div className={styles.crads}>
             {
               productone && productone.image_card && productone.image_card.map((item, index) => {
-                return <ImageCard key={index} src={item.card_image} onClick={this.goto} index={item.link} />
+                return <ImageCard key={index} src={item.card_image} onClick={this.goto} index={item.link} set={index} />
               })
             }
           </div>
@@ -106,7 +106,7 @@ const Bottom = ({ language, current, setkey, productone }) => {
               setkey(item.value)
             }}
           >
-            <span style={current == item.value ? { backgroundColor: 'black', color: 'white' } : { backgroundColor: 'white', color: 'black' }}>{item.text[language]}</span>
+            <span style={current == item.value ? { backgroundColor: 'black', color: 'white', padding: '2px' } : { backgroundColor: 'white', color: 'black', padding: '2px' }}>{item.text[language]}</span>
           </div>
         })
       }
@@ -118,7 +118,7 @@ const Bottom = ({ language, current, setkey, productone }) => {
           switch (item.type) {
             case "text":
               if (item.key == current) {
-                return <p key={index} style={{ margin: '0 !important', fontSize: '10px' }}>{item.value[language]}</p>
+                return <p key={index} style={{ margin: '0 !important', fontSize: '10px', lineHeight: '1.5em' }}>{item.value[language]}</p>
               }
             case "image":
               if (item.key == current) {
@@ -136,15 +136,15 @@ const Image = ({ src }) => {
 }
 
 const Title = ({ text }) => {
-  return <p style={{ margin: '0' }}>{text}</p>
+  return <p style={{ margin: '0', fontSize: '18px', fontWeight: '530' }}>{text}</p>
 }
 
 const Des = ({ text }) => {
-  return <p style={{ margin: '0', fontSize: '10px', marginBottom: '16px' }}>{text}</p>
+  return <p style={{ margin: '0', fontSize: '8px', marginBottom: '8px', marginTop: '8px' }}>{text}</p>
 }
 
 const Price = ({ text }) => {
-  return <p style={{ margin: '0', marginTop: '16px' }}>{text}</p>
+  return <p style={{ margin: '0', marginTop: '8px', fontWeight: '530' }}>{text}</p>
 }
 
 const Colors = ({ colors, goto }) => {
@@ -182,12 +182,12 @@ const Color = ({ src, goto, index }) => {
   return <div className={styles.color} onClick={() => {
     goto(index)
   }}>
-    <img src={src} style={{ width: '60%' }} />
+    <img src={src} style={{ width: '80%' }} />
   </div>
 }
 
-const ImageCard = ({ src, onClick, index }) => {
-  return <div className={styles.imagecard} onClick={() => {
+const ImageCard = ({ src, onClick, index, set }) => {
+  return <div className={styles.imagecard} style={set == '3' ? { marginRight: '0px' } : {}} onClick={() => {
     onClick(index)
   }}>
     <img src={src} style={{ width: '100%' }} />
@@ -195,7 +195,11 @@ const ImageCard = ({ src, onClick, index }) => {
 }
 
 const Buy = ({ buydata, language }) => {
-  return <div style={{ width: '30%', margin: "20px 0px" }}>
+  return <div style={{ width: '30%', margin: "20px 0px", cursor: 'pointer' }}
+    onClick={() => {
+      window.open(buydata.link, '_blank')
+    }}
+  >
     <img src={buydata && buydata.image[language]} style={{ width: '100%' }} />
   </div>
 }
@@ -205,7 +209,7 @@ const Share = ({ sharedata, language }) => {
     <p style={{ margin: '0px', fontSize: '13px' }}>分享</p>
     <Divider />
     <div>
-      <Row type="flex" justify="space-around">
+      <Row type="flex" justify="flex-start">
         {
           sharedata && sharedata.map((item, index) => {
             return <Col span={4} key={index} className={styles.shareimage}>

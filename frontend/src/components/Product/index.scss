@@ -8,7 +8,7 @@
 }
 
 .right{
-  width: 46%;
+  width: 40%;
 }
 
 .color{
@@ -27,13 +27,14 @@
 
 .imagecard{
   height: 24%;
-  width: 26%;
-  margin-right: 0.5%
+  width: 25.7%;
+  margin-right: 0.8%
 }
 
 .crads{
   display: flex;
   justify-content: flex-start;
+  margin-top: 2px;
 }
 
 .list{
@@ -45,6 +46,7 @@
 .bottomdes{
   height: 200px;
   width: 100%;
+  margin-top: 16px;
 }
 
 .shareimage{

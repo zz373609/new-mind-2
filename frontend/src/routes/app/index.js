@@ -10,7 +10,8 @@ const up = {
   background: 'rgba(0, 0, 0,0.1)',
   color: 'white',
   selectcolor: 'white',
-  bottom: '2px solid #fff'
+  bottom: '2px solid #fff',
+  fontWeight: '600'
 }
 
 const down = {
@@ -18,7 +19,8 @@ const down = {
   background: 'rgba(255, 255, 255,0.9)',
   color: 'black',
   selectcolor: '#004D8B',
-  bottom: '2px solid #004D8B'
+  bottom: '2px solid #004D8B',
+  fontWeight: '600'
 }
 
 class App extends Component {
@@ -62,7 +64,7 @@ class App extends Component {
       {this.state.showTopNav && <NavBar history={history} dispatch={dispatch} homepage={homepage} diff={this.state.diff} product={homepage.product}/>}
       <TopBanner src={homepage.topSrc} />
       <div style={{
-        width: '69.5%',
+        width: '67.4%',
         margin: '0 auto'
       }} ref={div => this.div = div}>
         {this.props.children}

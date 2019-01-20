@@ -85,7 +85,8 @@ class NavBar extends Component {
                 >
                   <span className={styles.language} style={index === navIndex ? {
                     borderBottom: diff.bottom,
-                    color: diff.selectcolor
+                    color: diff.selectcolor,
+                    fontWeight: diff.fontWeight
                   } : { borderBottom: 'none' }}>{language === 'zh' ? i.value_zh : i.value_en}</span>
                   {index === 1 && <ProjectMenu history={history}
                     language={homepage.language}
@@ -107,7 +108,7 @@ class NavBar extends Component {
             })}
           </ul>
         </div>
-        <Input style={{ width: '120px' }} prefix={<Icon type='search' />} />
+        <Input style={{ width: '120px' }} size='small' className={styles.inp} prefix={<Icon type='search' />} />
         <span
           onClick={() => {
             dispatch({
