@@ -74,6 +74,10 @@ const navItems = [{
 }
 ]
 const address = {
+  'company': {
+    en: 'Compnay:NANOIN degsin',
+    zh: '公司:杭州微客设计有限公司'
+  },
   'address': {
     en: 'Address:Zhejiang hangzhou xihu chuanyilu 3A-211',
     zh: '地址:浙江省杭州市西湖区转塘街道创意路2号凤凰创意大厦3A-211室'
@@ -112,7 +116,7 @@ class BottomNav extends Component {
             <li key={item.key}>
               <div>
                 <h3 style={{
-                  fontSize: 15, color: 'white', fontWeight: 300
+                  fontSize: 18, color: 'white', fontWeight: 300
                 }}>{language === 'zh' ? item.zh_value : item.en_value}</h3>
                 <ul>{
                   item.links.map((i, index) => (
@@ -120,7 +124,7 @@ class BottomNav extends Component {
                       i.hash && <a style={{
                         color: '#ddd',
                         textDecoration: 'none',
-                        fontSize: 10,
+                        fontSize: 12,
                         fontFamily: 'Helvertical,Microsoft Yahei'
                       }} href={`/?language=${language}#${i.hash}`}>
                         {
@@ -137,7 +141,7 @@ class BottomNav extends Component {
                       style={{
                         cursor: 'pointer',
                         color: '#ddd',
-                        fontSize: 10,
+                        fontSize: 12,
                         fontFamily: 'Helvertical,Microsoft Yahei'
                       }}>{language === 'zh' ? i.zh_value : i.en_value
                       }</span>}</li>
@@ -152,7 +156,9 @@ class BottomNav extends Component {
         <Divider style={{
           backgroundColor: '#878787'
         }} />
-        <p style={{ margin: '0px', width: '180px', marginTop: '16px' }}>{address['address'][language]}</p>
+
+        <p style={{ margin: '0px', width: '180px', marginTop: '16px' }}>{address['company'][language]}</p>
+        <p style={{ margin: '0px', width: '180px' }}>{address['address'][language]}</p>
         <p style={{ margin: '0px' }}>{address['zip'][language]}</p>
         <p style={{ margin: '0px' }}>{address['phone'][language]}</p>
       </div>
