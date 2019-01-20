@@ -103,9 +103,9 @@ class BottomNav extends Component {
       <ul style={{
         display: 'flex',
         justifyContent: 'space-between',
-        width: '68.25%',
+        width: '65%',
         margin: '0 auto',
-        padding: '64px 0',
+        padding: '40px 0',
         position: 'absolute',
         top: '20%',
         left: '50%',
@@ -157,7 +157,7 @@ class BottomNav extends Component {
           backgroundColor: '#878787'
         }} />
 
-        <p style={{ margin: '0px', width: '180px', marginTop: '16px' }}>{address['company'][language]}</p>
+        <p style={{ margin: '0px', width: '180px', marginTop: '12px' }}>{address['company'][language]}</p>
         <p style={{ margin: '0px', width: '180px' }}>{address['address'][language]}</p>
         <p style={{ margin: '0px' }}>{address['zip'][language]}</p>
         <p style={{ margin: '0px' }}>{address['phone'][language]}</p>

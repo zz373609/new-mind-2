@@ -15,11 +15,11 @@ const up = {
 }
 
 const down = {
-  logo: 'http://pkndszzxq.bkt.clouddn.com/image/logoWechatIMG20.png',
-  background: 'rgba(255, 255, 255,0.9)',
-  color: 'black',
-  selectcolor: '#004D8B',
-  bottom: '2px solid #004D8B',
+  logo: 'http://pkndszzxq.bkt.clouddn.com/image/logoWechatIMG21.png',
+  background: 'rgba(0, 0, 0,0.5)',
+  color: 'white',
+  selectcolor: 'white',
+  bottom: '2px solid #fff',
   fontWeight: '600'
 }
 
