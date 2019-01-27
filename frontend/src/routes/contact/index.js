@@ -223,7 +223,7 @@ class Contact extends Component {
           </div>
           <div style={{ width: '100%', marginTop: 40, marginBottom: 68 }}>
             <div>{language === 'zh' ? <span className={styles.zh}>地址</span> : <span className={styles.en}>Address</span>}</div>
-            <div style={{ marginTop: 14 }}>{language === 'zh' ? <span className={styles.zh}>中国浙江省杭州市西湖区转塘街道创意路2号凤凰创意大厦3A211 邮编：310024</span> : <span className={styles.en}>3A-211, Phoenix Creative Building, Chuangyi Rd 2, Zhuantang, Xihu, Hangzhou, Zhejiang, 310024</span>}</div>
+            <div style={{ marginTop: 14 }}>{language === 'zh' ? <span className={styles.zh}>中国浙江省杭州市西湖区转塘街道创意路2号凤凰创意大厦3A-211 邮编：310024</span> : <span className={styles.en}>3A-211, Phoenix Creative Building, Chuangyi Rd 2, Zhuantang, Xihu, Hangzhou, Zhejiang, 310024</span>}</div>
           </div>
           <div id='mapcontainer'
             style={{

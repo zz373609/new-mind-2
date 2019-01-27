@@ -48,7 +48,7 @@ const navItems = [{
       zh_value: '冥想座具',
       en_value: 'Meditation Seat'
     }, {
-      pathname: '/project/table',
+      pathname: '/project/desk',
       zh_value: '冥想桌',
       en_value: 'U-shape Table'
     }
@@ -152,6 +152,7 @@ class BottomNav extends Component {
                           pathname: i.pathname,
                           search: `language=${language}`
                         })
+                        window.scrollTo(0, 0)
                       }}
                       style={{
                         cursor: 'pointer',
@@ -174,24 +175,23 @@ class BottomNav extends Component {
           backgroundColor: '#878787'
         }} />
         <div style={{ marginTop: '5%', display: 'flex', justifyContent: 'space-between' }}>
-          <div style={{ width: '7%' }}>
+          <div style={{ width: '6%' }}>
             <img src={'http://pkndszzxq.bkt.clouddn.com/WechatIMG125.png'} style={{ width: '100%' }} />
           </div>
           <div className={styles.addressinfo}>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               {
                 imagelist.map((item, index) => {
-                  return <div style={{ width: '4%', marginRight: '16px', marginBottom: '16px' }}><img src={item} style={{ width: '100%' }} /></div>
+                  return <div style={{ width: '18px', marginRight: '16px', marginBottom: '16px' }}><img src={item} style={{ width: '100%' }} /></div>
                 })
               }
             </div>
-            <p style={{ margin: '0px', textAlign: 'center' }}>{address['copy'][language]}</p>
-            <p style={{ margin: '0px', textAlign: 'center' }}>{address['address'][language]}</p>
-            <p style={{ margin: '0px', textAlign: 'center' }}>{address['zip'][language]}</p>
-            <p style={{ margin: '0px', textAlign: 'center' }}>{address['phone'][language]}</p>
+            <p style={{ margin: '0px', textAlign: 'center', fontSize: '12px' }}>{address['copy'][language]}</p>
+            <p style={{ margin: '0px', textAlign: 'center', fontSize: '12px' }}>{address['address'][language]}</p>
+            <p style={{ margin: '0px', textAlign: 'center', fontSize: '12px' }}>{address['zip'][language]}</p>
+            <p style={{ margin: '0px', textAlign: 'center', fontSize: '12px' }}>{address['phone'][language]}</p>
           </div>
-          <div>
-          </div>
+          <div/>
         </div>
       </div>
     </div >)

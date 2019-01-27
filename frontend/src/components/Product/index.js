@@ -61,6 +61,7 @@ class Product extends Component {
           <Carousel
             effect="fade"
             ref={c => (this.slider = c)}
+            autoplay
           >
             {
               productone && productone.images && productone.images.map((item, index) => {
@@ -163,7 +164,7 @@ const Colors = ({ colors, goto }) => {
           })
         }
       </Row>
-      <Row type="flex" justify="space-around">
+      <Row type="flex" justify={"space-around"}>
         {
           colors && colors.map((item, index) => {
             if (index > 4 && item.cricle_image) {

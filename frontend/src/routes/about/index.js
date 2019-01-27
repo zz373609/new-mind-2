@@ -31,14 +31,14 @@ const p2 = {
   zh: `盘腿是一种古老的坐姿，中国古人称为“居”，即所谓尊者的坐姿，乃双腿盘绕而坐。这样一种坐姿的好处在于能将身体团圆成一个有机整体，且身体的血液集中于人体上半身，使得脏腑与脑部供血充足，便于集中精力，古人常借这种姿势以打坐冥想，思考自然万物存在与关联的哲理。现代人虽仍有盘腿坐的习惯，却缺少一种用于此行为的坐具。希望借由这种坐具的引导，带来我们对东方生活方式的再思考。
 从坐姿演变的历史看，东西方大致经历了从席地而坐到臀部逐渐抬高的转变。各个时期的坐具中几乎都未曾提及盘腿而坐的相关家具，这就成为此项研究的重要原因。 忙碌与快节奏构成了现代人对于生活与工作的基本定义，这样的过程伴随着能量的极大消耗。能量的留存有利于我们更好地发掘身体中潜藏的能力，且帮助改善人、物与环境之间的深层关系。
   一般人无法长时间盘腿，且坐姿多呈现不够中正挺立的姿态，这样一来便易产生脊椎疾病。冥想座具以人体工程学研究为基础，开发帮助人们形成正确、轻松盘腿坐姿的器具，并以冥想活动达到开发人体潜能与贮存能量的终极效果。长久使用会让我们爱上自己的身体，并学会与自我对话。`,
-  en:`Cross- legged is an ancient sitting posture.Ancient Chinese people called it "residence".That is to say, the so - called sitting posture of respectful people is sitting with two legs coiled.The advantage of such a sitting posture is that it can reunite the body into an organic whole, and the blood of the body concentrates on the upper body of the human body, so that the viscera and brain supply enough blood to facilitate the concentration of energy.Ancient people often used this posture to meditate and think about the philosophy of the existence and association of natural things.Although modern people still have the habit of sitting cross - legged, they lack a seat for this behavior.It is hoped that the guidance of this kind of seat will lead us to rethink the Oriental way of life.
+  en: `Cross- legged is an ancient sitting posture.Ancient Chinese people called it "residence".That is to say, the so - called sitting posture of respectful people is sitting with two legs coiled.The advantage of such a sitting posture is that it can reunite the body into an organic whole, and the blood of the body concentrates on the upper body of the human body, so that the viscera and brain supply enough blood to facilitate the concentration of energy.Ancient people often used this posture to meditate and think about the philosophy of the existence and association of natural things.Although modern people still have the habit of sitting cross - legged, they lack a seat for this behavior.It is hoped that the guidance of this kind of seat will lead us to rethink the Oriental way of life.
 From the history of sitting posture evolution, the East and the West roughly experienced a change from sitting on the floor to gradually raising the buttocks.There is almost no mention of cross - legged furniture in the seating utensils of each period, which is an important reason for this study.Busy and fast rhythm constitute the basic definition of life and work for modern people.This process is accompanied by a great consumption of energy.The retention of energy is conducive to our better discovery of potential abilities in the body, and helps to improve the deep relationship between people, things and the environment.
 Generally speaking, people can not cross their legs for a long time, and their sitting postures are not straight enough, so they are prone to spinal diseases.Meditation seat is based on ergonomics.It develops instruments to help people form correct and relaxed cross - legged sitting posture, and achieves the ultimate effect of developing human potential and storing energy through meditation activities.Long - term use will make us fall in love with our bodies and learn to talk to ourselves.`
 }
 
 const person = {
-  zh:`设计学博士，任教于中国美术学院，冥想座具主创设计师。在其博士研究中首次提出微设计理论，并以其思维方法指导设计实践。曾在2014年受邀于TEDx演讲，2017年因其微设计理念在设计领域富有洞见的全新视角而获颁英国大本钟奖（神工奖）暨十大杰出华裔青年设计师奖，并被同时授予中英国际设计周“中英创意产业交流大使”称号。其设计作品至今已囊获包括德国红点设计至尊奖、德国iF产品设计奖、意大利A设计铂金奖、德国通用设计奖、亚洲最具影响力设计银奖、中国好设计奖金奖、台湾金点设计奖 、成功设计奖在内的众多国内外权威设计大奖，并带领微客设计机构（Nanoin Design）获评德国红点奖概念类全球排名第二的佳绩，是华人机构在此项目上的最高排名。微设计理念的本质在于倡导人、物、环境三者和谐发展的关系，它强调以极其细微的视角观察事物，重新诠释设计要素的内在关联，提炼并删减掉不必要的设计要素，从而得到产品全新的形式表达。2017年创立以精神释压为核心理念的健康生活品牌“心冥想”（Shine Meditation），帮助提供身心平衡的健康产品及服务，并致力于开发人类身体及大脑未知的潜力。冥想座具受邀参加全球各大知名设计展览。其设计作品亦被报道于<INTERNI>（意大利）、<Chois Gallery>（美国）、《财经》、《红点年鉴》（德国）、<surface asia>（美国）、<Vida Simples>（巴西）、AXIS(日本)、《英中时报》（英国）、YankoDesign（加拿大）、ELLE Décor(美国)、Core77（美国）、Fashion Times(美国)、每日邮报（英国）、Trends Now(法国)、<ERGONOMICS in PRODUCT DESIGN>（HK)、联合早报（新加坡）、《青年时报》、《每日商报》、《浙江日报》、《钱江晚报》、《都市快报》、《杭州日报》、《瑞丽家居》、《产品设计》、中国设计在线等国内外媒体。`,
-  en:`Doctor of Design, who teaches at the China Academy of Art, is the chief designer of Meditation Seat. In his doctoral research, micro-design theory was first put forward, and its thinking method was used to guide design practice. He was invited to speak at TEDx in 2014. In 2017, he was awarded the Big Ben Award (Shengong Award) and the Top Ten Outstanding Young Chinese Designers Award for his insightful new perspectives in the field of micro-design. He was also awarded the title of "Ambassador for the Exchange of Creative Industries between China and the UK" for the Sino-British International Design Week. His design works have won many authoritative design awards at home and abroad, including the German Red Spot Design Award, the German iF Product Design Award, the Italian A Platinum Design Award, the German General Design Award, the Asian Most Influential Design Silver Award, the Chinese Good Design Award, the Taiwan Golden Spot Design Award and the Successful Design Award. The second best achievement in the concept category of the National Red Spot Award is the highest ranking of Chinese organizations in this project. The essence of the concept of micro-design is to advocate the harmonious development of human, material and environment. It emphasizes observing things from a very subtle perspective, reinterpreting the internal relationship of design elements, refining and deleting unnecessary design elements, so as to get a brand-new form of product expression. In 2017, Shine Meditation, a brand of healthy life with mental stress relief as its core concept, was established to help provide balanced health products and services, and to develop the unknown potential of human body and brain. Meditation seats are invited to participate in major world-renowned design exhibitions. Its design works have also been reported in <INTERNI> (Italy), <Chois Gallery> (USA), <Finance and Economics>,<Red Dot Design Concept Yearbook (Germany), <Surface Asia> (USA), <Vida Simples> (Brazil), <AXIS> (Japan), <British and Chinese Times> (UK), <Yanko Design> (Canada), <ELLE Décor> (USA), <Core77> (USA), <Fashion Times> (USA), <Mail Online> (UK), <Trends Now> (France), <ERGONOMICS in PRODUCT Design> (HK), <Lianhe Zaobao> (Singapore), <Youth Times>, <Furniture Today> and many other domestic and foreign media.`
+  zh: `设计学博士，任教于中国美术学院，冥想座具主创设计师。在其博士研究中首次提出微设计理论，并以其思维方法指导设计实践。曾在2014年受邀于TEDx演讲，2017年因其微设计理念在设计领域富有洞见的全新视角而获颁英国大本钟奖（神工奖）暨十大杰出华裔青年设计师奖，并被同时授予中英国际设计周“中英创意产业交流大使”称号。其设计作品至今已囊获包括德国红点设计至尊奖、德国iF产品设计奖、意大利A设计铂金奖、德国通用设计奖、亚洲最具影响力设计银奖、中国好设计奖金奖、台湾金点设计奖 、成功设计奖在内的众多国内外权威设计大奖，并带领微客设计机构（Nanoin Design）获评德国红点奖概念类全球排名第二的佳绩，是华人机构在此项目上的最高排名。微设计理念的本质在于倡导人、物、环境三者和谐发展的关系，它强调以极其细微的视角观察事物，重新诠释设计要素的内在关联，提炼并删减掉不必要的设计要素，从而得到产品全新的形式表达。2017年创立以精神释压为核心理念的健康生活品牌“心冥想”（Shine Meditation），帮助提供身心平衡的健康产品及服务，并致力于开发人类身体及大脑未知的潜力。冥想座具受邀参加全球各大知名设计展览。其设计作品亦被报道于<INTERNI>（意大利）、<Chois Gallery>（美国）、《财经》、《红点年鉴》（德国）、<surface asia>（美国）、<Vida Simples>（巴西）、AXIS(日本)、《英中时报》（英国）、YankoDesign（加拿大）、ELLE Décor(美国)、Core77（美国）、Fashion Times(美国)、每日邮报（英国）、Trends Now(法国)、<ERGONOMICS in PRODUCT DESIGN>（HK)、联合早报（新加坡）、《青年时报》、《每日商报》、《浙江日报》、《钱江晚报》、《都市快报》、《杭州日报》、《瑞丽家居》、《产品设计》、中国设计在线等国内外媒体。`,
+  en: `Doctor of Design, who teaches at the China Academy of Art, is the chief designer of Meditation Seat. In his doctoral research, micro-design theory was first put forward, and its thinking method was used to guide design practice. He was invited to speak at TEDx in 2014. In 2017, he was awarded the Big Ben Award (Shengong Award) and the Top Ten Outstanding Young Chinese Designers Award for his insightful new perspectives in the field of micro-design. He was also awarded the title of "Ambassador for the Exchange of Creative Industries between China and the UK" for the Sino-British International Design Week. His design works have won many authoritative design awards at home and abroad, including the German Red Spot Design Award, the German iF Product Design Award, the Italian A Platinum Design Award, the German General Design Award, the Asian Most Influential Design Silver Award, the Chinese Good Design Award, the Taiwan Golden Spot Design Award and the Successful Design Award. The second best achievement in the concept category of the National Red Spot Award is the highest ranking of Chinese organizations in this project. The essence of the concept of micro-design is to advocate the harmonious development of human, material and environment. It emphasizes observing things from a very subtle perspective, reinterpreting the internal relationship of design elements, refining and deleting unnecessary design elements, so as to get a brand-new form of product expression. In 2017, Shine Meditation, a brand of healthy life with mental stress relief as its core concept, was established to help provide balanced health products and services, and to develop the unknown potential of human body and brain. Meditation seats are invited to participate in major world-renowned design exhibitions. Its design works have also been reported in <INTERNI> (Italy), <Chois Gallery> (USA), <Finance and Economics>,<Red Dot Design Concept Yearbook (Germany), <Surface Asia> (USA), <Vida Simples> (Brazil), <AXIS> (Japan), <British and Chinese Times> (UK), <Yanko Design> (Canada), <ELLE Décor> (USA), <Core77> (USA), <Fashion Times> (USA), <Mail Online> (UK), <Trends Now> (France), <ERGONOMICS in PRODUCT Design> (HK), <Lianhe Zaobao> (Singapore), <Youth Times>, <Furniture Today> and many other domestic and foreign media.`
 }
 
 @connect(state => ({
@@ -99,8 +99,8 @@ class About extends Component {
             color: '#696969',
             marginTop: '16px'
           }} > {
-            language == 'zh' ? '冥想座具荣获众多国际大奖并在各大国际设计展会亮相' : 'Meditation seat won several famous design awards and was exhibited all over the world'
-          }</span>
+              language == 'zh' ? '冥想座具荣获众多国际大奖并在各大国际设计展会亮相' : 'Meditation seat won several famous design awards and was exhibited all over the world'
+            }</span>
         </div>
         <SubTitle title={aboutseat[language]} />
         <p style={{
@@ -113,7 +113,7 @@ class About extends Component {
           {
             p2[language]
           }
-      </p>
+        </p>
         <div style={{
           display: 'flex',
           flexWrap: 'wrap',
@@ -128,10 +128,10 @@ class About extends Component {
             fontSize: '11px',
             color: '#696969',
             marginTop: '16px',
-            marginBottom:'16px'
+            marginBottom: '32px'
           }} >{
-            language == 'zh' ? '中国传统坐姿研究' : 'Chinese Tranditional sitting posture'
-          }</span>
+              language == 'zh' ? '中国传统坐姿研究' : 'Chinese Tranditional sitting posture'
+            }</span>
           <img src={'http://pkndszzxq.bkt.clouddn.com/hisotry.png'} style={{ width: '100%' }} />
           <span style={{
             display: 'inline-block',
@@ -139,12 +139,12 @@ class About extends Component {
             fontSize: '11px',
             color: '#696969',
             marginTop: '16px',
-            marginBottom:'16px'
+            marginBottom: '16px'
           }} >{
-            language == 'zh' ? '中国坐具历史' : 'Chinese seat hisotry'
-          }</span>
+              language == 'zh' ? '中国坐具历史' : 'Chinese seat hisotry'
+            }</span>
         </div>
-        <SubTitle title='FOUNDER / 高凤麟' />
+        <SubTitle title={language == 'zh' ?'创始人-高凤麟' : 'Founder-Gao Fengling'} />
         <div style={{
           marginTop: 32,
           display: 'flex'
@@ -153,7 +153,7 @@ class About extends Component {
             width: '30%',
             marginRight: '30px'
           }}>
-            <img src={'http://pkndszzxq.bkt.clouddn.com/person.jpeg'} style={{ width: '100%' }} />
+            <img src={'http://pkndszzxq.bkt.clouddn.com/person.jpeg'} style={{ width: '100%', marginRight: '16px' }} />
           </div>
           <div style={{
             width: '70%',
@@ -162,9 +162,9 @@ class About extends Component {
             lineHeight: '1.7',
             marginTop: '-4px'
           }}>
-           {
-             person[language]
-           }
+            {
+              person[language]
+            }
           </div>
         </div>
       </div>

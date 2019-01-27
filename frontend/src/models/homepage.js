@@ -10,7 +10,7 @@ export default {
     columnKey: 0,
     articleId: null,
     navIndex: 0,
-    topSrc: 'http://pkndszzxq.bkt.clouddn.com//image/backgroundtop/topbackground.png',
+    topSrc: 'http://pkndszzxq.bkt.clouddn.com/WechatIMG116%201.png',
     product: [],
     productone: {},
     articles: [],
