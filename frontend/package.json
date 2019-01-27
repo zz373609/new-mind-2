@@ -28,7 +28,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-transition-group": "^2.5.2",
-    "video-react": "^0.13.1"
+    "video-react": "^0.13.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

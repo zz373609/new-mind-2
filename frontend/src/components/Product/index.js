@@ -200,7 +200,7 @@ const Buy = ({ buydata, language }) => {
       window.open(buydata.link, '_blank')
     }}
   >
-    <img src={buydata && buydata.image[language]} style={{ width: '100%' }} />
+    <img src={buydata && buydata.image[language]} style={{ width: '100%' }} className={styles.buybox}/>
   </div>
 }
 

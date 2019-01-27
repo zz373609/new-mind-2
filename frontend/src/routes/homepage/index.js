@@ -10,7 +10,7 @@ import { CSSTransition } from 'react-transition-group';
 import { Modal, Icon } from 'antd'
 const play = require('./image/play.png')
 const play_black = require('./image/play_black.png')
-const material1_main = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/23.png'
+const material1_main = 'http://pkndszzxq.bkt.clouddn.com/WechatIMG123.png'
 const material1_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img1.jpg'
 const material1_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img2.jpg'
 const material1_show3 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img3.jpg'
@@ -142,32 +142,49 @@ class HomePage extends Component {
   }
 
   render() {
-    const { homepage, history } = this.props
+    const { homepage, history, dispatch } = this.props
     const { language, showProjectMenu } = homepage
     const { pictureIndex, pictureVisible, imageSrc } = this.state
     return <div className={styles.container}>
-      <div>
-        <div style={{ display: 'flex' }}>
-          <HomepageImage onClick={() => {
-            this.setState({
-              pictureVisible: true,
-              imageSrc: [material1_show1, material1_show2, material1_show3, material1_show4, material1_show5]
-            })
-          }} src={material1_main} percent='50%' />
-          <HomepageImage
-            onClick={() => {
-              this.setState({
-                pictureVisible: true,
-                imageSrc: [material2_show1, material2_show2]
-              })
-            }}
-            src={language === 'zh' ? material2_zh : material2_en} percent='50%'
-          />
-        </div>
-        <div style={{ display: 'flex' }}>
-          <HomepageImage src={language === 'zh' ? material3_left_zh : material3_left_en} percent='33.3333%' />
-          <HomepageImage src={material3_middle} percent='33.3333%' />
-          <HomepageImage src={language === 'zh' ? material3_right_zh : material3_right_en} percent='33.3333%' />
+      <div onMouseOver={() => {
+        dispatch({
+          type: 'homepage/updateState',
+          payload: {
+            key: 'showProjectMenu',
+            value: false
+          }
+        })
+      }}>
+        <div style={{ display: 'flex', height: '20%' }}>
+          <div style={{}}>
+            <div style={{ display: 'flex' }}>
+              <HomepageImage src={material1_main}
+                onClick={() => {
+                  this.setState({
+                    pictureVisible: true,
+                    imageSrc: [material1_show2, material1_show3, material1_show4]
+                  })
+                }}
+              />
+              <HomepageImage src={"http://pkndszzxq.bkt.clouddn.com/image/center/WechatIMG120.png"} />
+            </div>
+            <div style={{ display: 'flex' }}>
+              <HomepageImage src={'http://pkndszzxq.bkt.clouddn.com//image/left/WechatIMG122.png'} />
+              <HomepageImage src={'http://pkndszzxq.bkt.clouddn.com//image/right/WechatIMG121.png'}
+                onClick={() => {
+                  this.setState({
+                    pictureVisible: true,
+                    imageSrc: [material2_show1, material2_show2]
+                  })
+                }}
+              />
+            </div>
+          </div>
+          <div  >
+            <div style={{ display: 'flex' }}>
+              <HomepageImage src={'http://pkndszzxq.bkt.clouddn.com//image/stay/stay.png'} />
+            </div>
+          </div>
         </div>
         <HomepageImage src={transition1} percent='100%' />
         <div onClick={() => {
@@ -389,7 +406,7 @@ class HomePage extends Component {
                   <img
                     className={styles['modal-pic']}
                     src={this.state.imageSrc[pictureIndex]}
-                    style={{ maxWidth: '100%', maxHeight: '100%'}} id='imageload'
+                    style={{ maxWidth: '100%', maxHeight: '100%' }} id='imageload'
                   />
                 )
               }

@@ -5,6 +5,7 @@ import router from './router'
 import 'normalize.css'
 import '../src/utils/reset.css'
 import createLoading from 'dva-loading'
+import './react-video.css'
 
 let history = createBrowserHistory()
 
