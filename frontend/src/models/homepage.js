@@ -4,7 +4,7 @@ export default {
   namespace: 'homepage',
 
   state: {
-    language: 'zh',
+    language: 'en',
     showProjectMenu: false,
     showMusicPlayer: false,
     columnKey: 0,

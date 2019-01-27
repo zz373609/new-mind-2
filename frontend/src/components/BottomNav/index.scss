@@ -37,11 +37,11 @@
 
 .address{
   position: absolute;
-  top: 65%;
+  top: 52%;
   left: 17.8%;
   color: white;
   font-size: 10px;
-  width: 68.25%;
+  width: 65%;
 }
 
 
@@ -49,7 +49,30 @@
   position: absolute;
   color: white;
   left: 16.8%;
-  top: 4.2%;
+  top: 3.2%;
   font-size: 22px;
   font-weight: 300;
+}
+
+.linkto{
+  font-size: 15px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.weike{
+  background: white;
+  color: #565656;
+  padding: 1px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-left: 7px;
+}
+
+.weike:hover{
+  background:#ababab;
+}
+
+.linktop:hover{
+  color:white !important;
 }

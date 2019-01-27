@@ -11,6 +11,22 @@
   }
 }
 
+.homeimage{
+  position: relative;
+}
+
 .cover{
   display: none;
+}
+
+.buy{
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
+  width: 90px;
+  z-index: 1000;
+}
+
+.buy:hover{
+  width: 88px;
 }

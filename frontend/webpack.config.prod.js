@@ -127,7 +127,7 @@ module.exports = {
     new CleanWebpackPlugin('dist'),
     new HtmlWebpackPlugin({
       filename: '../index.html',
-      title: 'minxiang',
+      title: 'shinemeditation',
       template: './index.ejs'
     }),
     new webpack.DefinePlugin({

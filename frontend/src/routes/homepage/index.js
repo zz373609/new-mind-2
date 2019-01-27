@@ -11,6 +11,10 @@ import { Modal, Icon } from 'antd'
 const play = require('./image/play.png')
 const play_black = require('./image/play_black.png')
 const material1_main = 'http://pkndszzxq.bkt.clouddn.com/WechatIMG123.png'
+const top_center_zh = 'http://pkndszzxq.bkt.clouddn.com/image/center/WechatIMG120.png'
+const top_center_en = 'http://pkndszzxq.bkt.clouddn.com/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%94%B9%EF%BC%88%E8%8B%B1%E6%96%87%E7%89%88%EF%BC%89-02.png'
+const u_zh = 'http://pkndszzxq.bkt.clouddn.com//image/left/WechatIMG122.png'
+const u_en = 'http://pkndszzxq.bkt.clouddn.com/u-en.png'
 const material1_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img1.jpg'
 const material1_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img2.jpg'
 const material1_show3 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material1/img3.jpg'
@@ -25,85 +29,86 @@ const material3_left_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/
 const material3_middle = 'http://pkndszzxq.bkt.clouddn.com/image/zh/change/7.png'
 const material3_right_zh = 'http://pkndszzxq.bkt.clouddn.com/image/zh/change/6.png'
 const material3_right_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/2.png'
-const transition1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img1.png'
-const transition2_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img2_zh.png'
-const transition2_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/3.png'
-const transition3_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img3_zh.png'
-const transition3_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/5.png'
+const transition1 = 'http://pkndszzxq.bkt.clouddn.com/1banner.png'
+const transition2_zh = 'http://pkndszzxq.bkt.clouddn.com/award_banner.png'
+const transition2_en = 'http://pkndszzxq.bkt.clouddn.com/awrad_en.png'
+const transition3_en = 'http://pkndszzxq.bkt.clouddn.com/banner.png'
 const transition4 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img4.png'
 const transition5_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img5_zh.png'
 const transition5_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img5_zh.png'
-const transition6 = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/9.png'
-const transition7_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img7_zh.png'
+const transition6_zh = 'http://pkndszzxq.bkt.clouddn.com/sencise_zh.png'
+const transition6_en = 'http://pkndszzxq.bkt.clouddn.com/sencise_en.png'
+const transition7_zh = 'http://pkndszzxq.bkt.clouddn.com/WechatIMG113.png'
 const transition7_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/11.png'
-const transition8_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img8_zh.png'
-const transition8_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img8_en.png'
-const transition9 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img9.png'
-const transition10_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img10_zh.png'
-const transition10_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/14.png'
-const transition11 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img11.png'
-const transition12 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img12.png'
-const transition13 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img13.png'
-const transition14_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img14_zh.png'
-const transition14_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/18.png'
-const transition15 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img15.png'
+const transition8_zh = 'http://pkndszzxq.bkt.clouddn.com/time_zh.png'
+const transition8_en = 'http://pkndszzxq.bkt.clouddn.com/time_en.png'
+const transition9 = 'http://pkndszzxq.bkt.clouddn.com/25.png'
+const transition10_zh = 'http://pkndszzxq.bkt.clouddn.com/WechatIMG139.png'
+const transition10_en = 'http://pkndszzxq.bkt.clouddn.com/space_en.png'
+const transition11 = 'http://pkndszzxq.bkt.clouddn.com/last.png'
+const transition12 = 'http://pkndszzxq.bkt.clouddn.com/midbefore.png'
+const transition13 = 'http://pkndszzxq.bkt.clouddn.com/last.png'
+const transition14_zh = 'http://pkndszzxq.bkt.clouddn.com/haiwai.png'
+const transition14_en = 'http://pkndszzxq.bkt.clouddn.com/haiwai_en.png'
+const transition15 = 'http://pkndszzxq.bkt.clouddn.com/miding.png'
 const transition16_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img16_zh.png'
 const transition16_en = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img16_en.png'
-const transition17 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/transition/img17.png'
-const fullpageVideo = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/video1.png'
+const transition17 = 'http://pkndszzxq.bkt.clouddn.com/mid.png'
+const fullpageVideo = 'http://pkndszzxq.bkt.clouddn.com/video_first.png'
 const material4 = 'http://pkndszzxq.bkt.clouddn.com//image/main/WechatIMG36.png'
 const material4_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material4/img1.jpg'
 const material4_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material4/img2.jpg'
 const material4_show3 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material4/img3.jpg'
-const material5_zh = 'http://pkndszzxq.bkt.clouddn.com/image/zh/change/1.png'
-const material5_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/4.png'
+const material5_zh = 'http://pkndszzxq.bkt.clouddn.com/if_zh.png'
+const material5_en = 'http://pkndszzxq.bkt.clouddn.com/if_en.png'
 const material5_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material5/img1.jpg'
 const material5_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material5/img2.jpg'
 const material5_show3 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material5/img3.jpg'
-const award_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/award_zh.png'
-const award_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/21.png'
-const material6_zh = 'http://pkndszzxq.bkt.clouddn.com//image/new/newbuilding.png'
-const material6_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/6.png'
+const award_zh = 'http://pkndszzxq.bkt.clouddn.com/first_awrad_zh.png'
+const award_en = 'http://pkndszzxq.bkt.clouddn.com/first_awrad_en.png'
+const material6_zh = 'http://pkndszzxq.bkt.clouddn.com/second_award_zh.png'
+const material6_en = 'http://pkndszzxq.bkt.clouddn.com/second_awrad_en.png'
 const material6_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material6/img1.jpg'
 const material6_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material6/img2.jpg'
-const material7_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material7/main_zh.png'
-const material7_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/7.png'
+const material7_zh = 'http://pkndszzxq.bkt.clouddn.com/third_zh.png'
+const material7_en = 'http://pkndszzxq.bkt.clouddn.com/third_en.png'
 const material7_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material7/img1.jpg'
 const material7_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material7/img2.jpg'
 const material7_show3 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material7/img3.jpg'
 const material7_show4 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material7/img4.jpg'
-const material8_zh = 'http://pkndszzxq.bkt.clouddn.com//image/new/bowu.png'
-const material8_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/8.png'
+const material8_zh = 'http://pkndszzxq.bkt.clouddn.com/four_zh.png'
+const material8_en = 'http://pkndszzxq.bkt.clouddn.com/four_en.png'
 const material8_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material8/img1.jpg'
 const material8_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material8/img2.jpg'
-const fog = 'http://pkndszzxq.bkt.clouddn.com/image/zh/change/8.png'
-const brain1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/brain1.png'
-const brain2_zh = 'http://pkndszzxq.bkt.clouddn.com//image/new/1.png'
-const brain2_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/10.png'
-const brain3_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/brain3_zh.png'
-const brain3_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/12.png'
-const brain4 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/brain4.png'
-const land1 = 'http://pkndszzxq.bkt.clouddn.com/image/zh/change/9.png'
-const land2 = 'http://pkndszzxq.bkt.clouddn.com/image/zh/change/10.png'
-const material9 = 'http://pkndszzxq.bkt.clouddn.com/image/zh/change/2.png'
+const fog = 'http://pkndszzxq.bkt.clouddn.com/air.png'
+const brain1 = 'http://pkndszzxq.bkt.clouddn.com/brain_zh.png'
+const brain2_zh = 'http://pkndszzxq.bkt.clouddn.com/effect_zh.png'
+const brain2_en = 'http://pkndszzxq.bkt.clouddn.com/effect_en.png'
+const brain3_zh = 'http://pkndszzxq.bkt.clouddn.com/brain3_zh.png'
+const brain3_en = 'http://pkndszzxq.bkt.clouddn.com/brain3_en.png'
+const brain4_en = 'http://pkndszzxq.bkt.clouddn.com/brain4_en.png'
+const brain4_zh = 'http://pkndszzxq.bkt.clouddn.com/brain4_zh.png'
+const land1 = 'http://pkndszzxq.bkt.clouddn.com/land.png'
+const land2 = 'http://pkndszzxq.bkt.clouddn.com/tree.png'
+const material9 = 'http://pkndszzxq.bkt.clouddn.com/first.png'
 const material9_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material9/img1.png'
-const space1_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/space1_zh.png'
-const space1_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/15.png'
-const space2_zh = 'http://pkndszzxq.bkt.clouddn.com/image/zh/change/3.png'
-const space2_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/16.png'
-const material10 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material10/main_en.png'
+const space1_zh = 'http://pkndszzxq.bkt.clouddn.com/fire_zh.png'
+const space1_en = 'http://pkndszzxq.bkt.clouddn.com/fire_en.png'
+const space2_zh = 'http://pkndszzxq.bkt.clouddn.com/montain_zh.png'
+const space2_en = 'http://pkndszzxq.bkt.clouddn.com/motain_en.png'
+const material10 = 'http://pkndszzxq.bkt.clouddn.com/not_show_main.png'
 const material10_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material10/img1.png'
-const material11 = 'http://pkndszzxq.bkt.clouddn.com/image/zh/change/4.png'
+const material11 = 'http://pkndszzxq.bkt.clouddn.com/wave.png'
 const material11_show1 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material11/img1.jpg'
 const material11_show2 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material11/img2.jpg'
 const material11_show3 = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/material11/img3.jpg'
-const space3_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/space3_zh.png'
-const space3_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/17.png'
-const video_left_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/video_left_zh.png'
-const video_left_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/20.png'
-const video_right_zh = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/video_right_zh.png'
-const video_right_en = 'http://pkndszzxq.bkt.clouddn.com/image/png/change/en/19.png'
-const people = 'http://pkndszzxq.bkt.clouddn.com/image/homepage/other/people.png'
+const space3_zh = 'http://pkndszzxq.bkt.clouddn.com/duck_zh.png'
+const space3_en = 'http://pkndszzxq.bkt.clouddn.com/duck_en.png'
+const video_left_zh = 'http://pkndszzxq.bkt.clouddn.com/left_video_zh.png'
+const video_left_en = 'http://pkndszzxq.bkt.clouddn.com/right_video_en.png'
+const video_right_zh = 'http://pkndszzxq.bkt.clouddn.com/vi_zh.png'
+const video_right_en = 'http://pkndszzxq.bkt.clouddn.com/vi_en.png'
+const people = 'http://pkndszzxq.bkt.clouddn.com/peopel.png'
 const sand = 'http://pkndszzxq.bkt.clouddn.com/image/zh/change/11.png'
 const bottom_left_video = 'http://pkndszzxq.bkt.clouddn.com/video/mp4/bottom_left.mp4bottom_left.mp4'
 const bottom_right_video = 'http://pkndszzxq.bkt.clouddn.com/video/mp4/bottom_right.mp4bottom_right.mp4'
@@ -139,14 +144,15 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
+
   }
 
   render() {
     const { homepage, history, dispatch } = this.props
     const { language, showProjectMenu } = homepage
     const { pictureIndex, pictureVisible, imageSrc } = this.state
-    return <div className={styles.container}>
-      <div onMouseOver={() => {
+    return <div className={styles.container}
+      onMouseOver={() => {
         dispatch({
           type: 'homepage/updateState',
           payload: {
@@ -155,10 +161,16 @@ class HomePage extends Component {
           }
         })
       }}>
+      <div >
         <div style={{ display: 'flex', height: '20%' }}>
           <div style={{}}>
             <div style={{ display: 'flex' }}>
               <HomepageImage src={material1_main}
+                buy_link
+                history={history}
+                buy_go={'/project/seat'}
+                postion={'right'}
+                language={language}
                 onClick={() => {
                   this.setState({
                     pictureVisible: true,
@@ -166,11 +178,16 @@ class HomePage extends Component {
                   })
                 }}
               />
-              <HomepageImage src={"http://pkndszzxq.bkt.clouddn.com/image/center/WechatIMG120.png"} />
+              <HomepageImage src={language == 'zh' ? top_center_zh : top_center_en} />
             </div>
             <div style={{ display: 'flex' }}>
-              <HomepageImage src={'http://pkndszzxq.bkt.clouddn.com//image/left/WechatIMG122.png'} />
-              <HomepageImage src={'http://pkndszzxq.bkt.clouddn.com//image/right/WechatIMG121.png'}
+              <HomepageImage src={language == 'zh' ? u_zh : u_en} />
+              <HomepageImage
+                buy_link
+                history={history}
+                language={language}
+                buy_go={'/project/desk'}
+                postion={'left'} src={'http://pkndszzxq.bkt.clouddn.com//image/right/WechatIMG121.png'}
                 onClick={() => {
                   this.setState({
                     pictureVisible: true,
@@ -211,7 +228,7 @@ class HomePage extends Component {
             }}
             src={language === 'zh' ? material5_zh : material5_en} percent='50%' />
         </div>
-        <HomepageImage src={language === 'zh' ? transition3_zh : transition3_en} percent='100%' />
+        <HomepageImage src={transition3_en} percent='100%' />
       </div>
       <div style={{ display: 'flex' }}>
         <HomepageImage src={language === 'zh' ? award_zh : award_en} percent='50%' />
@@ -244,8 +261,7 @@ class HomePage extends Component {
       </div>
       <HomepageImage src={transition4} percent='100%' />
       <HomepageImage src={fog} percent='100%' />
-      <HomepageImage id='scientific' src={language === 'zh' ? transition5_zh : transition5_en} percent='100%' />
-      <HomepageImage src={transition6} percent='100%' />
+      <HomepageImage src={language == 'zh' ? transition6_zh : transition6_en} percent='100%' />
       <div style={{ display: 'flex' }}>
         <HomepageImage src={brain1} percent='50%' />
         <HomepageImage src={language === 'zh' ? brain2_zh : brain2_en} percent='50%' />
@@ -253,7 +269,7 @@ class HomePage extends Component {
       <HomepageImage src={language === 'zh' ? transition7_zh : transition7_en} percent='100%' />
       <div style={{ display: 'flex' }}>
         <HomepageImage src={language === 'zh' ? brain3_zh : brain3_en} percent='50%' />
-        <HomepageImage src={brain4} percent='50%' />
+        <HomepageImage src={language == 'zh' ? brain4_zh : brain4_en} percent='50%' />
       </div>
       <HomepageImage src={language === 'zh' ? transition8_zh : transition8_en} percent='100%' />
       <HomepageImage src={transition9} percent='100%' />
@@ -337,8 +353,6 @@ class HomePage extends Component {
       </div>
       <HomepageImage src={transition15} percent='100%' />
       <HomepageImage src={people} percent='100%' />
-      <HomepageImage src={language === 'zh' ? transition16_zh : transition16_en} percent='100%' />
-      <HomepageImage src={sand} percent='100%' />
       <HomepageImage src={transition17} percent='100%' />
       <Modal
         className={styles['video-modal']}
