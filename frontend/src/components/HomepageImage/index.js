@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import propTypes from 'prop-types'
 import styles from './index.scss'
-const buy_zh_not = 'http://pkndszzxq.bkt.clouddn.com/buy_zh_not.png'
-const buy_en_not = 'http://pkndszzxq.bkt.clouddn.com//image/buy/buy_en_not.png'
+const buy_zh_not = 'http://images.shinemeditation.cn/buy_zh_not.png'
+const buy_en_not = 'http://images.shinemeditation.cn//image/buy/buy_en_not.png'
 
 class HomepageImage extends Component {
   constructor(props) {

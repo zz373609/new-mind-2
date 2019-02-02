@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
 import { Divider } from 'antd'
-const bottom_nav_zh = 'http://pkndszzxq.bkt.clouddn.com/image/bottom/WechatIMG124.png'
+const bottom_nav_zh = 'http://images.shinemeditation.cn/image/bottom/WechatIMG124.png'
 
 import qq from './image/qq.png'
 import facebook from './image/facebook.png'
@@ -176,7 +176,7 @@ class BottomNav extends Component {
         }} />
         <div style={{ marginTop: '5%', display: 'flex', justifyContent: 'space-between' }}>
           <div style={{ width: '6%' }}>
-            <img src={'http://pkndszzxq.bkt.clouddn.com/WechatIMG125.png'} style={{ width: '100%' }} />
+            <img src={'http://images.shinemeditation.cn/WechatIMG125.png'} style={{ width: '100%' }} />
           </div>
           <div className={styles.addressinfo}>
             <div style={{ display: 'flex', justifyContent: 'center' }}>

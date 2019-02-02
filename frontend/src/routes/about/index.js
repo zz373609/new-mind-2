@@ -91,7 +91,7 @@ class About extends Component {
           justifyContent: 'center',
           marginBottom: 26
         }}>
-          <img src={'http://pkndszzxq.bkt.clouddn.com/world.png'} style={{ width: '100%' }} />
+          <img src={'http://images.shinemeditation.cn/world.png'} style={{ width: '100%' }} />
           <span style={{
             display: 'inline-block',
             fontFamily: 'Microsoft Yahei',
@@ -121,7 +121,7 @@ class About extends Component {
           justifyContent: 'center',
           marginBottom: 56
         }}>
-          <img src={'http://pkndszzxq.bkt.clouddn.com/siting.png'} style={{ width: '100%' }} />
+          <img src={'http://images.shinemeditation.cn/siting.png'} style={{ width: '100%' }} />
           <span style={{
             display: 'inline-block',
             fontFamily: 'Microsoft Yahei',
@@ -132,7 +132,7 @@ class About extends Component {
           }} >{
               language == 'zh' ? '中国传统坐姿研究' : 'Chinese Tranditional sitting posture'
             }</span>
-          <img src={'http://pkndszzxq.bkt.clouddn.com/hisotry.png'} style={{ width: '100%' }} />
+          <img src={'http://images.shinemeditation.cn/hisotry.png'} style={{ width: '100%' }} />
           <span style={{
             display: 'inline-block',
             fontFamily: 'Microsoft Yahei',
@@ -153,7 +153,7 @@ class About extends Component {
             width: '30%',
             marginRight: '30px'
           }}>
-            <img src={'http://pkndszzxq.bkt.clouddn.com/person.jpeg'} style={{ width: '100%', marginRight: '16px' }} />
+            <img src={'http://images.shinemeditation.cn/person.jpeg'} style={{ width: '100%', marginRight: '16px' }} />
           </div>
           <div style={{
             width: '70%',
