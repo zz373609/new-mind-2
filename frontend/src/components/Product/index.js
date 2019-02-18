@@ -153,7 +153,7 @@ const Colors = ({ colors, goto }) => {
     <p style={{ margin: '0' }}>颜色</p>
     <Divider />
     <div className={styles.colors}>
-      <Row type="flex" justify="space-around">
+      <Row type="flex" justify="start">
         {
           colors && colors.map((item, index) => {
             if (index < 5) {
@@ -164,7 +164,7 @@ const Colors = ({ colors, goto }) => {
           })
         }
       </Row>
-      <Row type="flex" justify={"space-around"}>
+      <Row type="flex" justify={"start"}>
         {
           colors && colors.map((item, index) => {
             if (index > 4 && item.cricle_image) {
@@ -210,7 +210,7 @@ const Share = ({ sharedata, language }) => {
     <p style={{ margin: '0px', fontSize: '13px' }}>分享</p>
     <Divider />
     <div>
-      <Row type="flex" justify="flex-start">
+      <Row type="flex" justify="start">
         {
           sharedata && sharedata.map((item, index) => {
             return <Col span={4} key={index} className={styles.shareimage}>

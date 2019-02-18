@@ -144,7 +144,7 @@ class About extends Component {
               language == 'zh' ? '中国坐具历史' : 'Chinese seat hisotry'
             }</span>
         </div>
-        <SubTitle title={language == 'zh' ?'创始人-高凤麟' : 'Founder-Gao Fengling'} />
+        <SubTitle title={language == 'zh' ?'创始人/高凤麟' : 'Founder-Gao Fengling'} />
         <div style={{
           marginTop: 32,
           display: 'flex'
@@ -153,7 +153,7 @@ class About extends Component {
             width: '30%',
             marginRight: '30px'
           }}>
-            <img src={'http://images.shinemeditation.cn/person.jpeg'} style={{ width: '100%', marginRight: '16px' }} />
+            <img src={'http://images.shinemeditation.cn/gao.jpg'} style={{ width: '100%', marginRight: '16px' }} />
           </div>
           <div style={{
             width: '70%',

@@ -6,7 +6,7 @@ import { connect } from 'dva'
 import styles from './style/index.scss'
 
 const up = {
-  logo: 'http://images.shinemeditation.cn/image/logoWechatIMG21.png',
+  logo: 'http://images.shinemeditation.cn/new.png',
   background: 'rgba(0, 0, 0,0.1)',
   color: 'white',
   selectcolor: 'white',
@@ -14,7 +14,7 @@ const up = {
 }
 
 const down = {
-  logo: 'http://images.shinemeditation.cn/image/logoWechatIMG21.png',
+  logo: 'http://images.shinemeditation.cn/new.png',
   background: 'rgba(0, 0, 0,0.5)',
   color: 'white',
   selectcolor: 'white',

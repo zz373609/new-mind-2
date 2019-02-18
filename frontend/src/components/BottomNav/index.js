@@ -182,7 +182,7 @@ class BottomNav extends Component {
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               {
                 imagelist.map((item, index) => {
-                  return <div style={{ width: '18px', marginRight: '16px', marginBottom: '16px' }}><img src={item} style={{ width: '100%' }} /></div>
+                  return <div key={index} style={{ width: '18px', marginRight: '16px', marginBottom: '16px' }}><img src={item} style={{ width: '100%' }} /></div>
                 })
               }
             </div>
@@ -191,7 +191,7 @@ class BottomNav extends Component {
             <p style={{ margin: '0px', textAlign: 'center', fontSize: '12px' }}>{address['zip'][language]}</p>
             <p style={{ margin: '0px', textAlign: 'center', fontSize: '12px' }}>{address['phone'][language]}</p>
           </div>
-          <div/>
+          <div />
         </div>
       </div>
     </div >)

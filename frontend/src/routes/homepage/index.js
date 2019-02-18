@@ -59,8 +59,9 @@ const material4 = 'http://images.shinemeditation.cn//image/main/WechatIMG36.png'
 const material4_show1 = 'http://images.shinemeditation.cn/image/homepage/material4/img1.jpg'
 const material4_show2 = 'http://images.shinemeditation.cn/image/homepage/material4/img2.jpg'
 const material4_show3 = 'http://images.shinemeditation.cn/image/homepage/material4/img3.jpg'
-const material5_zh = 'http://images.shinemeditation.cn/if_zh.png'
-const material5_en = 'http://images.shinemeditation.cn/if_en.png'
+const material4_show4 = 'http://images.shinemeditation.cn/material4_show4.jpg'
+const material5_zh = 'http://images.shinemeditation.cn/ted_zh.png'
+const material5_en = 'http://images.shinemeditation.cn/ted.png'
 const material5_show1 = 'http://images.shinemeditation.cn/image/homepage/material5/img1.jpg'
 const material5_show2 = 'http://images.shinemeditation.cn/image/homepage/material5/img2.jpg'
 const material5_show3 = 'http://images.shinemeditation.cn/image/homepage/material5/img3.jpg'
@@ -215,7 +216,7 @@ class HomePage extends Component {
             onClick={() => {
               this.setState({
                 pictureVisible: true,
-                imageSrc: [material4_show1, material4_show2, material4_show3]
+                imageSrc: [material4_show1, material4_show2, material4_show3, material4_show4]
               })
             }}
             src={material4} percent='50%' />
