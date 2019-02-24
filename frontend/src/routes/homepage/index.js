@@ -6,7 +6,7 @@ import { withRouter } from 'react-router'
 import styles from './style/index.scss'
 import './style/index.css'
 import { Player } from 'video-react'
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group'
 import { Modal, Icon } from 'antd'
 const play = require('./image/play.png')
 const play_black = require('./image/play_black.png')
