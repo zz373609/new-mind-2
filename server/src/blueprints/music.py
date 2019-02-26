@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, Response, Blueprint, render_template_string
-from src.mock.mock_data import music_mock
+from src.config.db_config import mongo
+from bson.objectid import ObjectId
 
 music_bp = Blueprint(
     'music',
@@ -9,13 +10,15 @@ music_bp = Blueprint(
 
 @music_bp.route('/all')
 def musics():
-    data = []
-    for x in range(1, 10):
-        p = music_mock
-        p['id'] = x
-        data.append(p)
-    return jsonify(data)
+    data = mongo.db.music.find()
+    result = []
+    for item in data:
+        item["_id"] = str(item["_id"])
+        result.append(item)
+    return jsonify(result)
 
 @music_bp.route('/<int:id>')
 def music(id):
-    return jsonify(music_mock)
+    data = mongo.db.music.find_one({"_id": ObjectId(id)})
+    data['_id'] = str(data['_id'])
+    return jsonify(data)

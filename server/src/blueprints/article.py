@@ -22,3 +22,4 @@ def article(id):
     data = mongo.db.article.find_one({"_id": ObjectId(id)})
     data['_id'] = str(data['_id'])
     return jsonify(data)
+
