@@ -162,7 +162,7 @@ class HomePage extends Component {
           }
         })
       }}>
-      <div >
+      <div>
         <div style={{ display: 'flex', height: '20%' }}>
           <div style={{}}>
             <div style={{ display: 'flex' }}>
@@ -198,7 +198,7 @@ class HomePage extends Component {
               />
             </div>
           </div>
-          <div  >
+          <div>
             <div style={{ display: 'flex' }}>
               <HomepageImage src={'http://images.shinemeditation.cn//image/stay/stay.png'} />
             </div>

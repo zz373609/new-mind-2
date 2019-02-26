@@ -36,12 +36,12 @@ app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'index.html'))
 })
 
-app.listen(8877, function (err) {
+app.listen(8000, function (err) {
   if (err) {
     return console.error(err)
   }
 
-  if (openBrowser('http://localhost:8877')) {
+  if (openBrowser('http://localhost:8000')) {
     console.log('The browser tab has been opened!')
   }
 })

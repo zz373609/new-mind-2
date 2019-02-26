@@ -5,6 +5,7 @@ import Column from './column'
 import About from './about'
 import Contact from './contact'
 import App from './app'
+import CMS from './cms'
 export {
   HomePage,
   Music,
@@ -12,5 +13,6 @@ export {
   Column,
   About,
   Contact,
-  App
+  App,
+  CMS
 }
