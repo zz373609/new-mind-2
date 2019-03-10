@@ -7,8 +7,7 @@ import {
   Column,
   About,
   Contact,
-  App,
-  CMS
+  App
 } from './routes'
 function RouterConfig({ history, match }) {
   return (
@@ -21,7 +20,6 @@ function RouterConfig({ history, match }) {
             <Route path='/column' component={Column} />
             <Route exact path='/about' component={About} />
             <Route exact path='/contact' component={Contact} />
-            <Route exact path='/cms' component={CMS} />
           </Switch>
         </App>
       </Router>

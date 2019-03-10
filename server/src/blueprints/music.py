@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify, Response, Blueprint, render_template_string
 from src.config.db_config import mongo
 from bson.objectid import ObjectId
+from src.util.error import InvalidUsage,set_error
+from src.util.response import ResponseHandle
 
 music_bp = Blueprint(
     'music',
@@ -15,10 +17,16 @@ def musics():
     for item in data:
         item["_id"] = str(item["_id"])
         result.append(item)
-    return jsonify(result)
+    res = ResponseHandle({
+        "musics":result
+    })
+    return jsonify(res.get_response())
 
 @music_bp.route('/<int:id>')
 def music(id):
-    data = mongo.db.music.find_one({"_id": ObjectId(id)})
-    data['_id'] = str(data['_id'])
-    return jsonify(data)
+    result = mongo.db.music.find_one({"_id": ObjectId(id)})
+    result['_id'] = str(result['_id'])
+    res = ResponseHandle({
+        "music":result
+    })
+    return jsonify(res.get_response())

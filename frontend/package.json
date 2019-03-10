@@ -25,6 +25,7 @@
     "postcss-assets": "^5.0.0",
     "precss": "^4.0.0",
     "prop-types": "^15.6.1",
+    "qiniu-js": "^2.5.4",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-transition-group": "^2.5.2",

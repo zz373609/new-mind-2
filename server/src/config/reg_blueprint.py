@@ -3,7 +3,7 @@ from src.blueprints.article import article_bp
 from src.blueprints.music import music_bp
 from src.blueprints.feature import feature_bp
 
-def reg(app):
+def reg_router(app):
 	app.register_blueprint(product_bp)
 	app.register_blueprint(article_bp)
 	app.register_blueprint(music_bp)
