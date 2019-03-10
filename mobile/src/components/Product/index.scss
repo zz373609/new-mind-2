@@ -1,0 +1,61 @@
+.Product{
+  display: flex;
+  justify-content: space-between;
+}
+
+.left{
+  width: 50%;
+}
+
+.right{
+  width: 40%;
+}
+
+.color{
+  border-radius: 50%;
+  margin-bottom: 8px;
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.colors{
+}
+
+.imagecard{
+  height: 24%;
+  width: 25.7%;
+  margin-right: 0.8%
+}
+
+.crads{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2px;
+}
+
+.list{
+  font-size: 10px;
+  width: 15%;
+  cursor: pointer;
+}
+
+.bottomdes{
+  height: 200px;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.shareimage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buybox:hover{
+  box-shadow: -1px 1px 8px -2px rgba(0,0,0,0.75);
+  border-radius: 5px;
+}

@@ -1,0 +1,14 @@
+.contain{
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 16px;
+  margin: 0px 16px;
+  border-bottom: 1px solid #ebedf0;
+}
+
+.item{
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 48px;
+  margin: 0px 8px;
+}

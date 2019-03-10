@@ -1,0 +1,7 @@
+.ant-select-selection__rendered{
+  background-color: #f2f2f2;
+}
+
+input,textarea {
+  background-color: #f2f2f2 !important;
+}

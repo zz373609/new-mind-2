@@ -1,0 +1,28 @@
+
+@font-face {
+  font-family: 'Microsoft YaheiRegular';
+  src: local('Microsoft Yahei Regular'),
+         local('Microsoft Yahei'),
+         url('http://images.shinemeditation.cn/font/font/yahei.ttfMicrosoft%20Yahei.ttf') format('truetype')
+ } 
+
+body {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+div {
+  box-sizing: border-box;
+  font-family: Helvetica, 'Microsoft Yahei';
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

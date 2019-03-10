@@ -1,0 +1,28 @@
+.ant-input{
+  /* height: 25px; */
+}
+
+.ant-select-selection__rendered{
+  margin: 0px !important;
+}
+
+
+.transi-enter{
+  height: 0px;
+  transition: height 500ms ease-in;
+}
+
+.transi-enter-active {
+  height: 370px;
+  transition: height 500ms ease-in;
+}
+
+.transi-exit {
+  height: 0px;
+  transition: height 300ms ease-in;
+}
+
+.transi-exit-active {
+  height: 0;
+  transition: height 300ms ease-in;
+}
