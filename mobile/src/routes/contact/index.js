@@ -57,58 +57,50 @@ class QAForm extends Component {
           console.log(value)
         })
       }}>
-        <div className={styles['form-row']}>
-          <FormItem style={{ width: '45%' }} label={language === 'zh' ? <span className={styles.zh}>问题类别</span> : <span className={styles.en}>Type of Request</span>}>
-            {getFieldDecorator('questionType', {
-              rules: [{ required: true, message: language === 'zh' ? '请选择问题类别' : 'Please choose type of request.' }]
-            })(<Select>
-              {OptionsData.map((i, index) => (
-                <Option key={i.key} value={i.key}>{i.value[language]}</Option>
-              ))}
-            </Select>)}
-          </FormItem>
-          <FormItem style={{ width: '45%' }} label={language === 'zh' ? <span className={styles.zh}>感兴趣的产品</span> : <span className={styles.en}>Products of Interest</span>}>
-            {getFieldDecorator('interestProduct', {
-              rules: [{ required: true, message: language === 'zh' ? '请告诉我们您感兴趣的产品' : ' Please tell us in which products you are interested.' }]
-            })(<Input />)}
-          </FormItem>
-        </div>
-        <div className={styles['form-row']}>
-          <FormItem style={{ width: '45%' }} label={language === 'zh' ? <span className={styles.zh}>姓</span> : <span className={styles.en}>First Name</span>}>
-            {getFieldDecorator('firstName', {
-              rules: [{ required: true, message: language === 'zh' ? '请输入您的姓' : 'Please enter your first name' }]
-            })(<Input />)}
-          </FormItem>
-          <FormItem style={{ width: '45%' }} label={language === 'zh' ? <span className={styles.zh}>名</span> : <span className={styles.en}>Last Name</span>}>
-            {getFieldDecorator('lastName', {
-              rules: [{ required: true, message: language === 'zh' ? '请输入您的名' : 'Please enter your last name' }]
-            })(<Input />)}
-          </FormItem>
-        </div>
-        <div className={styles['form-row']}>
-          <FormItem style={{ width: '45%' }} label={language === 'zh' ? <span className={styles.zh}>您的邮箱</span> : <span className={styles.en}>Your Email</span>}>
-            {getFieldDecorator('email', {
-              rules: [{ required: true, message: language === 'zh' ? '请输入您的邮箱' : 'Please enter your email address' }]
-            })(<Input />)}
-          </FormItem>
-          <FormItem style={{ width: '45%' }} label={language === 'zh' ? <span className={styles.zh}>您的电话</span> : <span className={styles.en}>Phone</span>}>
-            {getFieldDecorator('phone', {
-              rules: [{ required: true, message: language === 'zh' ? '请输入您的电话' : 'Please enter your phone number' }]
-            })(<Input />)}
-          </FormItem>
-        </div>
-        <div className={styles['form-row']}>
-          <FormItem style={{ width: '45%' }} label={language === 'zh' ? <span className={styles.zh}>国家</span> : <span className={styles.en}>Country</span>}>
-            {getFieldDecorator('country', {
-              rules: [{ required: true, message: language === 'zh' ? '请输入您的国家' : 'Please enter your country' }]
-            })(<Input />)}
-          </FormItem>
-          <FormItem style={{ width: '45%' }} label={language === 'zh' ? <span className={styles.zh}>公司</span> : <span className={styles.en}>Company</span>}>
-            {getFieldDecorator('company', {
-              rules: [{ required: true, message: language === 'zh' ? '请输入您的公司' : 'Please enter your company name' }]
-            })(<Input />)}
-          </FormItem>
-        </div>
+        <FormItem label={language === 'zh' ? <span className={styles.zh}>问题类别</span> : <span className={styles.en}>Type of Request</span>}>
+          {getFieldDecorator('questionType', {
+            rules: [{ required: true, message: language === 'zh' ? '请选择问题类别' : 'Please choose type of request.' }]
+          })(<Select>
+            {OptionsData.map((i, index) => (
+              <Option key={i.key} value={i.key}>{i.value[language]}</Option>
+            ))}
+          </Select>)}
+        </FormItem>
+        <FormItem label={language === 'zh' ? <span className={styles.zh}>感兴趣的产品</span> : <span className={styles.en}>Products of Interest</span>}>
+          {getFieldDecorator('interestProduct', {
+            rules: [{ required: true, message: language === 'zh' ? '请告诉我们您感兴趣的产品' : ' Please tell us in which products you are interested.' }]
+          })(<Input />)}
+        </FormItem>
+        <FormItem label={language === 'zh' ? <span className={styles.zh}>姓</span> : <span className={styles.en}>First Name</span>}>
+          {getFieldDecorator('firstName', {
+            rules: [{ required: true, message: language === 'zh' ? '请输入您的姓' : 'Please enter your first name' }]
+          })(<Input />)}
+        </FormItem>
+        <FormItem label={language === 'zh' ? <span className={styles.zh}>名</span> : <span className={styles.en}>Last Name</span>}>
+          {getFieldDecorator('lastName', {
+            rules: [{ required: true, message: language === 'zh' ? '请输入您的名' : 'Please enter your last name' }]
+          })(<Input />)}
+        </FormItem>
+        <FormItem label={language === 'zh' ? <span className={styles.zh}>您的邮箱</span> : <span className={styles.en}>Your Email</span>}>
+          {getFieldDecorator('email', {
+            rules: [{ required: true, message: language === 'zh' ? '请输入您的邮箱' : 'Please enter your email address' }]
+          })(<Input />)}
+        </FormItem>
+        <FormItem label={language === 'zh' ? <span className={styles.zh}>您的电话</span> : <span className={styles.en}>Phone</span>}>
+          {getFieldDecorator('phone', {
+            rules: [{ required: true, message: language === 'zh' ? '请输入您的电话' : 'Please enter your phone number' }]
+          })(<Input />)}
+        </FormItem>
+        <FormItem label={language === 'zh' ? <span className={styles.zh}>国家</span> : <span className={styles.en}>Country</span>}>
+          {getFieldDecorator('country', {
+            rules: [{ required: true, message: language === 'zh' ? '请输入您的国家' : 'Please enter your country' }]
+          })(<Input />)}
+        </FormItem>
+        <FormItem label={language === 'zh' ? <span className={styles.zh}>公司</span> : <span className={styles.en}>Company</span>}>
+          {getFieldDecorator('company', {
+            rules: [{ required: true, message: language === 'zh' ? '请输入您的公司' : 'Please enter your company name' }]
+          })(<Input />)}
+        </FormItem>
         <FormItem label={language === 'zh' ? <span className={styles.zh}>您需要什么帮助</span> : <span className={styles.en}>How can we help?</span>}>
           {getFieldDecorator('helpInfo', {
             rules: [{ required: true, message: language === 'zh' ? '请告诉我们您需要什么帮助' : 'Please tell us how can we help' }]
@@ -132,7 +124,7 @@ class QAForm extends Component {
             </Button>)}
           </FormItem>
         </div>
-      </Form>
+      </Form >
     )
   }
 }
@@ -188,7 +180,7 @@ class Contact extends Component {
     return <div style={{
       margin: '0 auto',
       background: '#fff',
-      padding: '86px 7.45%'
+      padding: '32px 7.45%'
     }}>
       <div style={{ width: '100%' }}>
         <SubTitle title={language === 'zh' ? '联系我们' : 'CONTACT US'} />

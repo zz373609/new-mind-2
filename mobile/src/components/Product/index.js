@@ -82,8 +82,8 @@ class Product extends Component {
           <Divider />
           <Price text={productone && productone.price} />
           <Des text={productone && productone.description && productone.description[language]} />
-          <Colors colors={productone.images} goto={this.goto} />
           <Buy buydata={productone && productone.buy} language={language} />
+          <Colors colors={productone.images} goto={this.goto} />
           <Share sharedata={productone && productone.share} language={language} />
         </div>
       </div>
@@ -95,7 +95,7 @@ class Product extends Component {
 }
 
 const Bottom = ({ language, current, setkey, productone }) => {
-  return <div>
+  return <div className={styles.bottom}>
     <div style={{
       display: 'flex',
       justifyContent: 'flex-start'
@@ -149,7 +149,7 @@ const Price = ({ text }) => {
 }
 
 const Colors = ({ colors, goto }) => {
-  return <div>
+  return <div style={{ clear: 'both' }}>
     <p style={{ margin: '0' }}>颜色</p>
     <Divider />
     <div className={styles.colors}>
@@ -196,12 +196,13 @@ const ImageCard = ({ src, onClick, index, set }) => {
 }
 
 const Buy = ({ buydata, language }) => {
-  return <div style={{ width: '30%', margin: "20px 0px", cursor: 'pointer' }}
+  return <div style={{ width: '30%', margin: "20px 0px", cursor: 'pointer', float: 'right', }}
     onClick={() => {
       window.open(buydata.link, '_blank')
     }}
+    className={styles.buybutton}
   >
-    <img src={buydata && buydata.image[language]} style={{ width: '100%' }} className={styles.buybox}/>
+    <img src={buydata && buydata.image[language]} style={{ width: '100%' }} className={styles.buybox} />
   </div>
 }
 

@@ -17,17 +17,8 @@ class Project extends Component {
     const { language } = homepage
     return <div style={{
       margin: '0 auto',
-      background: '#fff',
-      padding: '86px'
+      background: '#fff'
     }}>
-      <div style={{
-        borderBottom: '1px solid #ddd', marginBottom: 68, paddingBottom: 10
-      }}>
-        <Breadcrumb separator={<span style={{ fontSize: 10, fontWeight: 600 }}>&gt;</span>}>
-          <Breadcrumb.Item>{<span style={{ fontSize: 10 }} className={styles[language]}>{language === 'zh' ? '项目' : 'PROJECT'}</span>}</Breadcrumb.Item>
-          <Breadcrumb.Item>{<span style={{ fontSize: 10 }} className={styles[language]}>{match.params.id}</span>}</Breadcrumb.Item>
-        </Breadcrumb>
-      </div>
       <div>
         <Product productone={homepage.productone} language={homepage.language}/>
       </div>
