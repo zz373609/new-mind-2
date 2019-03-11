@@ -1,0 +1,15 @@
+.left{
+    width:200px;
+    height: calc(100vh - 60px);
+    border-right: 1px solid #f0f1f2;
+}
+.container{
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.right{
+    width: 100%;
+    padding: 32px;
+}
