@@ -29,7 +29,6 @@ export default {
             payload: pathname.replace('/project/', '')
           })
         }
-        console.log(pathname)
         if (pathname.indexOf('/column/articles/') > -1 && pathname.replace('/column/articles/', '').length) {
           dispatch({
             type: 'ArticleOne',

@@ -115,7 +115,7 @@ class BottomNav extends Component {
       <div style={{ paddingTop: '50px' }}>
         {
           navItems.map((item, index) => {
-            return <MenuItem key={index} item={item} language={language} />
+            return <MenuItem key={index} item={item} language={language} history={history} />
           })
         }
       </div>

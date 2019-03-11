@@ -15,7 +15,7 @@ class MenuItem extends Component {
   }
 
   render() {
-    let { item, language } = this.props
+    let { item, language, history } = this.props
     return <div onClick={() => {
       this.setState({
         height: this.state.height === 0 ? 'auto' : 0
@@ -31,7 +31,14 @@ class MenuItem extends Component {
         height={this.state.height}>
         {
           item.links.map((subitem, index) => {
-            return <div key={index} style={{ color: 'white' }} className={styles.item} >
+            return <div key={index} style={{ color: 'white' }} className={styles.item} onClick={() => {
+              subitem.hash ?
+                window.location.href = `/?language=${language}#${subitem.hash}`
+                : history.push({
+                  pathname: subitem.pathname,
+                  search: `language=${language}`
+                })
+            }}>
               {subitem[language]}
             </div>
           })

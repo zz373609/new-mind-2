@@ -3,11 +3,9 @@ import { ProjectMenu, IconCustom } from '../../components'
 import styles from './index.scss'
 import propTypes from 'prop-types'
 import { Input, Icon } from 'antd'
-import { Menu, NavBar as NavMo, DatePicker, Button } from 'antd-mobile';
+import { NavBar as NavMo } from 'antd-mobile'
 import './index.css'
-import AnimateHeight from 'react-animate-height';
-const Search = Input.Search;
-import { CSSTransition } from 'react-transition-group';
+import AnimateHeight from 'react-animate-height'
 
 const data = [
   {
@@ -15,7 +13,8 @@ const data = [
     label: {
       zh: '主页',
       en: 'HOME'
-    }
+    },
+    link: '/'
   },
   {
     value: '2',
@@ -23,14 +22,23 @@ const data = [
       zh: '项目',
       en: 'PROJECT'
     },
+    link: '/project/seat',
     children: [
       {
         value: '',
-        label: 'MEDITATION SEAT'
+        label: {
+          zh: 'MEDITATION SEAT',
+          en: 'MEDITATION SEAT'
+        },
+        link: '/project/seat'
       },
       {
         value: '',
-        label: 'U-SHAPE TABLE'
+        label: {
+          zh: 'U-SHAPE TABLE',
+          en: 'U-SHAPE TABLE'
+        },
+        link: '/project/desk'
       }
     ]
   },
@@ -39,14 +47,24 @@ const data = [
     label: {
       zh: '关于',
       en: 'ABOUT'
-    }
+    },
+    link: '/about'
   },
   {
     value: '4',
     label: {
       zh: '联系我们',
       en: 'CONTACT'
-    }
+    },
+    link: '/contact'
+  },
+  {
+    value: '5',
+    label: {
+      zh: 'English',
+      en: '中文'
+    },
+    link: '/language'
   }
 ]
 
@@ -56,6 +74,26 @@ class NavBar extends Component {
     this.state = {
       height: 0
     }
+    this.nav = this.nav.bind(this)
+  }
+
+  nav(link) {
+    this.setState({
+      height: 0
+    }, () => {
+      if (link == '/language') {
+        console.log(link)
+        this.props.dispatch({
+          type: 'homepage/updateState',
+          payload: {
+            key: 'language',
+            value: this.props.homepage.language == 'en' ? 'zh' : 'en'
+          }
+        })
+      } else {
+        this.props.history.push(link)
+      }
+    })
   }
 
   render() {
@@ -80,12 +118,12 @@ class NavBar extends Component {
         />}
         leftContent={<Logo logo={'http://images.shinemeditation.cn/new.png'} />}
       />
-      <MenuCustom height={this.state.height} language={language} />
+      <MenuCustom height={this.state.height} language={language} onClick={this.nav} />
     </div>
   }
 }
 
-const MenuCustom = ({ height, language }) => {
+const MenuCustom = ({ height, language, onClick }) => {
   return <AnimateHeight
     duration={500}
     height={height}>
@@ -94,24 +132,32 @@ const MenuCustom = ({ height, language }) => {
         data.map((item, index) => {
           return <MenuItem
             text={item.label[language]}
+            link={item.link}
             key={index}
-            children={item.children ? item.children : null} />
+            children={item.children ? item.children : null}
+            language={language}
+            onClick={onClick}
+          />
         })
       }
     </div>
   </AnimateHeight>
 }
 
-const MenuItem = ({ text, style, children }) => {
-  return <div>
+const MenuItem = ({ text, style, children, language, onClick, link }) => {
+  return <div onClick={() => {
+    link ? onClick(link) : console.log('no link')
+  }}>
     <div className={styles.item} style={style}>
       {text}
       <IconCustom content='&#xe6f5;' style={{ fontSize: '20px', color: '#108ee9' }} />
     </div>
     {
       children ? children.map((item, index) => {
-        return <div className={styles.citem} key={index} style={style}>
-          {item.label}
+        return <div className={styles.citem} key={index} style={style} onClick={() => {
+          onClick(item.link)
+        }}>
+          {item.label[language]}
         </div>
       }) : ''
     }
