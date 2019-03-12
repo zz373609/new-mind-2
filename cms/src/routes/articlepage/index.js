@@ -4,23 +4,36 @@ import PropTypes from 'prop-types'
 import './style/index.css'
 import styles from './style/index.scss'
 import { NewTable } from '../../components'
-import { Modal } from 'antd'
+import { Modal, Button, message } from 'antd'
+import { insertArticle, deleteArticle } from '../../services/server'
+import moment from 'moment'
 
 @connect(state => ({
   homepage: state.homepage,
   loading: state.loading
 }))
 class ArticlePage extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
-      visiable: false,
+      visible: false,
       article: null
     }
     this.columns = [
       {
         title: '标题',
         dataIndex: 'title'
+      },
+      {
+        title: '创建时间',
+        dataIndex: 'date',
+        render: (text) => {
+          return <div>
+            {
+              text ? moment(text).format('YYYY-MM-DD HH:MM:SS') : ''
+            }
+          </div>
+        }
       },
       {
         title: '操作',
@@ -39,6 +52,8 @@ class ArticlePage extends Component {
     ]
     this.preview = this.preview.bind(this)
     this.edit = this.edit.bind(this)
+    this.delete = this.delete.bind(this)
+    this.newarticle = this.newarticle.bind(this)
     this.Ops = [
       {
         value: 'preview',
@@ -49,29 +64,61 @@ class ArticlePage extends Component {
         value: 'edit',
         lable: '编辑',
         func: this.edit
+      },
+      {
+        value: 'edit',
+        lable: '删除',
+        func: this.delete
       }
     ]
   }
 
-  preview (item) {
+  preview(item) {
     this.setState({
-      article: item
+      article: item,
+      visible: true
     })
   }
 
-  edit (item) {
+  edit(item) {
     window.open('/article/' + item._id, '_blank')
   }
 
-  render () {
+  delete(item) {
+    deleteArticle(item._id)
+  }
+
+  async newarticle() {
+    try {
+      let res = await insertArticle('new', {})
+      window.open('/article/' + res.data.id, '_blank')
+    } catch (error) {
+      message.error('创建文章失败')
+    }
+  }
+
+  render() {
     const { homepage, loading } = this.props
     const { articles } = homepage
     return <div>
       <Modal
-        visiable={this.state.visiable}
+        visible={this.state.visible}
+        onCancel={() => {
+          this.setState({
+            visible: false
+          })
+        }}
+        width={800}
+        footer={null}
       >
-        <div />
+        <div>
+          <h2>{this.state.article ? this.state.article.title : ''}</h2>
+          <div dangerouslySetInnerHTML={{ __html: this.state.article ? this.state.article.content : '' }} />
+        </div>
       </Modal>
+      <div className={styles.addnew}>
+        <Button onClick={this.newarticle} type={'primary'}>新建文章</Button>
+      </div>
       <NewTable
         columns={this.columns}
         dataSource={articles}

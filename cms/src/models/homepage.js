@@ -1,4 +1,11 @@
-import { fetchProducts, fetchArticles, fetchMusics } from '../services/server'
+import {
+  fetchProducts,
+  fetchArticles,
+  fetchMusics,
+  updateProduct,
+  putArticle
+} from '../services/server'
+import { message } from 'antd'
 
 export default {
   namespace: 'homepage',
@@ -68,6 +75,25 @@ export default {
           })
         }
       })
+    },
+    *putProduct({ payload }, { call, put, select, take, all }) {
+      try {
+        yield call(updateProduct, payload.id, payload.data)
+        yield put({
+          type: 'getProducts'
+        })
+        message.success('修改商品成功')
+      } catch (error) {
+        message.success('修改失败')
+      }
+    },
+    *putArticle({ payload }, { call, put, select, take, all }) {
+      try {
+        yield call(putArticle, payload.id, payload.data)
+        message.success('保存文章成功')
+      } catch (error) {
+        message.success('保存文章失败')
+      }
     }
 
   },

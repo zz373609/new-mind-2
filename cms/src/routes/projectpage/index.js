@@ -70,6 +70,7 @@ class ProjectPage extends Component {
       }
     ]
     this.updateProduct = this.updateProduct.bind(this)
+    this.putServerProduct = this.putServerProduct.bind(this)
   }
 
   updateProduct(key, language, val) {
@@ -80,8 +81,21 @@ class ProjectPage extends Component {
     })
   }
 
+  putServerProduct() {
+    let { dispatch } = this.props
+    let product = JSON.parse(JSON.stringify(this.state.product))
+    delete product._id
+    dispatch({
+      type: 'homepage/putProduct',
+      payload: {
+        id: this.state.product._id,
+        data: product
+      }
+    })
+  }
+
   render() {
-    const { homepage, loading } = this.props
+    const { homepage, loading, dispatch } = this.props
     const { products } = homepage
     let { product } = this.state
     return <div>
@@ -150,7 +164,7 @@ class ProjectPage extends Component {
           display: 'flex',
           justifyContent: 'flex-end'
         }}>
-          <Button type='primary'>修改</Button>
+          <Button onClick={this.putServerProduct} type='primary'>修改</Button>
         </div>
       </Modal>
       <NewTable

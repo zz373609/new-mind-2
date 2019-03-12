@@ -16,30 +16,13 @@ class Articles extends Component {
   }
   renderAbstract = (article, index) => {
     const { history } = this.props
-    return <div>
+    return <div onClick={() => {
+      history.push({
+        pathname: `/column/articles/${article._id}`
+      })
+    }}>
       <h3 className={styles.zh} style={{ fontWeight: 400 }}>{article.title}</h3>
       <div className={styles.en} style={{ fontSize: 12, color: '#222' }}>{article.time}</div>
-      <div className={styles.zh} style={{ fontSize: '12px', margin: '16px 0' }}>{article.content.filter(i => i.type === 'subTitle').map(i => i.value).join('/')}</div>
-      <p className={classNames(styles.zh, { [styles['abstract-para']]: true })}>{article.content.find(i => i.type === 'paragraph').value}</p>
-      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <img style={{ height: '46px', marginTop: 10, cursor: 'pointer' }}
-          onClick={() => {
-            history.push({
-              pathname: `/column/articles/${article._id}`
-            })
-          }}
-          onMouseEnter={() => {
-            this.setState({
-              inIcon: index
-            })
-          }}
-          onMouseLeave={() => {
-            this.setState({
-              inIcon: null
-            })
-          }}
-          src={this.state.inIcon === index ? readMore_black : readMore} />
-      </div>
     </div >
   }
   render() {

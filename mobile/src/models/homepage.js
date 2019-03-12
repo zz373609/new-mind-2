@@ -29,6 +29,7 @@ export default {
             payload: pathname.replace('/project/', '')
           })
         }
+        console.log(pathname)
         if (pathname.indexOf('/column/articles/') > -1 && pathname.replace('/column/articles/', '').length) {
           dispatch({
             type: 'ArticleOne',
@@ -107,7 +108,7 @@ export default {
           type: 'updateState',
           payload: {
             key: 'product',
-            value: res
+            value: res.data.products
           }
         })
       } catch (error) {
@@ -124,7 +125,7 @@ export default {
           type: 'updateState',
           payload: {
             key: 'productone',
-            value: res
+            value: res.data.product
           }
         })
       } catch (error) {
@@ -141,7 +142,7 @@ export default {
           type: 'updateState',
           payload: {
             key: 'articles',
-            value: res
+            value: res.data.articles
           }
         })
       } catch (error) {
@@ -159,7 +160,7 @@ export default {
           type: 'updateState',
           payload: {
             key: 'article',
-            value: res
+            value: res.data.article
           }
         })
       } catch (error) {

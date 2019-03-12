@@ -21,10 +21,34 @@ export function fetchArticles() {
   return fetch.get(`${host}${api}/article/all`)
 }
 
+export function fetchArticle(id) {
+  return fetch.get(`${host}${api}/article/${id}`)
+}
+
+export function putArticle(id, payload) {
+  return fetch.put(`${host}${api}/article/${id}`, payload)
+}
+
 export function fetchMusics() {
   return fetch.get(`${host}${api}/music/all`)
 }
 
 export function getToken(key) {
   return fetch.get(`${host}${api}/feature/get_token?key=${key}`)
+}
+
+export function insertArticle(id, payload) {
+  return fetch.post(`${host}${api}/article/${id}`, payload)
+}
+
+export function updateArticle(id, payload) {
+  return fetch.put(`${host}${api}/article/${id}`, payload)
+}
+
+export function deleteArticle(id) {
+  return fetch.delete(`${host}${api}/article/${id}`)
+}
+
+export function updateProduct(id, payload) {
+  return fetch.put(`${host}${api}/product/${id}`, payload)
 }

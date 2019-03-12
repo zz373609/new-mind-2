@@ -3,8 +3,6 @@ from src.config.qiniu_config import access_key, secret_key
 from qiniu import Auth
 from src.util.error import InvalidUsage,set_error
 from src.util.response import ResponseHandle
-from src.util.error import InvalidUsage,set_error
-from src.util.response import ResponseHandle
 
 feature_bp = Blueprint(
     'feature',

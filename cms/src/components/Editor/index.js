@@ -9,41 +9,33 @@ import CKUpload from '../../utils/ckupload'
 class Editor extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      data: ""
-    }
   }
 
   componentDidMount() {
-    this.setState({
-      data: '<p>dsfg</p>'
-    })
+
   }
 
   render() {
-    const { } = this.props
+    const { data, onChange } = this.props
     return <div className={styles.editor}>
       <CKEditor
         editor={ClassicEditor}
-        data={this.state.data}
+        data={data}
         onInit={editor => {
-          // You can store the "editor" and use when it is needed.
           editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
             return new CKUpload(loader)
           }
         }}
         onChange={(event, editor) => {
           const data = editor.getData()
-          this.setState({
-            data
-          })
-          console.log({ event, editor, data })
+          onChange(data)
+          // console.log({ event, editor, data })
         }}
         onBlur={editor => {
-          console.log('Blur.', editor)
+          // console.log('Blur.', editor)
         }}
         onFocus={editor => {
-          console.log('Focus.', editor)
+          // console.log('Focus.', editor)
         }}
       />
     </div>

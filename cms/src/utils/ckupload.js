@@ -2,15 +2,15 @@ import * as qiniu from 'qiniu-js'
 import { uuid } from '../utils/func'
 import { getToken } from '../services/server'
 class CKUpload {
-  constructor(loader) {
+  constructor (loader) {
     // The file loader instance to use during the upload.
-    this.loader = loader;
+    this.loader = loader
   }
 
   // Starts the upload process.
-  async upload() {
+  async upload () {
     let res = await this.loader.file
-    let key = uuid(8, 16)
+    let key = uuid(16, 16)
     let result = await getToken(key)
     let file = await this.getFile(res, key, result)
     return {
@@ -18,17 +18,17 @@ class CKUpload {
     }
   }
 
-  getFile(res, key, result) {
+  getFile (res, key, result) {
     var observable = qiniu.upload(res, key, result.data.token)
     return new Promise((resolve, reject) => {
       observable.subscribe({
-        next(res) {
+        next (res) {
           console.log(res)
         },
-        error(err) {
-          // ...
+        error (err) {
+          console.log(err)
         },
-        complete(res) {
+        complete (res) {
           resolve(res)
         }
       })
@@ -36,7 +36,7 @@ class CKUpload {
   }
 
   // Aborts the upload process.
-  abort() {
+  abort () {
   }
 }
 
