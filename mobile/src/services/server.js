@@ -24,3 +24,7 @@ export function fetchProductone(param) {
 export function fetchArticle(param) {
   return fetch.get(`${host}${api}/article/${param.id}`)
 }
+
+export function fetchMusics() {
+  return fetch.get(`${host}${api}/music/all`)
+}

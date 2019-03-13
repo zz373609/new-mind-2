@@ -61,7 +61,9 @@ class Column extends Component {
       </div>
       <Route path='/column/articles' exact render={(props) => <Articles {...props} dispatch={dispatch} homepage={homepage} />} />
       <Route path='/column/articles/:id' exact render={(props) => <ArticleDetail {...props} article={homepage.article} homepage={homepage} />} />
-      <Route path='/column/music' exact component={Music} />
+      <Route path='/column/music' exact render={() => {
+        return <Music musics={homepage.musics} />
+      }} />
       <Route path='/column/news' exact component={News} />
     </div>
     )

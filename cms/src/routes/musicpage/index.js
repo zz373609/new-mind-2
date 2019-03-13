@@ -5,6 +5,8 @@ import './style/index.css'
 import styles from './style/index.scss'
 import { NewTable, QiuUpload } from '../../components'
 import { Modal, Form, Input, Button } from 'antd'
+import ReactAudioPlayer from 'react-audio-player'
+import moment from 'moment'
 
 const FormItem = Form.Item
 const FormItemLayout = {
@@ -39,20 +41,84 @@ class MusicPage extends Component {
         dataIndex: 'name'
       },
       {
+        title: '创建时间',
+        dataIndex: 'date',
+        render: (text) => {
+          return <div>
+            {
+              text ? moment(text).format('YYYY-MM-DD HH:MM:SS') : ''
+            }
+          </div>
+        }
+      },
+      {
         title: '操作',
         render: (text, record) => {
           return <div>
-            <a onClick={() => {
+            <a style={{ marginRight: '16px' }} onClick={() => {
               this.setState({
                 music: record,
                 visiable: true
               })
             }}>编辑</a>
+            <a onClick={() => {
+              this.deleteMusic(record)
+            }}>删除</a>
           </div>
         }
       }
     ]
     this.updateProduct = this.updateProduct.bind(this)
+    this.cover = this.cover.bind(this)
+    this.music = this.music.bind(this)
+    this.confirm = this.confirm.bind(this)
+    this.makenew = this.makenew.bind(this)
+    this.deleteMusic = this.deleteMusic.bind(this)
+  }
+
+  cover(url) {
+    let music = JSON.parse(JSON.stringify(this.state.music))
+    music.cover = url
+    this.setState({
+      music: music
+    })
+  }
+
+  music(url) {
+    let music = JSON.parse(JSON.stringify(this.state.music))
+    music.linkUrl = url
+    this.setState({
+      music: music
+    })
+  }
+
+  confirm() {
+    console.log('herer?')
+    let { dispatch } = this.props
+    let music = JSON.parse(JSON.stringify(this.state.music))
+    delete music._id
+    dispatch({
+      type: 'homepage/putMusic',
+      payload: {
+        id: this.state.music._id,
+        data: music
+      }
+    })
+  }
+
+  makenew() {
+    let { dispatch } = this.props
+    dispatch({
+      type: 'homepage/newMusic'
+    })
+  }
+
+  deleteMusic(item) {
+    let { dispatch } = this.props
+    dispatch({
+      type: 'homepage/deleteMusics',
+      payload: item._id
+    })
   }
 
   updateProduct(key, val) {
@@ -103,22 +169,53 @@ class MusicPage extends Component {
             label='音乐'
             {...FormItemLayout}
           >
-            <QiuUpload />
+            <div className={styles.musicbox}>
+              <div style={{ marginRight: '16px' }}>
+                {
+                  this.state.music.linkUrl ? <ReactAudioPlayer
+                    src={this.state.music.linkUrl ? this.state.music.linkUrl : ''}
+                    controls
+                  /> : ''
+                }
+              </div>
+              <QiuUpload
+                getUrl={this.music}
+              />
+            </div>
           </FormItem>
           <FormItem
             label='音乐封面图'
             {...FormItemLayout}
           >
-            <QiuUpload />
+            <div className={styles.musicbox}>
+              <div style={{ marginRight: '16px' }}>
+                {
+                  this.state.music.cover ? <div
+                    className={styles.mucover}
+                    style={{ backgroundImage: `url(${this.state.music.cover ? this.state.music.cover : ''})` }}
+                  /> : ''
+                }
+              </div>
+              <QiuUpload
+                getUrl={this.cover}
+              />
+            </div>
           </FormItem>
         </div>
         <div style={{
           display: 'flex',
           justifyContent: 'flex-end'
         }}>
-          <Button type='primary'>修改</Button>
+          <Button type='primary' onClick={this.confirm}>修改</Button>
         </div>
       </Modal>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+        marginBottom: '16px'
+      }}>
+        <Button type='primary' onClick={this.makenew}>新建音乐</Button>
+      </div>
       <NewTable
         columns={this.columns}
         dataSource={musics}

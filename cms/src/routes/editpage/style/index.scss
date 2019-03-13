@@ -10,3 +10,19 @@
   align-items: center;
   box-shadow: 0 2px 8px #f0f1f2;
 }
+
+.imagebox{
+  width: 128px;
+  height: 128px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 16px;
+}
+
+.final{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 16px;
+}

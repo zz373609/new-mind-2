@@ -3,7 +3,7 @@ import { connect } from 'dva'
 import PropTypes from 'prop-types'
 import './style/index.css'
 import styles from './style/index.scss'
-import { Editor } from '../../components'
+import { Editor, QiuUpload } from '../../components'
 import { fetchArticle } from '../../services/server'
 import pathToRegexp from 'path-to-regexp'
 import { Input, Button } from 'antd'
@@ -19,11 +19,21 @@ class EditPage extends Component {
       id: '',
       article: {
         content: '',
-        title: ''
+        title: '',
+        cover: ''
       }
     }
     this.onChange = this.onChange.bind(this)
     this.save = this.save.bind(this)
+    this.getUrl = this.getUrl.bind(this)
+  }
+
+  getUrl(url) {
+    let article = JSON.parse(JSON.stringify(this.state.article))
+    article.cover = url
+    this.setState({
+      article: article
+    })
   }
 
   onChange(data) {
@@ -57,6 +67,7 @@ class EditPage extends Component {
         let article = JSON.parse(JSON.stringify(this.state.article))
         article.content = res.data.article.content
         article.title = res.data.article.title
+        article.cover = res.data.article.cover
         this.setState({
           article: article
         })
@@ -85,6 +96,16 @@ class EditPage extends Component {
           data={this.state.article.content}
           onChange={this.onChange}
         />
+        <div>
+          <div className={styles.final}>
+            {
+              this.state.article.cover ? <div className={styles.imagebox} style={{ backgroundImage: `url(${this.state.article.cover})` }} /> : ''
+            }
+            <QiuUpload
+              getUrl={this.getUrl}
+            />
+          </div>
+        </div>
       </div>
     </div>
   }

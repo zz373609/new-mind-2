@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
-import { music } from './mock/mock.js'
 const QRcode = require('./image/QRcode.png')
 const play = require('./image/play.png')
 const play_black = require('./image/play_black.png')
 const pause = require('./image/pause.png')
 const pause_black = require('./image/pause_black.png')
 let audio = document.createElement('audio')
+
 class Music extends Component {
   constructor (props) {
     super(props)
@@ -17,9 +17,10 @@ class Music extends Component {
   }
   render () {
     const { musicIndex, inIcon } = this.state
+    const { musics } = this.props
     return (<div>
       <div style={{ width: '100%', margin: '0 auto', paddingBottom: 160, borderBottom: '1px solid #ddd', marginBottom: 20 }}>
-        {music.map((item, index) => (
+        {musics.map((item, index) => (
           <div style={{ width: '70%', border: '1px solid #aaa', margin: '36px auto', display: 'flex', position: 'relative' }}>
             <div>
               <img src={item.coverUrl} style={{ height: 80 }} />

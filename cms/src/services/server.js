@@ -33,6 +33,18 @@ export function fetchMusics() {
   return fetch.get(`${host}${api}/music/all`)
 }
 
+export function puthMusics(id, payload) {
+  return fetch.put(`${host}${api}/music/${id}`, payload)
+}
+
+export function postMusics() {
+  return fetch.post(`${host}${api}/music/new`)
+}
+
+export function deleteMusics(id) {
+  return fetch.delete(`${host}${api}/music/${id}`)
+}
+
 export function getToken(key) {
   return fetch.get(`${host}${api}/feature/get_token?key=${key}`)
 }

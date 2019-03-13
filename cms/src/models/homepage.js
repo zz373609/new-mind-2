@@ -3,7 +3,11 @@ import {
   fetchArticles,
   fetchMusics,
   updateProduct,
-  putArticle
+  putArticle,
+  postMusics,
+  puthMusics,
+  deleteMusics,
+  deleteArticle
 } from '../services/server'
 import { message } from 'antd'
 
@@ -63,6 +67,17 @@ export default {
         }
       })
     },
+    *deleteArticleServer({ payload }, { call, put, select, take, all }) {
+      try {
+        yield call(deleteArticle, payload)
+        yield put({
+          type: 'getArticles'
+        })
+        message.success('删除成功')
+      } catch (error) {
+        message.success('删除失败')
+      }
+    },
     *getMusics({ payload }, { call, put, select, take, all }) {
       let res = yield call(fetchMusics)
       yield put({
@@ -94,8 +109,40 @@ export default {
       } catch (error) {
         message.success('保存文章失败')
       }
+    },
+    *putMusic({ payload }, { call, put, select, take, all }) {
+      try {
+        yield call(puthMusics, payload.id, payload.data)
+        message.success('修改音乐成功')
+        yield put({
+          type: 'getMusics'
+        })
+      } catch (error) {
+        message.success('修改音乐失败')
+      }
+    },
+    *newMusic({ payload }, { call, put, select, take, all }) {
+      try {
+        yield call(postMusics)
+        message.success('创建音乐成功')
+        yield put({
+          type: 'getMusics'
+        })
+      } catch (error) {
+        message.success('创建音乐失败')
+      }
+    },
+    *deleteMusics({ payload }, { call, put, select, take, all }) {
+      try {
+        yield call(deleteMusics, payload)
+        message.success('删除音乐成功')
+        yield put({
+          type: 'getMusics'
+        })
+      } catch (error) {
+        message.success('删除音乐失败')
+      }
     }
-
   },
 
   reducers: {

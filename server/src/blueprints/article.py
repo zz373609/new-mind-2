@@ -52,6 +52,7 @@ def articlenew(id):
         _id = article.insert_one({
             "title":"",
             "content":"",
+            "cover":"",
             "date":datetime.datetime.utcnow()
         })
         print(_id.inserted_id)

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import './style/index.css'
 import styles from './style/index.scss'
 import { NewTable } from '../../components'
-import { Modal, Button, message } from 'antd'
-import { insertArticle, deleteArticle } from '../../services/server'
+import { Modal, Button, message, Divider } from 'antd'
+import { insertArticle } from '../../services/server'
 import moment from 'moment'
 
 @connect(state => ({
@@ -13,7 +13,7 @@ import moment from 'moment'
   loading: state.loading
 }))
 class ArticlePage extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       visible: false,
@@ -85,7 +85,11 @@ class ArticlePage extends Component {
   }
 
   delete(item) {
-    deleteArticle(item._id)
+    let { dispatch } = this.props
+    dispatch({
+      type: 'homepage/deleteArticleServer',
+      payload: item._id
+    })
   }
 
   async newarticle() {
@@ -111,7 +115,10 @@ class ArticlePage extends Component {
         width={800}
         footer={null}
       >
-        <div>
+        <div className={styles.preview}>
+          <h3>封面图</h3>
+          <img src={this.state.article ? this.state.article.cover : ''} style={{ width: '100%' }} />
+          <Divider />
           <h2>{this.state.article ? this.state.article.title : ''}</h2>
           <div dangerouslySetInnerHTML={{ __html: this.state.article ? this.state.article.content : '' }} />
         </div>

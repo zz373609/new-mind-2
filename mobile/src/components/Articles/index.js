@@ -16,18 +16,14 @@ class Articles extends Component {
   }
   renderAbstract = (article, index) => {
     const { history } = this.props
-    return <div onClick={() => {
-      history.push({
-        pathname: `/column/articles/${article._id}`
-      })
-    }}>
+    return <div >
       <h3 className={styles.zh} style={{ fontWeight: 400 }}>{article.title}</h3>
       <div className={styles.en} style={{ fontSize: 12, color: '#222' }}>{article.time}</div>
     </div >
   }
   render() {
     const { current } = this.state
-    const { homepage } = this.props
+    const { homepage, history } = this.props
     return (<div>
       {
         homepage && homepage.articles && homepage.articles.map((i, index) => (
@@ -37,6 +33,10 @@ class Articles extends Component {
             borderBottom: '1px solid #ddd',
             marginBottom: 22,
             paddingBottom: 22
+          }} onClick={() => {
+            history.push({
+              pathname: `/column/articles/${i._id}`
+            })
           }}>
             <div style={{ width: '48%' }}><img style={{ display: 'block', width: '100%' }} src={i.cover} /></div>
             <div style={{ width: '48%' }}>{

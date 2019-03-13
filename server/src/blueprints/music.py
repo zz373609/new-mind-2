@@ -5,6 +5,7 @@ from bson.objectid import ObjectId
 from src.util.error import InvalidUsage,set_error
 from src.util.response import ResponseHandle
 from src.util.validate_parse import ValidateParse
+import datetime
 
 post_music_reqparse = ValidateParse()
 post_music_reqparse.add_argument(
@@ -41,13 +42,13 @@ def musics():
 @music_bp.route('/<string:id>', methods=['GET','POST','PUT','DELETE'])
 def operate_music(id):
     if request.method == 'GET':
-        music(id)
+        return music(id)
     elif request.method == 'POST':
-        new_mudic(id)
+        return new_mudic(id)
     elif request.method == 'PUT':
-        update_music(id)
+        return update_music(id)
     elif request.method == 'DELETE':
-        delete_music(id)
+        return delete_music(id)
 
 
 
@@ -61,13 +62,17 @@ def music(id):
 
 
 def new_mudic(id):
-    json = request.json
     if not id:
         raise InvalidUsage(status_code=500,payload=set_error(500,"need id"))
     music = mongo.db.music
     if id == "new":
-        post_music_reqparse.parse_source(json)
-        _id = music.insert_one(json)
+        _id = music.insert_one({
+            "title" : "new",
+            "name" : "new",
+            "cover" : "",
+            "linkUrl" : "",
+            "date":datetime.datetime.utcnow()
+        })
         res = ResponseHandle({
             "id":str(_id.inserted_id)
         })
