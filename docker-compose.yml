@@ -21,6 +21,8 @@ services:
       - ./mobile/dist/:/www/mobile/
       - ./cms/dist/:/www/cms/
       - ./https/:/etc/nginx/conf.d/https
+      - ./https_m:/etc/nginx/conf.d/https_m
+      - ./https_cms:/etc/nginx/conf.d/https_cms
     links:
       - backend
     ports:
