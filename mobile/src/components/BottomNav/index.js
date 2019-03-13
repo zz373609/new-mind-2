@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import styles from './index.scss'
-import { Divider } from 'antd'
 import MenuItem from './MenuItem'
-
+import { HomepageImage } from '../index'
 import qq from './image/qq.png'
 import facebook from './image/facebook.png'
 import wechat from './image/wechet.png'
@@ -111,7 +110,9 @@ class BottomNav extends Component {
   render() {
     const { homepage, history } = this.props
     const { language } = homepage
-    return (<div style={{}} className={styles.contain}>
+    return (<div>
+      <HomepageImage src={`http://images.shinemeditation.cn/bottom_mo.png`} />
+      <div style={{}} className={styles.contain}>
       <div style={{ paddingTop: '50px' }}>
         {
           navItems.map((item, index) => {
@@ -134,7 +135,7 @@ class BottomNav extends Component {
           })
         }
       </div>
-    </div >)
+    </div ></div>)
   }
 }
 export default BottomNav

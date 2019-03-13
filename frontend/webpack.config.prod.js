@@ -127,7 +127,7 @@ module.exports = {
     new CleanWebpackPlugin('dist'),
     new HtmlWebpackPlugin({
       filename: '../index.html',
-      title: 'shinemeditation',
+      title: '心冥想 SHINE MEDITATION | 冥想座具 MEDITATION SEAT | 高凤麟 GAO FENGLIN | 微客设计机构 NANOIN DESIGN STUDIO',
       template: './index.ejs'
     }),
     new webpack.DefinePlugin({

@@ -82,7 +82,6 @@ class NavBar extends Component {
       height: 0
     }, () => {
       if (link == '/language') {
-        console.log(link)
         this.props.dispatch({
           type: 'homepage/updateState',
           payload: {
@@ -116,7 +115,7 @@ class NavBar extends Component {
             })
           }}
         />}
-        leftContent={<Logo logo={'http://images.shinemeditation.cn/new.png'} />}
+        leftContent={<Logo logo={'http://images.shinemeditation.cn/mobile_logo.png'} />}
       />
       <MenuCustom height={this.state.height} language={language} onClick={this.nav} />
     </div>
