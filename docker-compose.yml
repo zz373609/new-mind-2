@@ -34,6 +34,5 @@ services:
       - backend
     ports:
       - '993:443'
-      - '80:80'
 
       
