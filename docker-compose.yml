@@ -18,16 +18,22 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - ./frontend/dist/:/www/data/
-      - ./mobile/dist/:/www/mobile/
-      - ./cms/dist/:/www/cms/
       - ./https/:/etc/nginx/conf.d/https
-      - ./https_m:/etc/nginx/conf.d/https_m
-      - ./https_cms:/etc/nginx/conf.d/https_cms
     links:
       - backend
     ports:
       - '443:443'
       - '80:80'
-      - '993:993'
-      - '994:994'
+    mobile:
+      image: nginx
+       volumes:
+      - ./nginx_mobile.conf:/etc/nginx/conf.d/default.conf
+      - ./mobile/dist/:/www/mobile/
+      - ./https_m:/etc/nginx/conf.d/https_m
+    links:
+      - backend
+    ports:
+      - '993:443'
+      - '80:80'
+
       
