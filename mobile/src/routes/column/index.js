@@ -6,7 +6,6 @@ import styles from './style/index.scss'
 import classNames from 'classnames'
 import { Music, Articles, News, ArticleDetail } from '../../components'
 import { Route } from 'dva/router'
-import { mockArticles } from '../../components/Articles/mockdata/mock.js'
 
 const type = [
   {

@@ -23,7 +23,7 @@ class Music extends Component {
         {musics.map((item, index) => (
           <div style={{ width: '70%', border: '1px solid #aaa', margin: '36px auto', display: 'flex', position: 'relative' }}>
             <div>
-              <img src={item.coverUrl} style={{ height: 80 }} />
+              <img src={item.cover} style={{ height: 80 }} />
               {musicIndex !== index && <img style={{ position: 'absolute', height: '40px', top: 20, left: 20 }}
                 onMouseEnter={() => {
                   this.setState({
