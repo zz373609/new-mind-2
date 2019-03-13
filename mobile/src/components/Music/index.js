@@ -18,6 +18,7 @@ class Music extends Component {
   render () {
     const { musicIndex, inIcon } = this.state
     const { musics } = this.props
+    
     return (<div>
       <div style={{ width: '100%', margin: '0 auto', paddingBottom: 160, borderBottom: '1px solid #ddd', marginBottom: 20 }}>
         {musics.map((item, index) => (
