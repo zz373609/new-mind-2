@@ -20,6 +20,7 @@ services:
       - ./frontend/dist/:/www/data/
       - ./https/:/etc/nginx/conf.d/https
       - ./mobile/dist/:/www/mobile/
+      - ./cms/dist/:www/cms
     links:
       - backend
     ports:
