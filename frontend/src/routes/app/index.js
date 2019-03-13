@@ -32,6 +32,12 @@ class App extends Component {
     this.setDiff = this.setDiff.bind(this)
   }
 
+  componentWillMount() {
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+      window.location.href = 'http://m.shinemeditation.cn:911'
+    }
+  }
+
   setDiff() {
 
   }
@@ -59,8 +65,8 @@ class App extends Component {
       // background: 'repeating-linear-gradient( -45deg, #f2f2f2, #f2f2f2 1px, #d9d9d9 1px, #fff 5px)',
       position: 'relative'
     }}>
-      {this.state.showTopNav && <NavBar history={history} dispatch={dispatch} homepage={homepage} diff={this.state.diff} product={homepage.product}/>}
-      <TopBanner src={homepage.topSrc} dispatch={dispatch}/>
+      {this.state.showTopNav && <NavBar history={history} dispatch={dispatch} homepage={homepage} diff={this.state.diff} product={homepage.product} />}
+      <TopBanner src={homepage.topSrc} dispatch={dispatch} />
       <div style={{
         width: '67.4%',
         margin: '0 auto'
