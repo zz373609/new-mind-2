@@ -16,6 +16,7 @@ class Music extends Component {
     }
   }
   render () {
+    
     const { musicIndex, inIcon } = this.state
     const { musics } = this.props
     return (<div>
