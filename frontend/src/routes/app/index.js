@@ -29,17 +29,12 @@ class App extends Component {
       diff: up
     }
     this.div = null
-    this.setDiff = this.setDiff.bind(this)
   }
 
   componentWillMount() {
-    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    if (/Android|webOS|iPhone|iPod|BlackBerry|Meizu/i.test(navigator.userAgent)) {
       window.location.href = 'https://m.shinemeditation.cn:911'
     }
-  }
-
-  setDiff() {
-
   }
 
   componentDidMount() {
