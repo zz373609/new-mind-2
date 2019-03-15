@@ -13,21 +13,21 @@ services:
     ports:
       - '5020:5030'
     working_dir: /code
-  nginx:
-    image: nginx
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./frontend/dist/:/www/data/
-      - ./mobile/dist/:/www/mobile/
-      - ./cms/dist/:/www/cms/
-      - ./https/:/etc/nginx/conf.d/https
-      - ./https_m:/etc/nginx/conf.d/https_m
-      - ./https_cms:/etc/nginx/conf.d/https_cms
-    links:
-      - backend
-    ports:
-      - '443:443'
-      - '80:80'
-      - '911:911'
-      - '994:994'
+  # nginx:
+  #   image: nginx
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf
+  #     - ./frontend/dist/:/www/data/
+  #     - ./mobile/dist/:/www/mobile/
+  #     - ./cms/dist/:/www/cms/
+  #     - ./https/:/etc/nginx/conf.d/https
+  #     - ./https_m:/etc/nginx/conf.d/https_m
+  #     - ./https_cms:/etc/nginx/conf.d/https_cms
+  #   links:
+  #     - backend
+  #   ports:
+  #     - '443:443'
+  #     - '80:80'
+  #     - '911:911'
+  #     - '994:994'
       

@@ -1,5 +1,5 @@
 import qs from 'qs'
-import { fetchProduct, fetchProductone, fetchArticle, fetchMusics } from '../services/server'
+import { fetchProduct, fetchProductone, fetchArticle, fetchMusics,fetchNeses } from '../services/server'
 export default {
   namespace: 'homepage',
 
@@ -15,7 +15,8 @@ export default {
     productone: {},
     articles: [],
     article: {},
-    musics: []
+    musics: [],
+    newses:[]
   },
 
   subscriptions: {
@@ -34,6 +35,11 @@ export default {
           dispatch({
             type: 'ArticleOne',
             payload: pathname.replace('/column/articles/', '')
+          })
+        }
+        if (pathname.indexOf('/column/news') > -1) {
+          dispatch({
+            type: 'Newses'
           })
         }
         if (pathname.indexOf('/column/music') > -1) {
@@ -145,6 +151,20 @@ export default {
           payload: {
             key: 'musics',
             value: res.data.musics
+          }
+        })
+      } catch (error) {
+
+      }
+    },
+    *Newses({ payload }, { call, put, select, take }) {
+      try {
+        let res = yield call(fetchNeses)
+        yield put({
+          type: 'updateState',
+          payload: {
+            key: 'newses',
+            value: res.data.newses
           }
         })
       } catch (error) {

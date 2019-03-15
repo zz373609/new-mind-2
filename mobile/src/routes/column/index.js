@@ -6,6 +6,7 @@ import styles from './style/index.scss'
 import classNames from 'classnames'
 import { Music, Articles, News, ArticleDetail } from '../../components'
 import { Route } from 'dva/router'
+import { mockArticles } from '../../components/Articles/mockdata/mock.js'
 
 const type = [
   {
@@ -63,7 +64,9 @@ class Column extends Component {
       <Route path='/column/music' exact render={() => {
         return <Music musics={homepage.musics} />
       }} />
-      <Route path='/column/news' exact component={News} />
+      <Route path='/column/news' exact render={() => {
+        return <News newses={homepage.newses} />
+      }} />
     </div>
     )
   }
