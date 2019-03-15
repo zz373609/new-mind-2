@@ -32,7 +32,6 @@ class App extends Component {
   }
 
   componentWillMount() {
-    
     if (/Android|webOS|iPhone|iPod|BlackBerry|Meizu/i.test(navigator.userAgent)) {
       window.location.href = 'https://m.shinemeditation.cn:911'
     }
