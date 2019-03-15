@@ -7,7 +7,11 @@ import {
   postMusics,
   puthMusics,
   deleteMusics,
-  deleteArticle
+  deleteArticle,
+  fetchNews,
+  addNews,
+  updateNews,
+  deleteNews
 } from '../services/server'
 import { message } from 'antd'
 
@@ -17,7 +21,8 @@ export default {
   state: {
     products: [],
     articles: [],
-    musics: []
+    musics: [],
+    newses: []
   },
 
   subscriptions: {
@@ -34,6 +39,10 @@ export default {
         } else if (pathname == '/music') {
           dispatch({
             type: 'getMusics'
+          })
+        } else if (pathname == '/news') {
+          dispatch({
+            type: 'getNews'
           })
         }
       })
@@ -67,6 +76,19 @@ export default {
         }
       })
     },
+    *getNews({ payload }, { call, put, select, take, all }) {
+      let res = yield call(fetchNews)
+      yield put({
+        type: 'updateValue',
+        payload: {
+          key: 'newses',
+          val: res.data.newses.map((item, index) => {
+            item.key = item._id
+            return item
+          })
+        }
+      })
+    },
     *deleteArticleServer({ payload }, { call, put, select, take, all }) {
       try {
         yield call(deleteArticle, payload)
@@ -90,6 +112,39 @@ export default {
           })
         }
       })
+    },
+    *newNews({ payload }, { call, put, select, take, all }) {
+      try {
+        yield call(addNews)
+        yield put({
+          type: 'getNews'
+        })
+        message.success('创建成功')
+      } catch (error) {
+        message.error('创建失败')
+      }
+    },
+    *putNews({ payload }, { call, put, select, take, all }) {
+      try {
+        yield call(updateNews, payload.id, payload.data)
+        yield put({
+          type: 'getNews'
+        })
+        message.success('更新成功')
+      } catch (error) {
+        message.error('更新失败')
+      }
+    },
+    *deleteNews({ payload }, { call, put, select, take, all }) {
+      try {
+        yield call(deleteNews, payload)
+        yield put({
+          type: 'getNews'
+        })
+        message.success('删除成功')
+      } catch (error) {
+        message.error('删除失败')
+      }
     },
     *putProduct({ payload }, { call, put, select, take, all }) {
       try {

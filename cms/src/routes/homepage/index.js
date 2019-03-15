@@ -3,13 +3,14 @@ import { connect } from 'dva'
 import PropTypes from 'prop-types'
 import './style/index.css'
 import styles from './style/index.scss'
-import { Editor, NavBar } from '../../components'
+import { NavBar } from '../../components'
 import { Menu } from 'antd'
 import { Route, Switch } from 'dva/router'
 import {
   ProjectPage,
   MusicPage,
-  ArticlePage
+  ArticlePage,
+  NewsPage
 } from '../index'
 
 const MenuItem = Menu.Item
@@ -26,6 +27,10 @@ const Menus = [
   {
     value: '/music',
     lable: '音乐'
+  },
+  {
+    value: '/news',
+    lable: '新闻'
   }
 ]
 
@@ -34,23 +39,23 @@ const Menus = [
   loading: state.loading
 }))
 class HomePage extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {}
   }
 
-  render() {
-    const { homepage, loading, history } = this.props
+  render () {
+    const { history } = this.props
     return <div>
       <NavBar />
       <div className={styles.container}>
         <div className={styles.left}>
           <Menu
-            mode="inline"
+            mode='inline'
             style={{ border: 'none' }}
             selectedKeys={[window.location.pathname]}
             onClick={(e) => {
-              this.props.history.push(e.key)
+              history.push(e.key)
             }}
           >
             {
@@ -65,6 +70,7 @@ class HomePage extends Component {
             <Route path='/' exact component={ProjectPage} />
             <Route path='/article' exact component={ArticlePage} />
             <Route path='/music' exact component={MusicPage} />
+            <Route path='/news' exact component={NewsPage} />
           </Switch>
         </div>
       </div>
@@ -73,8 +79,7 @@ class HomePage extends Component {
 }
 
 HomePage.propTypes = {
-  homepage: PropTypes.object,
-  loading: PropTypes.object
+  history: PropTypes.object
 }
 
 export default HomePage

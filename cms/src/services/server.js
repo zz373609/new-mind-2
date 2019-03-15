@@ -64,3 +64,19 @@ export function deleteArticle(id) {
 export function updateProduct(id, payload) {
   return fetch.put(`${host}${api}/product/${id}`, payload)
 }
+
+export function fetchNews() {
+  return fetch.get(`${host}${api}/news/all`)
+}
+
+export function addNews() {
+  return fetch.post(`${host}${api}/news/new`)
+}
+
+export function updateNews(id, data) {
+  return fetch.put(`${host}${api}/news/${id}`, data)
+}
+
+export function deleteNews(id) {
+  return fetch.delete(`${host}${api}/news/${id}`)
+}

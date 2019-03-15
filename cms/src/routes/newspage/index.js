@@ -4,8 +4,7 @@ import PropTypes from 'prop-types'
 import './style/index.css'
 import styles from './style/index.scss'
 import { NewTable, QiuUpload } from '../../components'
-import { Modal, Form, Input, Button } from 'antd'
-import ReactAudioPlayer from 'react-audio-player'
+import { Modal, Button, Form, Input, DatePicker } from 'antd'
 import moment from 'moment'
 
 const FormItem = Form.Item
@@ -24,21 +23,18 @@ const FormItemLayout = {
   homepage: state.homepage,
   loading: state.loading
 }))
-class MusicPage extends Component {
+class NewsPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      music: {},
-      visiable: false
+      visiable: false,
+      newses: [],
+      news: {}
     }
     this.columns = [
       {
-        title: '标题',
-        dataIndex: 'title'
-      },
-      {
         title: '名字',
-        dataIndex: 'name'
+        dataIndex: 'content'
       },
       {
         title: '创建时间',
@@ -57,81 +53,81 @@ class MusicPage extends Component {
           return <div>
             <a style={{ marginRight: '16px' }} onClick={() => {
               this.setState({
-                music: record,
+                news: record,
                 visiable: true
               })
             }}>编辑</a>
             <a onClick={() => {
-              this.deleteMusic(record)
+              this.deleteNews(record)
             }}>删除</a>
           </div>
         }
       }
     ]
-    this.updateProduct = this.updateProduct.bind(this)
-    this.cover = this.cover.bind(this)
-    this.music = this.music.bind(this)
-    this.confirm = this.confirm.bind(this)
+    this.deleteNews = this.deleteNews.bind(this)
     this.makenew = this.makenew.bind(this)
-    this.deleteMusic = this.deleteMusic.bind(this)
-  }
-
-  cover(url) {
-    let music = JSON.parse(JSON.stringify(this.state.music))
-    music.cover = url
-    this.setState({
-      music: music
-    })
-  }
-
-  music(url) {
-    let music = JSON.parse(JSON.stringify(this.state.music))
-    music.linkUrl = url
-    this.setState({
-      music: music
-    })
+    this.updateContent = this.updateContent.bind(this)
+    this.updateCover = this.updateCover.bind(this)
+    this.updateDate = this.updateDate.bind(this)
+    this.confirm = this.confirm.bind(this)
   }
 
   confirm() {
     let { dispatch } = this.props
-    let music = JSON.parse(JSON.stringify(this.state.music))
-    delete music._id
+    let news = JSON.parse(JSON.stringify(this.state.news))
+    delete news._id
     dispatch({
-      type: 'homepage/putMusic',
+      type: 'homepage/putNews',
       payload: {
-        id: this.state.music._id,
-        data: music
+        id: this.state.news._id,
+        data: news
       }
+    })
+  }
+
+  updateContent(val) {
+    let news = JSON.parse(JSON.stringify(this.state.news))
+    news.content = val
+    this.setState({
+      news
+    })
+  }
+
+  updateCover(url) {
+    let news = JSON.parse(JSON.stringify(this.state.news))
+    news.cover = url
+    this.setState({
+      news
+    })
+  }
+
+  updateDate(value, string) {
+    let news = JSON.parse(JSON.stringify(this.state.news))
+    news.date = string
+    this.setState({
+      news
+    })
+  }
+
+  deleteNews(item) {
+    let { dispatch } = this.props
+    dispatch({
+      type: 'homepage/deleteNews',
+      payload: item._id
     })
   }
 
   makenew() {
     let { dispatch } = this.props
     dispatch({
-      type: 'homepage/newMusic'
-    })
-  }
-
-  deleteMusic(item) {
-    let { dispatch } = this.props
-    dispatch({
-      type: 'homepage/deleteMusics',
-      payload: item._id
-    })
-  }
-
-  updateProduct(key, val) {
-    let music = JSON.parse(JSON.stringify(this.state.music))
-    music[key] = val
-    this.setState({
-      music: music
+      type: 'homepage/newNews'
     })
   }
 
   render() {
     const { homepage, loading } = this.props
-    const { musics } = homepage
-    const { music } = this.state
+    const { newses } = homepage
+    let { news } = this.state
     return <div>
       <Modal
         visible={this.state.visiable}
@@ -145,60 +141,38 @@ class MusicPage extends Component {
       >
         <div style={{ marginTop: '32px' }}>
           <FormItem
-            label='标题'
+            label='内容'
             {...FormItemLayout}
           >
-            <Input value={music.title ? music.title : ''}
+            <Input value={news.content ? news.content : ''}
               onChange={(e) => {
-                this.updateProduct('title', e.target.value)
+                this.updateContent(e.target.value)
               }}
             />
           </FormItem>
           <FormItem
-            label='名字'
-            {...FormItemLayout}
-          >
-            <Input value={music.name ? music.name : ''}
-              onChange={(e) => {
-                this.updateProduct('name', e.target.value)
-              }}
-            />
-          </FormItem>
-          <FormItem
-            label='音乐'
+            label='新闻封面图'
             {...FormItemLayout}
           >
             <div className={styles.musicbox}>
               <div style={{ marginRight: '16px' }}>
                 {
-                  this.state.music.linkUrl ? <ReactAudioPlayer
-                    src={this.state.music.linkUrl ? this.state.music.linkUrl : ''}
-                    controls
-                  /> : ''
-                }
-              </div>
-              <QiuUpload
-                getUrl={this.music}
-              />
-            </div>
-          </FormItem>
-          <FormItem
-            label='音乐封面图'
-            {...FormItemLayout}
-          >
-            <div className={styles.musicbox}>
-              <div style={{ marginRight: '16px' }}>
-                {
-                  this.state.music.cover ? <div
+                  this.state.news.cover ? <div
                     className={styles.mucover}
-                    style={{ backgroundImage: `url(${this.state.music.cover ? this.state.music.cover : ''})` }}
+                    style={{ backgroundImage: `url(${this.state.news.cover ? this.state.news.cover : ''})` }}
                   /> : ''
                 }
               </div>
               <QiuUpload
-                getUrl={this.cover}
+                getUrl={this.updateCover}
               />
             </div>
+          </FormItem>
+          <FormItem
+            label='时间'
+            {...FormItemLayout}
+          >
+            <DatePicker onChange={this.updateDate} value={news.date ? moment(news.date) : null} />
           </FormItem>
         </div>
         <div style={{
@@ -213,19 +187,19 @@ class MusicPage extends Component {
         justifyContent: 'flex-end',
         marginBottom: '16px'
       }}>
-        <Button type='primary' onClick={this.makenew}>新建音乐</Button>
+        <Button type='primary' onClick={this.makenew}>新建新闻</Button>
       </div>
       <NewTable
         columns={this.columns}
-        dataSource={musics}
+        dataSource={newses}
       />
     </div>
   }
 }
 
-MusicPage.propTypes = {
+NewsPage.propTypes = {
   homepage: PropTypes.object,
   loading: PropTypes.object
 }
 
-export default MusicPage
+export default NewsPage
