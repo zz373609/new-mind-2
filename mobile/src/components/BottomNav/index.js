@@ -113,29 +113,34 @@ class BottomNav extends Component {
     return (<div>
       <HomepageImage src={`http://images.shinemeditation.cn/bottom_mo.png`} />
       <div style={{}} className={styles.contain}>
-      <div style={{ paddingTop: '50px' }}>
-        {
-          navItems.map((item, index) => {
-            return <MenuItem key={index} item={item} language={language} history={history} />
-          })
-        }
-      </div>
-      <p style={{ marginLeft: '16px', color: 'white', marginTop: '16px' }}>Click to Visit<span style={{ background: 'white', color: 'black', marginLeft: '8px' }}>NANOIN</span></p>
-      <div style={{ marginLeft: '16px', width: '20px' }} className={styles.shares}>
-        {
-          imagelist.map((item, index) => {
-            return <img src={item} style={{ width: '100%', marginRight: '16px' }} />
-          })
-        }
-      </div>
-      <div style={{ color: 'white', marginTop: '16px', paddingBottom: '16px' }}>
-        {
-          Object.keys(address).map((item, index) => {
-            return <p style={{ margin: '0px', marginLeft: '16px', fontSize: '10px' }}>{address[item][language]}</p>
-          })
-        }
-      </div>
-    </div ></div>)
+        <div style={{ paddingTop: '50px' }}>
+          {
+            navItems.map((item, index) => {
+              return <MenuItem key={index} item={item} language={language} history={history} />
+            })
+          }
+        </div>
+        <p style={{ marginLeft: '16px', color: 'white', marginTop: '16px' }}>Click to Visit<span style={{ background: 'white', color: 'black', marginLeft: '8px' }}>NANOIN</span></p>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ marginLeft: '16px', width: '20px' }} className={styles.shares}>
+            {
+              imagelist.map((item, index) => {
+                return <img src={item} style={{ width: '100%', marginRight: '16px' }} />
+              })
+            }
+          </div>
+          <div style={{ width: '70px',marginRight: '16px' }}>
+            <img src={'http://images.shinemeditation.cn/WechatIMG125.png'} style={{ width: '100%' }} />
+          </div>
+        </div>
+        <div style={{ color: 'white', marginTop: '16px', paddingBottom: '16px' }}>
+          {
+            Object.keys(address).map((item, index) => {
+              return <p style={{ margin: '0px', marginLeft: '16px', fontSize: '10px' }}>{address[item][language]}</p>
+            })
+          }
+        </div>
+      </div ></div>)
   }
 }
 export default BottomNav
