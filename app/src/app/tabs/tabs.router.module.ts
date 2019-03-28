@@ -8,7 +8,7 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
@@ -17,7 +17,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2',
+        path: 'lesson',
         children: [
           {
             path: '',
@@ -26,7 +26,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab3',
+        path: 'person',
         children: [
           {
             path: '',
@@ -35,15 +35,24 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'about',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab4/tab4.module#Tab4PageModule'
+          }
+        ]
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

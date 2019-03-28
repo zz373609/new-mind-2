@@ -2,3 +2,22 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+
+.noise{
+    width: 140px;
+    margin-right: 16px;
+    height: 180px;
+}
+
+.noise-content{
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  padding-left: 8px;
+  margin-right: 8px;
+}
+
+.noise-content ion-card{
+  flex-shrink: 0;
+}
