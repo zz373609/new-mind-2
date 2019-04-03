@@ -32,3 +32,7 @@ export function fetchMusics() {
 export function fetchNeses(){
   return fetch.get(`${host}${api}/news/all`)
 }
+
+export function fetchPages(){
+  return fetch.get(`${host}${api}`)
+}

@@ -32,7 +32,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    if (/Android|webOS|iPhone|iPod|BlackBerry|iPad/i.test(navigator.userAgent)) {
       window.location.href = 'https://m.shinemeditation.cn:911'
     }
   }
@@ -64,6 +64,7 @@ class App extends Component {
       <TopBanner src={homepage.topSrc} dispatch={dispatch} />
       <div style={{
         width: '67.4%',
+        maxWidth: '1242px',
         margin: '0 auto'
       }} ref={div => this.div = div}>
         {this.props.children}

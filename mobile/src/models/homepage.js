@@ -10,7 +10,7 @@ export default {
     columnKey: 0,
     articleId: null,
     navIndex: 0,
-    topSrc: 'http://images.shinemeditation.cn/WechatIMG116%201.png',
+    topSrc: 'http://images.shinemeditation.cn/top_mobile.png',
     product: [],
     productone: {},
     articles: [],

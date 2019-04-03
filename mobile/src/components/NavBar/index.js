@@ -27,7 +27,7 @@ const data = [
       {
         value: '',
         label: {
-          zh: 'MEDITATION SEAT',
+          zh: '冥想坐具',
           en: 'MEDITATION SEAT'
         },
         link: '/project/seat'
@@ -35,7 +35,7 @@ const data = [
       {
         value: '',
         label: {
-          zh: 'U-SHAPE TABLE',
+          zh: '冥想桌',
           en: 'U-SHAPE TABLE'
         },
         link: '/project/desk'
@@ -45,13 +45,47 @@ const data = [
   {
     value: '3',
     label: {
+      zh: '专栏',
+      en: 'COLUMN'
+    },
+    link: '/column/articles',
+    children: [
+      {
+        value: '0',
+        label: {
+          zh: '文章',
+          en: 'ARTICLE'
+        },
+        link: '/column/articles'
+      },
+      {
+        value: '1',
+        label: {
+          zh: '音乐',
+          en: 'MUSIC'
+        },
+        link: '/column/music'
+      },
+      {
+        value: '2',
+        label: {
+          zh: '新闻',
+          en: 'NEWS'
+        },
+        link: '/column/news'
+      }
+    ]
+  },
+  {
+    value: '4',
+    label: {
       zh: '关于',
       en: 'ABOUT'
     },
     link: '/about'
   },
   {
-    value: '4',
+    value: '5',
     label: {
       zh: '联系我们',
       en: 'CONTACT'
@@ -59,7 +93,7 @@ const data = [
     link: '/contact'
   },
   {
-    value: '5',
+    value: '6',
     label: {
       zh: 'English',
       en: '中文'

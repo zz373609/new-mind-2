@@ -65,7 +65,6 @@ class HomePage extends Component {
           ImageArray[language].map((item, index) => {
             return <HomepageImage key={index} onClick={() => {
               let key = item.replace('mo_', '')
-              console.log(key)
               if (key && videoList[key]) {
                 this.setState({
                   videoVisible: true,

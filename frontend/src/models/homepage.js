@@ -1,5 +1,5 @@
 import qs from 'qs'
-import { fetchProduct, fetchProductone, fetchArticle, fetchMusics,fetchNeses } from '../services/server'
+import { fetchProduct, fetchProductone, fetchArticle, fetchMusics, fetchNeses, fetchPages } from '../services/server'
 export default {
   namespace: 'homepage',
 
@@ -16,7 +16,8 @@ export default {
     articles: [],
     article: {},
     musics: [],
-    newses:[]
+    newses: [],
+    pages: []
   },
 
   subscriptions: {
@@ -189,7 +190,6 @@ export default {
       }
     },
     *ArticleOne({ payload }, { call, put, select, take }) {
-      console.log(payload)
       try {
         let param = {
           id: payload
@@ -205,6 +205,9 @@ export default {
       } catch (error) {
 
       }
+    },
+    *getPages({ payload }, { call, put, select, taek }) {
+      let res = yield fetchPages()
     }
   },
   reducers: {
