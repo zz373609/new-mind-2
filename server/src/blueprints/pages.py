@@ -13,7 +13,7 @@ page_bp = Blueprint(
     url_prefix='/api/v1/page')
 
 
-@noise_bp.route('/all')
+@page_bp.route('/all')
 def pages():
     data = mongo.db.page.find()
     result = []
