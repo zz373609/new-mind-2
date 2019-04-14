@@ -1,83 +1,139 @@
+
+http://images.shinemeditation.cn/image/homepage/material2/img1.jpg
 const ImageArray = {
-  'en': [
-    'mo_en_2',
-    'mo_en_3',
-    'mo_en_4',
-    'mo_en_5',
-    'mo_en_6',
-    'mo_en_7',
-    'mo_en_8',
-    'mo_en_9',
-    'mo_en_10',
-    'mo_en_11',
-    'mo_en_12',
-    'mo_en_13',
-    'mo_en_14',
-    'mo_en_15',
-    'mo_en_16',
-    'mo_en_17',
-    'mo_en_18',
-    'mo_en_19',
-    'mo_en_20',
-    'mo_en_21',
-    'mo_en_22',
-    'mo_en_23',
-    'mo_en_24',
-    'mo_en_25',
-    'mo_en_26',
-    'mo_en_27',
-    'mo_en_28',
-    'mo_en_29',
-    'mo_en_30',
-    'mo_en_31',
-    'mo_en_32',
-    'mo_en_33',
-    'mo_en_34',
-    'mo_en_35',
-    'mo_en_36',
-    'mo_en_37',
-    'mo_en_38',
-    'mo_en_39',
-    'mo_en_40'
-  ],
-  'zh': [
-    'mo_zh_2',
-    'mo_zh_3',
-    'mo_zh_4',
-    'mo_zh_5',
-    'mo_zh_6',
-    'mo_zh_7',
-    'mo_zh_8',
-    'mo_zh_9',
-    'mo_zh_10',
-    'mo_zh_11',
-    'mo_zh_12',
-    'mo_zh_13',
-    'mo_zh_14',
-    'mo_zh_15',
-    'mo_zh_16',
-    'mo_zh_17',
-    'mo_zh_18',
-    'mo_zh_19',
-    'mo_zh_20',
-    'mo_zh_21',
-    'mo_zh_22',
-    'mo_zh_23',
-    'mo_zh_24',
-    'mo_zh_25',
-    'mo_zh_26',
-    'mo_zh_27',
-    'mo_zh_28',
-    'mo_zh_29',
-    'mo_zh_30',
-    'mo_zh_31',
-    'mo_zh_32',
-    'mo_zh_33',
-    'mo_zh_34',
-    'mo_zh_35',
-    'mo_zh_36',
-    'mo_zh_37'
-  ]
+  'en': [{ modal: [
+    "http://images.shinemeditation.cn/image/homepage/material1/img2.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material1/img3.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material1/img4.jpg"
+  ], image: 'mo_en_2' },
+  { modal: [], image: 'mo_en_3' },
+  { modal: [], image: 'mo_en_4' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material2/img1.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material2/img2.jpg"
+  ], image: 'mo_en_5' },
+  { modal: [], image: 'mo_en_6' },
+  { modal: [], image: 'mo_en_7' },
+  { modal: [], image: 'mo_en_8' },
+  { modal: [], image: 'mo_en_9' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material5/img1.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material5/img2.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material5/img3.jpg"
+  ], image: 'mo_en_10' },
+  { modal: [], image: 'mo_en_11' },
+  { modal: [], image: 'mo_en_12' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material7/img1.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material7/img4.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material7/img2.jpg",
+  ], image: 'mo_en_13' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material6/img1.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material6/img2.jpg"
+  ], image: 'mo_en_14' },
+  { modal: [
+    "http://images.shinemeditation.cn/tedshe.jpg",
+    "http://images.shinemeditation.cn/otherted.jpg"
+  ], image: 'mo_en_15' },
+  { modal: [], image: 'mo_en_16' },
+  { modal: [], image: 'mo_en_17' },
+  { modal: [], image: 'mo_en_18' },
+  { modal: [], image: 'mo_en_19' },
+  { modal: [], image: 'mo_en_20' },
+  { modal: [], image: 'mo_en_21' },
+  { modal: [], image: 'mo_en_22' },
+  { modal: [], image: 'mo_en_23' },
+  { modal: [], image: 'mo_en_24' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material9/img1.png"
+  ], image: 'mo_en_25' },
+  { modal: [], image: 'mo_en_26' },
+  { modal: [], image: 'mo_en_27' },
+  { modal: [], image: 'mo_en_28' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material10/img1.png"
+  ], image: 'mo_en_29' },
+  { modal: [], image: 'mo_en_30' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material11/img1.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material11/img2.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material11/img3.jpg"
+  ], image: 'mo_en_31' },
+  { modal: [], image: 'mo_en_32' },
+  { modal: [], image: 'mo_en_33' },
+  { modal: [], image: 'mo_en_34' },
+  { modal: [], image: 'mo_en_35' },
+  { modal: [], image: 'mo_en_36' },
+  { modal: [], image: 'mo_en_37' },
+  { modal: [], image: 'mo_en_38' },
+  { modal: [], image: 'mo_en_39' },
+  { modal: [], image: 'mo_en_40' }],
+  'zh': [ { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material1/img2.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material1/img3.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material1/img4.jpg"
+  ], image: 'mo_zh_2' },
+  { modal: [], image: 'mo_zh_3' },
+  { modal: [], image: 'mo_zh_4' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material2/img1.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material2/img2.jpg"
+  ], image: 'mo_zh_5' },
+  { modal: [], image: 'mo_zh_6' },
+  { modal: [], image: 'mo_zh_7' },
+  { modal: [], image: 'mo_zh_8' },
+  { modal: [], image: 'mo_zh_9' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material5/img1.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material5/img2.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material5/img3.jpg"
+  ], image: 'mo_zh_10' },
+  { modal: [], image: 'mo_zh_11' },
+  { modal: [], image: 'mo_zh_12' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material7/img1.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material7/img4.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material7/img2.jpg",
+  ], image: 'mo_zh_13' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material6/img1.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material6/img2.jpg"
+  ], image: 'mo_zh_14' },
+  { modal: [
+    "http://images.shinemeditation.cn/tedshe.jpg",
+    "http://images.shinemeditation.cn/otherted.jpg"
+  ], image: 'mo_zh_15' },
+  { modal: [], image: 'mo_zh_16' },
+  { modal: [], image: 'mo_zh_17' },
+  { modal: [], image: 'mo_zh_18' },
+  { modal: [], image: 'mo_zh_19' },
+  { modal: [], image: 'mo_zh_20' },
+  { modal: [], image: 'mo_zh_21' },
+  { modal: [], image: 'mo_zh_22' },
+  { modal: [], image: 'mo_zh_23' },
+  { modal: [], image: 'mo_zh_24' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material9/img1.png"
+  ], image: 'mo_zh_25' },
+  { modal: [], image: 'mo_zh_26' },
+  { modal: [], image: 'mo_zh_27' },
+  { modal: [], image: 'mo_zh_28' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material10/img1.png"
+  ], image: 'mo_zh_29' },
+  { modal: [], image: 'mo_zh_30' },
+  { modal: [
+    "http://images.shinemeditation.cn/image/homepage/material11/img1.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material11/img2.jpg",
+    "http://images.shinemeditation.cn/image/homepage/material11/img3.jpg"
+  ], image: 'mo_zh_31' },
+  { modal: [], image: 'mo_zh_32' },
+  { modal: [], image: 'mo_zh_33' },
+  { modal: [], image: 'mo_zh_34' },
+  { modal: [], image: 'mo_zh_35' },
+  { modal: [], image: 'mo_zh_36' },
+  { modal: [], image: 'mo_zh_37' } ]
 }
 
 const videoList = {
