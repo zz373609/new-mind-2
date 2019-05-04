@@ -1,5 +1,3 @@
-
-http://images.shinemeditation.cn/image/homepage/material2/img1.jpg
 const ImageArray = {
   'en': [{
     modal: [

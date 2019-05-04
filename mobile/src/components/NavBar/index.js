@@ -149,7 +149,7 @@ class NavBar extends Component {
             })
           }}
         />}
-        leftContent={<Logo logo={'http://images.shinemeditation.cn/mobile_logo.png'} />}
+        leftContent={<Logo logo={'http://images.shinemeditation.cn/green.jpeg'} />}
       />
       <MenuCustom height={this.state.height} language={language} onClick={this.nav} />
     </div>
@@ -198,7 +198,7 @@ const MenuItem = ({ text, style, children, language, onClick, link }) => {
 }
 
 const Logo = ({ logo }) => {
-  return <div style={{ width: '100px' }}>
+  return <div style={{ width: '80px' }}>
     <img src={logo} style={{ width: '100%' }} />
   </div>
 }
