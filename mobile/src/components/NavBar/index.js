@@ -142,14 +142,14 @@ class NavBar extends Component {
     return <div className={styles.nav}>
       <NavMo
         mode={'light'}
-        rightContent={<IconCustom content='&#xe61f;' style={{ fontSize: '24px', cursor: 'pointer' }}
+        rightContent={<IconCustom content='&#xe61f;' style={{ fontSize: '24px', cursor: 'pointer', color: '#17546c' }}
           onClick={() => {
             this.setState({
               height: this.state.height === 0 ? 'auto' : 0
             })
           }}
         />}
-        leftContent={<Logo logo={'http://images.shinemeditation.cn/green.jpeg'} />}
+        leftContent={<Logo logo={'http://images.shinemeditation.cn/logo_moblie_new.png'} />}
       />
       <MenuCustom height={this.state.height} language={language} onClick={this.nav} />
     </div>
