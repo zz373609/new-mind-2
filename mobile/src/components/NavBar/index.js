@@ -198,7 +198,7 @@ const MenuItem = ({ text, style, children, language, onClick, link }) => {
 }
 
 const Logo = ({ logo }) => {
-  return <div style={{ width: '80px' }}>
+  return <div style={{ width: '100px' }}>
     <img src={logo} style={{ width: '100%' }} />
   </div>
 }

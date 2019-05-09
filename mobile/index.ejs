@@ -9,7 +9,17 @@
     <title>
         <%= htmlWebpackPlugin.options.title %>
     </title>
-    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.11&key=5874e412d0ed5abc83994ddc954e251c"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112588946-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-112588946-4');
+    </script>
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.11&key=5874e412d0ed5abc83994ddc954e251c"></script>
 </head>
 
 <body>
