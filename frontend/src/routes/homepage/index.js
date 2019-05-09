@@ -193,7 +193,8 @@ class HomePage extends Component {
         <HomepageImage src={transition1} percent='100%' />
         <div onClick={() => {
           this.setState({
-            fullVideoVisible: true
+            videoVisible: true,
+            videoSrc: 'http://images.shinemeditation.cn/%E5%BE%AE%E8%AE%BE%E8%AE%A1-%E9%AB%98%E5%87%A4%E9%BA%9F5.7.mp4'
           })
         }}><HomepageImage src={fullpageVideo} percent='100%' /></div>
         <HomepageImage id='award' src={language === 'zh' ? transition2_zh : transition2_en} percent='100%' />

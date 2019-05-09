@@ -110,12 +110,14 @@ const ImageArray = {
   { modal: [], image: 'mo_zh_6' },
   { modal: [], image: 'mo_zh_7' },
   { modal: [], image: 'mo_zh_8' },
-  { modal: [
-    "http://images.shinemeditation.cn/image/homepage/material4/img1.jpg",
-    "http://images.shinemeditation.cn/image/homepage/material4/img2.jpg",
-    "http://images.shinemeditation.cn/image/homepage/material4/img3.jpg",
-    "http://images.shinemeditation.cn/material4_show4.jpg"
-  ], image: 'mo_zh_9' },
+  {
+    modal: [
+      "http://images.shinemeditation.cn/image/homepage/material4/img1.jpg",
+      "http://images.shinemeditation.cn/image/homepage/material4/img2.jpg",
+      "http://images.shinemeditation.cn/image/homepage/material4/img3.jpg",
+      "http://images.shinemeditation.cn/material4_show4.jpg"
+    ], image: 'mo_zh_9'
+  },
   {
     modal: [
       "http://images.shinemeditation.cn/image/homepage/material5/img1.jpg",
@@ -186,7 +188,9 @@ const videoList = {
   'zh_34': 'http://images.shinemeditation.cn/video/mp4/bottom_left.mp4bottom_left.mp4',
   'zh_35': 'http://images.shinemeditation.cn/video/mp4/bottom_right.mp4bottom_right.mp4',
   'en_36': 'http://images.shinemeditation.cn/video/mp4/bottom_left.mp4bottom_left.mp4',
-  'en_37': 'http://images.shinemeditation.cn/video/mp4/bottom_right.mp4bottom_right.mp4'
+  'en_37': 'http://images.shinemeditation.cn/video/mp4/bottom_right.mp4bottom_right.mp4',
+  'zh_7': 'http://images.shinemeditation.cn/%E5%BE%AE%E8%AE%BE%E8%AE%A1-%E9%AB%98%E5%87%A4%E9%BA%9F5.7.mp4',
+  'en_7': 'http://images.shinemeditation.cn/%E5%BE%AE%E8%AE%BE%E8%AE%A1-%E9%AB%98%E5%87%A4%E9%BA%9F5.7.mp4'
 }
 
 export {
